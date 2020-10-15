@@ -1,0 +1,175 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.header{
+    border-bottom: 1px solid gray;
+    background-color: lightgray;
+}
+.header h1 {
+    font-family: 'Courier New', Courier, monospace;
+}
+.login_form h2{
+    background-color:#555;
+    border-radius: 20px 20px 0 0;
+    color: #fff;
+    font-size: 28px;
+    padding: 20px 26px;
+    box-shadow: 6px 6px 6px #ADAEAD;
+}
+.login_form{
+    width: 450px;
+    margin: auto;
+    padding: 25px;
+    margin-top: 8%;
+}
+form{
+    background-color: #eee8e8;
+    border-radius: 0 0 20px 20px;
+    padding: 20px 26px;
+    box-shadow: 6px 2px 6px #ADAEAD;
+}
+table {
+    text-align: center;
+    width: 100%;
+}
+table input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+table input[type="password"] {
+    width: 80%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+table input[type="submit"] {
+    width: 50%;
+    padding: 10px 16px;
+    background-color:#4CAF50;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+}
+table input[type="date"] {
+    width: 58%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+table input[type="email"] {
+    width: 80%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+table input[type="tel"] {
+    width: 80%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+table input[type="submit"]:hover {
+    background-color: #127c12;
+}
+table a {
+    text-decoration: none;
+    color: #1e6ed6;
+}
+.sign_up{
+    width: 500px;
+    margin: auto;
+    margin-top: 2%;
+}
+.sign_up h2 {
+    background-color: #eee8e8;
+    border-radius: 20px 20px 0px 0px;
+    padding: 20px 26px;
+    box-shadow: 6px 2px 6px #ADAEAD;
+}
+.login_form #errorMessage {
+    color: red;
+    font-size: 14px;
+    display: block;
+    text-align: left;
+    margin-left: 35px;
+}
+.sign_up #errorMessage {
+    color: red;
+    font-size: 14px;
+    display: block;
+    text-align: left;
+    margin-left: 45px;
+}
+.forgot_password #errorMessage{
+    color: red;
+    font-size: 14px;
+    display: block;
+    text-align: left;
+    margin-left: 35px;
+}
+#title_forgot{
+    display: block;
+    text-align: left;
+    margin-left: 35px;
+}
+.forgot_password {
+    width: 450px;
+    margin: auto;
+    padding: 25px;
+    margin-top: 8%;
+}
+.forgot_password h2 {
+    background-color: #eee8e8;
+    border-radius: 20px 20px 0px 0px;
+    padding: 20px 26px;
+    box-shadow: 6px 2px 6px #ADAEAD;
+}
+.reset_password {
+    width: 500px;
+    margin: auto;
+    margin-top: 2%;
+}
+.reset_password h2{
+    background-color: #eee8e8;
+    border-radius: 20px 20px 0px 0px;
+    padding: 20px 26px;
+    box-shadow: 6px 2px 6px #ADAEAD;
+}
+.reset_password #errorMessage {
+    color: red;
+    font-size: 14px;
+    display: block;
+    text-align: left;
+    margin-left: 35px;
+}
+.redirect_page{
+    text-align: center;
+    margin-top: 10%;
+}
+.redirect_page h2{
+    margin-bottom: 5%;
+}
+.redirect_page button{
+    padding: 10px 16px;
+    background-color:#4CAF50;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+}
+.redirect_page a {
+    text-decoration: none;
+    color: white;
+}
+.redirect_page button:hover, .redirect_page a :hover {
+    background-color:#127c12;
+}
