@@ -30,7 +30,7 @@ if (isset($_GET["msgTimeUp"])) {
                 <div class="md-form">
                     <input type="email" name="txtEmail" id="txtEmail" placeholder="Email" required class="form-control">
                 </div>
-                <div style="color: red;font-size: 14px;display: block;text-align: left;">
+                <div class="text-danger small text-center">
                     <span id="errorMessage"><?php if (isset($_GET["msg"])) echo $_GET["msg"]; ?></span></td>
                 </div>
                 <div>

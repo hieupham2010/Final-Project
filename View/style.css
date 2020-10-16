@@ -23,6 +23,15 @@ img::after{
   box-shadow: 5px 10px  rgb(109, 179, 219); 
   border: 2px solid rgb(109, 179, 219);
 }
+.reset-card{
+  margin:auto;
+  width: 400px;
+  height: 500px;
+  display: flex;
+  flex: wrap;
+  box-shadow: 5px 10px  rgb(109, 179, 219); 
+  border: 2px solid rgb(109, 179, 219);
+}
 
 .forgot-card{
   margin:auto;
@@ -50,28 +59,29 @@ img::after{
     border: 1px solid #66a5e3 !important;
   }
  
-.card {
-  position: relative;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: 0;
-  min-height: 270px;
-  word-wrap: break-word;
-  
-  background-clip: border-box;
-  border: 1.25px solid rgba(0, 0, 0, .125);
-  border-radius: .5rem;
-
-}
-  .class-card:hover {
-    text-decoration: none;
-    color: #080808;
-    box-shadow: 5px;
-    cursor: pointer;
+  .card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .5rem;
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
   }
 
+  .card:hover {
+    text-decoration: none;
+    color: #080808;
+    box-shadow: 10px;
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 5px 10px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+  }
   .list-group-item {
     max-width: 300px;
     height: 300px;
