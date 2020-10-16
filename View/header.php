@@ -12,7 +12,7 @@
   <!--header -->
   <div class="header mt-4">
     <!--navbar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom ml-auto">
+    <nav class="navbar rounded navbar-expand-lg navbar-light bg-light border-bottom ml-auto">
       <a class="navbar-brand" href="#" id="logo">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQXUhPDDSVmzWhYaXJZAFOIkTZU-pyux0Aaow&usqp=CAU" width="30" height="30" alt="logo">
         <span>TDT Classroom</span>
