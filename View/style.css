@@ -1,32 +1,18 @@
 
 /*header*/
 
-::after{
+img::after{
   content: none !important;
 }
 /*header*/
 /******************************** Index */
 
-.class-card {
-  position: relative;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, .125);
-  border-radius: .25rem;
-}
 .Sign-up-card{
   margin:auto;
   margin-top: 15rem;
-  width: 400px;
-  height: 520px;
+  width: 23%;
+  height: 27%;
   display: flex;
-  flex: wrap;
   box-shadow: 5px 10px  rgb(109, 179, 219); 
   border: 2px solid rgb(109, 179, 219);
 }
@@ -37,7 +23,16 @@
   width: 400px;
   height: 500px;
   display: flex;
-  flex: wrap;
+  box-shadow: 5px 10px  rgb(109, 179, 219); 
+  border: 2px solid rgb(109, 179, 219);
+}
+
+.forgot-card{
+  margin:auto;
+  margin-top: 15rem;
+  width: 23%;
+  height: 20%;
+  display: flex;
   box-shadow: 5px 10px  rgb(109, 179, 219); 
   border: 2px solid rgb(109, 179, 219);
 }
@@ -58,6 +53,21 @@
     border: 1px solid #66a5e3 !important;
   }
  
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 270px;
+  word-wrap: break-word;
+  
+  background-clip: border-box;
+  border: 1.25px solid rgba(0, 0, 0, .125);
+  border-radius: .5rem;
+
+}
   .class-card:hover {
     text-decoration: none;
     color: #080808;

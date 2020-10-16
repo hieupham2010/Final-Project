@@ -33,9 +33,8 @@ if (isset($_GET["msgTimeUp"])) {
             <!-- Form -->
             <form class="text-center" action="../Handle/SignUpProcess.php" method="POST">
 
-                <!-- User Name-->
                 <div class="md-form">
-                    <input type="text" name="txtUserName" id="txtUserName" placeholder="User Name" required class="form-control mt-3">
+                    <input type="text" name="txtFullName" id="txtUserName" placeholder="Full Name" required class="form-control mt-3">
                 </div>
                 <!-- Birth Day -->
                 <div class="md-form" >
@@ -50,6 +49,10 @@ if (isset($_GET["msgTimeUp"])) {
                 <!-- Phone number -->
                 <div class="md-form">
                     <input type="tel" name="txtPhoneNumber" id="txtPhoneNumber" placeholder="Phone Number" pattern="[0-9]{10}" required class="form-control mt-3">
+                </div>
+                <!-- User Name-->
+                <div class="md-form">
+                    <input type="text" name="txtUserName" id="txtUserName" placeholder="User Name" required class="form-control mt-3">
                 </div>
 
                 <!-- Pass Word -->

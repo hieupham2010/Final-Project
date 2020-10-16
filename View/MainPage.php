@@ -28,7 +28,7 @@ if (!isset($_SESSION["logged"]) && $_SESSION["logged"] !== true) {
 
 </head>
 <style>
-  .class-card {
+  .card {
     position: relative;
     display: -ms-flexbox;
     display: flex;
@@ -39,7 +39,17 @@ if (!isset($_SESSION["logged"]) && $_SESSION["logged"] !== true) {
     background-color: #fff;
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: .25rem;
+    border-radius: .5rem;
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+  }
+
+  .card:hover {
+    text-decoration: none;
+    color: #080808;
+    box-shadow: 10px;
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 5px 10px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
   }
 </style>
 
@@ -49,185 +59,130 @@ if (!isset($_SESSION["logged"]) && $_SESSION["logged"] !== true) {
 
     <?php include 'header.php' ?>
 
-        <div class="container-fluid ">
+    <!--body-->
+    <div class="row m-0">
+      <!--Body left-->
+      <div class="col col-sm-10 mt-5">
+        <!--Element-->
 
+        <ol class="list-group list-group-horizontal">
+          <li class="list-group-item border-0 ">
+            <div class="card  border-info">
+              <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
+              <!--Class-->
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a id="class" href="#">Class Name</a>
+                </h5>
+                <p class="card-text">Description</p>
 
-          <!--body-->
-          <div class="row m-0">
-            <!--Body left-->
-            <div class="col col-sm-10 mt-5">
-              <!--Element-->
-
-              <ol class="list-group list-group-horizontal">
-
-
-
-                <li class="list-group-item border-0 ">
-                  <div class="card  border-info">
-                    <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
-                    <!--Class-->
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <a id="class" href="#">Class Name</a>
-                      </h5>
-                      <p class="card-text">Description</p>
-
-                    </div>
-                  </div>
-                </li>
-                <li class="list-group-item border-0 ">
-                  <div class="card border-info">
-                    <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
-
-                    <!--Class-->
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <a id="class" href="#">Class Name</a>
-                      </h5>
-                      <p class="card-text">Description</p>
-
-                    </div>
-                  </div>
-                </li>
-                <li class="list-group-item border-0 ">
-                  <div class="card  border-info">
-                    <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
-                    <!--Class-->
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <a id="class" href="#">Class Name</a>
-                      </h5>
-                      <p class="card-text">Description</p>
-
-                    </div>
-                  </div>
-                </li>
-                <li class="list-group-item border-0 ">
-                  <div class="card border-info">
-                    <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
-                    <!--Class-->
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <a id="class" href="#">Class Name</a>
-                      </h5>
-                      <p class="card-text">Description</p>
-
-                    </div>
-                  </div>
-                </li>
-                <li class="list-group-item border-0 ">
-                  <div class="card border-info">
-                    <img src="http://placehold.it/700x400" class="card-img-top" name="image" alt="...">
-                    <!--Class-->
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <a id="class" href="#">Class Name</a>
-                      </h5>
-                      <p class="card-text">Description</p>
-
-                    </div>
-                  </div>
-                </li>
-                <li class="list-group-item border-0 ">
-                  <div class="card border-info">
-                    <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
-                    <!--Class-->
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <a id="class" href="#">Class Name</a>
-                      </h5>
-                      <p class="card-text">Description</p>
-
-                    </div>
-                  </div>
-                </li>
-                <li class="list-group-item border-0 ">
-                  <div class="card border-info">
-                    <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
-                    <!--Class-->
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <a id="class" href="#">Class Name</a>
-                      </h5>
-                      <p class="card-text">Description</p>
-
-                    </div>
-                  </div>
-                </li>
-                <li class="list-group-item border-0 ">
-                  <div class="card border-info">
-                    <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
-                    <!--Class-->
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <a id="class" href="#">Class Name</a>
-                      </h5>
-                      <p class="card-text">Description</p>
-
-                    </div>
-                  </div>
-                </li>
-                <li class="list-group-item border-0 ">
-                  <div class="card border-info">
-                    <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
-                    <!--Class-->
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <a id="class" href="#">Class Name</a>
-                      </h5>
-                      <p class="card-text">Description</p>
-
-                    </div>
-                  </div>
-                </li>
-
-
-                <li class="list-group-item border-0 ">
-                  <div class="card border-info">
-                    <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
-                    <!--Class-->
-                    <div class="card-body">
-                      <h5 class="card-title">
-                        <a id="class" href="#">Class Name</a>
-                      </h5>
-                      <p class="card-text">Description</p>
-
-                    </div>
-                  </div>
-                </li>
-              </ol>
+              </div>
             </div>
-            <!--Body right-->
-            <div class=" body-right col col-sm-2 rounded-sm mt-5">
+          </li>
 
-              <aside id="to-do">
-                <div class="header-wrap text-left  ">
-                  <h2>
-                    <span>To Do</span>
-                  </h2>
-                </div>
+          <li class="list-group-item border-0 ">
+            <div class="card border-info">
+              <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
+              <!--Class-->
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a id="class" href="#">Class Name</a>
+                </h5>
+                <p class="card-text">Description</p>
 
-                <div class="border-bottom">
-                </div>
-
-                <div class="border-bottom">
-                </div>
-
-
-                <li><a href="">Nofitification 1</a></li>
-                <li><a href="">Nofitification 2</a></li>
-                <li><a href="">Nofitification 3</a></li>
-                <li><a href="">Nofitification 3</a></li>
-
-                </ul>
-
+              </div>
             </div>
+          </li>
 
+          <li class="list-group-item border-0 ">
+            <div class="card border-info">
+              <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
+              <!--Class-->
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a id="class" href="#">Class Name</a>
+                </h5>
+                <p class="card-text">Description</p>
+
+              </div>
+            </div>
+          </li>
+
+          <li class="list-group-item border-0 ">
+            <div class="card border-info">
+              <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
+              <!--Class-->
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a id="class" href="#">Class Name</a>
+                </h5>
+                <p class="card-text">Description</p>
+
+              </div>
+            </div>
+          </li>
+
+          <li class="list-group-item border-0 ">
+            <div class="card border-info">
+              <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
+              <!--Class-->
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a id="class" href="#">Class Name</a>
+                </h5>
+                <p class="card-text">Description</p>
+
+              </div>
+            </div>
+          </li>
+
+          <li class="list-group-item border-0 ">
+            <div class="card border-info">
+              <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
+              <!--Class-->
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a id="class" href="#">Class Name</a>
+                </h5>
+                <p class="card-text">Description</p>
+
+              </div>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+      <!--Body right-->
+      <div class=" body-right col col-sm-2 rounded-sm mt-5">
+
+        <aside id="to-do">
+          <div class="header-wrap text-left  ">
+            <h2>
+              <span>To Do</span>
+            </h2>
           </div>
 
-          </aside>
-        </div>
-        </row>
+          <div class="border-bottom">
+          </div>
+
+          <div class="border-bottom">
+          </div>
+
+
+          <li><a href="">Nofitification 1</a></li>
+          <li><a href="">Nofitification 2</a></li>
+          <li><a href="">Nofitification 3</a></li>
+          <li><a href="">Nofitification 3</a></li>
+
+          </ul>
+
+      </div>
+
+    </div>
+
+    </aside>
+
+    </row>
 </body>
 
 </html>
