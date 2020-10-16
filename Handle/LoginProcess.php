@@ -14,16 +14,18 @@
             $_SESSION["logged"] = true;
             $_SESSION["username"] = $UserName;
             $_SESSION["timeLoginExpire"] = time();
-            // if(!empty($_POST["remember"])) {
-            //     setcookie("remember_checked" , $UserName , time() + (86400 * 30));
-            // }else {
-            //     setcookie("remember_notCheck" , "" ,time()-3600);
-            // }
+            if(!empty($_POST["remember"]) && !isset($_COOKIE["UserName"])) {
+                setcookie("UserName" , $UserName , time() + (86400 * 30) , "/" , false);
+                setcookie("Password" , $UserPassword , time() + (86400 * 30) , "/" , false);
+            }else if(empty($_POST["remember"])){
+                setcookie("UserName" , "" ,time() - (86400 * 30) , "/" , false);
+                setcookie("Password" , "" ,time() - (86400 * 30), "/" , false);
+            }
             header("Location: ../View/MainPage.php");
         }else {
             $errorMessage = "Invalid user name or password please try again";
             header("Location: ../index.php?msg=$errorMessage");
         }
-        $connection.close();
+        $connection->close();
     }
 ?>

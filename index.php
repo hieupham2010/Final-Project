@@ -27,11 +27,7 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
 <body>
 
     <!-- Material form login -->
-<<<<<<< HEAD
     <div class="Login-card rounded-lg">
-=======
-    <div class="Login-card rounded-lg m-auto">
->>>>>>> cc21a946bc5f31ad1b24bf1b320af167e681095c
         <!--Card content-->
         <div class="card-body px-lg-5 pt-0 mt-3 mb-5">
                 <div class="mb-5  d-flex justify-content-center">
@@ -42,13 +38,14 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
                
                 <!-- Email -->
                 <div class="md-form mt-2">
-                    <input type="text" name="txtUserName" id="txtUserName" placeholder="User Name" required class="form-control">
+                    <input type="text" name="txtUserName" id="txtUserName" placeholder="User Name" required class="form-control"
+                    value="<?php if(isset($_COOKIE["UserName"])) echo $_COOKIE["UserName"]; ?>">
                 </div>
                 <!-- Password -->
 
                 <div class="md-form mt-3">
-                    <input type="password" name="txtPassword" id="txtPassword" placeholder="Password" required class="form-control">
-
+                    <input type="password" name="txtPassword" id="txtPassword" placeholder="Password" required class="form-control" 
+                    value="<?php if(isset($_COOKIE["Password"])) echo $_COOKIE["Password"];?>">
                 </div>
 
                 <div class="d-flex justify-content-left mt-3">
@@ -56,7 +53,8 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
                     <div>
                         <!-- Remember me -->
                         <div class="form-check ">
-                            <input type="checkbox" class="form-check-input" id="materialLoginFormRemember" name="remember" >
+                            <input type="checkbox" class="form-check-input" id="materialLoginFormRemember" name="remember" 
+                            <?php if(isset($_COOKIE["UserName"])) echo "checked" ;?>>
                             <label class="form-check-label " for="materialLoginFormRemember">Remember me</label>
                         </div>
                     </div>

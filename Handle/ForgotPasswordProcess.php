@@ -20,6 +20,7 @@
             $ErrorMessage = "Your email does not exists";
             header("Location: ../View/ForgotPassword.php?msg=$ErrorMessage");
         }
+        $connection->close();
     }
     
 ?>

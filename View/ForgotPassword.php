@@ -36,8 +36,6 @@ if (isset($_GET["msgTimeUp"])) {
                 <div>
                     <input class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" id="buttonForgotPassword" name="buttonForgotPassword" value="Verification">
                 </div>
-
-
                 <div class="d-flex justify-content-around">
             </form>
         </div>

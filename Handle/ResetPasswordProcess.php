@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         
         if(!empty($_POST["txtNewPassword"]) && !empty($_POST["txtConfirmPassword"])) {
@@ -15,6 +16,7 @@
                 $stmt->bind_param("ss" , $newPassword , $Email);
                 $stmt->execute();
                 $connection->close();
+                session_destroy();
                 header("Location: ../View/Redirect.php?msg=CompleteResetPassword");
             }
         }
