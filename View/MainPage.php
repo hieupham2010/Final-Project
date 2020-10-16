@@ -28,29 +28,7 @@ if (!isset($_SESSION["logged"]) && $_SESSION["logged"] !== true) {
 
 </head>
 <style>
-  .card {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: .5rem;
-    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
-  }
 
-  .card:hover {
-    text-decoration: none;
-    color: #080808;
-    box-shadow: 10px;
-    cursor: pointer;
-    transform: scale(1.05);
-    box-shadow: 5px 10px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
-  }
 </style>
 
 <body>
@@ -162,19 +140,16 @@ if (!isset($_SESSION["logged"]) && $_SESSION["logged"] !== true) {
             </h2>
           </div>
 
-          <div class="border-bottom">
-          </div>
+          <div class="border-bottom"></div>
 
-          <div class="border-bottom">
-          </div>
-
-
-          <li><a href="">Nofitification 1</a></li>
-          <li><a href="">Nofitification 2</a></li>
-          <li><a href="">Nofitification 3</a></li>
-          <li><a href="">Nofitification 3</a></li>
+          <ul class="list-unstyled p-auto mt-2">
+            <li class="mt-1"><a href="">Nofitification 1</a></li>
+            <li class="mt-1"><a href="">Nofitification 2</a></li>
+            <li class="mt-1"><a href="">Nofitification 3</a></li>
+            <li class="mt-1"><a href="">Nofitification 3</a></li>
 
           </ul>
+        </aside>
 
       </div>
 
