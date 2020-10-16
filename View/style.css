@@ -49,16 +49,16 @@ img::after{
 }
 
 .forgot-card{
-  position: absolute;
+  position: fixed;
   top: 0%;
   left: 50%;
   transform: translate(-50%, 25%);
-  margin:auto;
+  margin: auto;
   margin-top: 15rem;
-  width: 23%;
-  height: 20%;
-  display: flex;
-  box-shadow: 5px 10px  rgb(109, 179, 219); 
+  /* width: 23%; */
+  /* height: 20%; */
+  /* display: flex; */
+  box-shadow: 5px 10px rgb(109, 179, 219);
   border: 2px solid rgb(109, 179, 219);
 }
 
