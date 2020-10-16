@@ -1,25 +1,12 @@
 
 /*header*/
 
-::after{
+img::after{
   content: none !important;
 }
 /*header*/
 /******************************** Index */
 
-.class-card {
-  position: relative;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, .125);
-  border-radius: .25rem;
-}
 .Sign-up-card{
   margin:auto;
   width: 400px;
@@ -52,6 +39,21 @@
     border: 1px solid #66a5e3 !important;
   }
  
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 270px;
+  word-wrap: break-word;
+  
+  background-clip: border-box;
+  border: 1.25px solid rgba(0, 0, 0, .125);
+  border-radius: .5rem;
+
+}
   .class-card:hover {
     text-decoration: none;
     color: #080808;
