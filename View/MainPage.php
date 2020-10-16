@@ -52,79 +52,6 @@ if (!isset($_SESSION["logged"]) && $_SESSION["logged"] !== true) {
                 </h5>
                 <p class="card-text">Description</p>
 
-<<<<<<< HEAD
-=======
-        </div>
-
-
-            <li class="list-group-item border-0 ">
-              <div class="class-card  border-info">
-                <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
-                <!--Class-->
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a id="class" href="#">Class Name</a>
-                  </h5>
-                  <p class="card-text">Description</p>
-
-                </div>
-              </div>
-            </li>
-            
-            <li class="list-group-item border-0 ">
-              <div class="class-card  border-info">
-                <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
-                <!--Class-->
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a id="class" href="#">Class Name</a>
-                  </h5>
-                  <p class="card-text">Description</p>
-
-                </div>
-              </div>
-            </li>
-
-            <li class="list-group-item border-0 ">
-              <div class="class-card  border-info">
-                <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
-                <!--Class-->
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a id="class" href="#">Class Name</a>
-                  </h5>
-                  <p class="card-text">Description</p>
-
-                </div>
-              </div>
-            </li>
-
-            <li class="list-group-item border-0 ">
-              <div class="class-card  border-info">
-                <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
-                <!--Class-->
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a id="class" href="#">Class Name</a>
-                  </h5>
-                  <p class="card-text">Description</p>
-
-                </div>
-              </div>
-            </li>
-
-            <li class="list-group-item border-0 ">
-              <div class="class-card  border-info">
-                <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
-                <!--Class-->
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <a id="class" href="#">Class Name</a>
-                  </h5>
-                  <p class="card-text">Description</p>
-
-                </div>
->>>>>>> c7766fc98f10b8ee91eeaff97ca5165488177f54
               </div>
             </div>
           </li>
@@ -198,7 +125,6 @@ if (!isset($_SESSION["logged"]) && $_SESSION["logged"] !== true) {
             </h2>
           </div>
 
-<<<<<<< HEAD
           <div class="border-bottom">
           </div>
 
@@ -218,12 +144,6 @@ if (!isset($_SESSION["logged"]) && $_SESSION["logged"] !== true) {
         </aside>
       </div>
     </row>
-=======
-            <div class="border-bottom">
-            </div>
-        </div>
-    </div>
->>>>>>> c7766fc98f10b8ee91eeaff97ca5165488177f54
 </body>
 
 </html>
