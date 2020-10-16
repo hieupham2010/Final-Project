@@ -27,11 +27,7 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
 <body>
 
     <!-- Material form login -->
-<<<<<<< HEAD
     <div class="Login-card rounded-lg">
-=======
-    <div class="Login-card rounded-lg m-auto">
->>>>>>> cc21a946bc5f31ad1b24bf1b320af167e681095c
         <!--Card content-->
         <div class="card-body px-lg-5 pt-0 mt-3 mb-5">
                 <div class="mb-5  d-flex justify-content-center">
