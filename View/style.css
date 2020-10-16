@@ -19,6 +19,17 @@ img::after{
   margin:auto;
   width: 400px;
   height: 500px;
+  display: flex;
+  box-shadow: 5px 10px  rgb(109, 179, 219); 
+  border: 2px solid rgb(109, 179, 219);
+}
+
+.forgot-card{
+  margin:auto;
+  margin-top: 15rem;
+  width: 23%;
+  height: 20%;
+  display: flex;
   box-shadow: 5px 10px  rgb(109, 179, 219); 
   border: 2px solid rgb(109, 179, 219);
 }
