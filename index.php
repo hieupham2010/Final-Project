@@ -59,7 +59,6 @@
                     </div>
                     <!-- Sign in button -->
                     <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" id="buttonLogin" name="buttonLogin" value="Login">Sign in</button>
-
                     <!-- Register -->
                     <p>Not a member? <a href="View/SignUp.php">Register</a></p>
                     <div>
