@@ -14,9 +14,11 @@
             $_SESSION["logged"] = true;
             $_SESSION["username"] = $UserName;
             $_SESSION["timeLoginExpire"] = time();
-            if(!empty($_POST["remember"]) && !isset($_COOKIE["UserName"])) {
-                setcookie("UserName" , $UserName , time() + (86400 * 30) , "/" , false);
-                setcookie("Password" , $UserPassword , time() + (86400 * 30) , "/" , false);
+            if(!empty($_POST["remember"])) {
+                if(!isset($_COOKIE["UserName"]) || $_COOKIE["UserName"] !== $UserName) {
+                    setcookie("UserName" , $UserName , time() + (86400 * 30) , "/" , false);
+                    setcookie("Password" , $UserPassword , time() + (86400 * 30) , "/" , false);
+                }
             }else if(empty($_POST["remember"])){
                 setcookie("UserName" , "" ,time() - (86400 * 30) , "/" , false);
                 setcookie("Password" , "" ,time() - (86400 * 30), "/" , false);
