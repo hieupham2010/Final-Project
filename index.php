@@ -52,7 +52,7 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
                     <div>
                         <!-- Remember me -->
                         <div class="form-check ">
-                            <input type="checkbox" class="form-check-input" id="materialLoginFormRemember">
+                            <input type="checkbox" class="form-check-input" id="materialLoginFormRemember" name="remember" >
                             <label class="form-check-label " for="materialLoginFormRemember">Remember me</label>
                         </div>
                     </div>

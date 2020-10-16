@@ -14,6 +14,11 @@
             $_SESSION["logged"] = true;
             $_SESSION["username"] = $UserName;
             $_SESSION["timeLoginExpire"] = time();
+            // if(!empty($_POST["remember"])) {
+            //     setcookie("remember_checked" , $UserName , time() + (86400 * 30));
+            // }else {
+            //     setcookie("remember_notCheck" , "" ,time()-3600);
+            // }
             header("Location: ../View/MainPage.php");
         }else {
             $errorMessage = "Invalid user name or password please try again";
