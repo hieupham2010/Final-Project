@@ -29,15 +29,15 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
     <!-- Material form login -->
     <div class="Login-card rounded-lg  p-auto">
         <!--Card content-->
-        <div class="card-body px-lg-5 pt-0 mt-2">
-                <div class="mb-2  d-flex justify-content-center">
+        <div class="card-body px-lg-5 pt-0 mt-3 mb-5">
+                <div class="mb-5  d-flex justify-content-center">
                     <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/1/1b/T%C4%90T_logo.png/200px-T%C4%90T_logo.png" alt="Logo" width="120" height="80">
                 </div>
                 <!-- Form -->
-            <form class="text-center" action="Handle/LoginProcess.php" method="POST">
+            <form class="text-center " action="Handle/LoginProcess.php" method="POST">
                
                 <!-- Email -->
-                <div class="md-form">
+                <div class="md-form mt-2">
                     <input type="text" name="txtUserName" id="txtUserName" placeholder="User Name" required class="form-control">
                 </div>
                 <!-- Password -->
