@@ -36,17 +36,15 @@
         <div class="card-body px-lg-5 pt-0 mt-5">
 
             <!-- Form -->
-            <form class="text-center"  action="Handle/LoginProcess.php" method="POST">
+            <form class="text-center" action="Handle/LoginProcess.php" method="POST">
                 <!-- Email -->
                     <div class="md-form">
-                        <span>Tài Khoản</span>  <input type="text"  name="txtUserName" id="txtUserName" placeholder="User Name" required class="form-control">
+                        <input type="text"  name="txtUserName" id="txtUserName" placeholder="User Name" required class="form-control">
                     </div>
                     <!-- Password -->
                     <div class="md-form">
-                        <span>Mật Khẩu<input type="password" name="txtPassword" id="txtPassword" placeholder="Password" required class="form-control"></span>
-                        
+                       <input type="password" name="txtPassword" id="txtPassword" placeholder="Password" required class="form-control">
                     </div>
-
                     <div class="d-flex justify-content-around">
                         <div>
                             <!-- Remember me -->
@@ -55,23 +53,18 @@
                                 <label class="form-check-label" for="materialLoginFormRemember">Remember me</label>
                             </div>
                         </div>
-                        <div>
-                            <!-- Forgot password -->
-                            <a href="View/ForgotPassword.php">Forgot password?</a>
-                        </div>
                     </div>
-
+                    <div style="color:red;font-size:14px;display: block;text-align: left;">
+                        <?php if(isset($_GET["msg"])) echo $_GET["msg"] ?>
+                    </div>
                     <!-- Sign in button -->
                     <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" id="buttonLogin" name="buttonLogin" value="Login">Sign in</button>
 
                     <!-- Register -->
-                    <p>Not a member?
-                        
-                        <a href="View/SignUp.php">Register
-                        
-                    </a>
-                        
-                    </p>
+                    <p>Not a member? <a href="View/SignUp.php">Register</a></p>
+                    <div>
+                        <?php if(isset($_GET["msg"])) echo '<a href="View/ForgotPassword.php">Forgot Password</a>' ?>
+                    </div>
             </form>
                 <!-- Form -->
                 
