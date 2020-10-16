@@ -26,13 +26,14 @@
                     <div class="md-form">
                         <span>Email</span> <input type="email" name="txtEmail" id="txtEmail" placeholder="Email" required class="form-control">
                     </div>
+                    <div style="color: red;font-size: 14px;display: block;text-align: left;">
+                        <span id="errorMessage"><?php if(isset($_GET["msg"])) echo $_GET["msg"]; ?></span></td>     
+                    </div>
                     <div>
                         <input  class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" id="buttonForgotPassword" name="buttonForgotPassword" value="Verification">
                     </div>
-                    <!-- Password -->
-                    <div class="md-form">
-                        <span id="errorMessage"><?php if(isset($_GET["msg"])) echo $_GET["msg"]; ?></span></td>     
-                    </div>
+                    
+                    
                     <div class="d-flex justify-content-around">
                 </form> 
             </div>
