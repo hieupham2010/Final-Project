@@ -1,7 +1,7 @@
 
 
 /******************************** Index */
-.card{
+.Login-card{
   margin:auto;
   margin-top: 15rem;
   width: 400px;
@@ -28,7 +28,7 @@
     border: 1px solid #66a5e3 !important;
   }
  
-  .card:hover {
+  .class-card:hover {
     text-decoration: none;
     color: #080808;
     box-shadow: 5px;
@@ -167,7 +167,17 @@ ul ul a {
     background: rgb(243, 243, 243);
 }
 
-s
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
 
 
 a.article,
