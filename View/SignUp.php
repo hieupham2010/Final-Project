@@ -21,7 +21,7 @@ if (isset($_GET["msgTimeUp"])) {
 </style>
 
 <body>
-    <div class="Sign-up-card rounded-lg  p-auto">
+    <div class="Sign-up-card rounded-lg ">
         <!--Card content-->
         <div class="card-body px-lg-5 pt-0 mt-3 mb-5">
             <!--logo-->

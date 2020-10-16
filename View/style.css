@@ -22,22 +22,16 @@
 }
 .Sign-up-card{
   margin:auto;
-  margin-top: 15rem;
   width: 400px;
   height: 520px;
-  display: flex;
-  flex: wrap;
   box-shadow: 5px 10px  rgb(109, 179, 219); 
   border: 2px solid rgb(109, 179, 219);
 }
 
 .Login-card{
   margin:auto;
-  margin-top: 15rem;
   width: 400px;
   height: 500px;
-  display: flex;
-  flex: wrap;
   box-shadow: 5px 10px  rgb(109, 179, 219); 
   border: 2px solid rgb(109, 179, 219);
 }
