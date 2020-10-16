@@ -110,7 +110,7 @@
         </a>
         <div class="collapse navbar-collapse" id="navbar-list-6 col col-sm-3">
 					<div class="navbar-nav ml-auto ">
-						<a href="#" class="mt-3">
+						<a href="#" class="mt-4">
 							<span><?php echo $UserName ?></span>
 						</a>
 						<ul class="list-unstyled">
