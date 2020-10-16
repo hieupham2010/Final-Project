@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
-
 <body>
   <!--header -->
   <div class="header mt-4">

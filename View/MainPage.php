@@ -197,7 +197,6 @@ if (!isset($_SESSION["logged"]) && $_SESSION["logged"] !== true) {
                 </li>
               </ol>
             </div>
-
             <!--Body right-->
             <div class=" body-right col col-sm-2 rounded-sm mt-5">
 
