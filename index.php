@@ -20,7 +20,9 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
     <title>Login</title>
 </head>
 <style>
-
+    a::after{
+        content: none !important;
+    }
 </style>
 <body>
 
