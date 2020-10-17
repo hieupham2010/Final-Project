@@ -60,7 +60,7 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
                 <div class="text-danger small text-left mt-3">
                     <?php if (isset($_GET["msg"])) echo $_GET["msg"] ?>
                 </div>
-                <!-- error show -->
+                <!-- error show --> 
 
                 <!-- Sign in button -->
                 <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" id="buttonLogin" name="buttonLogin" value="Login">Sign in</button>
