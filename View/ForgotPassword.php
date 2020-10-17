@@ -11,7 +11,7 @@ if (isset($_GET["msgTimeUp"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/vi/1/1b/T%C4%90T_logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
     <title>Document</title>
 </head>
 
@@ -30,7 +30,7 @@ if (isset($_GET["msgTimeUp"])) {
                 <div class="md-form">
                     <input type="email" name="txtEmail" id="txtEmail" placeholder="Email" required class="form-control">
                 </div>
-                <div class="text-danger small text-center">
+                <div class="text-danger small text-left mt-3">
                     <span id="errorMessage"><?php if (isset($_GET["msg"])) echo $_GET["msg"]; ?></span></td>
                 </div>
                 <div>

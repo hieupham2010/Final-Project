@@ -19,8 +19,8 @@ img::after{
   width: 400px;
   padding-bottom: auto !important;
   height: 540px;
-  box-shadow: 5px 10px  rgb(109, 179, 219); 
-  border: 2px solid rgb(109, 179, 219);
+  box-shadow: 5px 10px  #6db3db; 
+  border: 2px solid #6db3db;
 }
 
 .Login-card{
@@ -33,8 +33,8 @@ img::after{
   height: 500px;
   display: block;
   flex-wrap: wrap;
-  box-shadow: 5px 10px  rgb(109, 179, 219); 
-  border: 2px solid rgb(109, 179, 219);
+  box-shadow: 5px 10px  #6db3db; 
+  border: 2px solid #6db3db;
 }
 .reset-card{
   position: absolute;
@@ -44,8 +44,8 @@ img::after{
   margin:auto;
   width: 400px;
   height: 500px;
-  box-shadow: 5px 10px  rgb(109, 179, 219); 
-  border: 2px solid rgb(109, 179, 219);
+  box-shadow: 5px 10px  #6db3db; 
+  border: 2px solid #6db3db;
 }
 
 .forgot-card{
@@ -58,8 +58,8 @@ img::after{
   /* width: 23%; */
   /* height: 20%; */
   /* display: flex; */
-  box-shadow: 5px 10px rgb(109, 179, 219);
-  border: 2px solid rgb(109, 179, 219);
+  box-shadow: 5px 10px #6db3db;
+  border: 2px solid #6db3db;
 }
 
 #class{
@@ -88,7 +88,7 @@ img::after{
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, .125);
+    border: 1px solid #00000020;
     border-radius: .5rem;
     transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
   }
@@ -99,7 +99,7 @@ img::after{
     box-shadow: 10px;
     cursor: pointer;
     transform: scale(1.05);
-    box-shadow: 5px 10px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+    box-shadow: 5px 10px #0000001f, 0 4px 8px #0000000f;
   }
   .list-group-item {
     max-width: 300px;
@@ -144,14 +144,14 @@ img::after{
     list-style: none;
     background-color: #fff;
     background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.15);
+    border: 1px solid #00000026;
     border-radius: .25rem;
 }
 .dropdown-item{
   width: auto !important;
 }
 .dropdown-item:focus{
-  background-color: rgb(243, 243, 243);
+  background-color: #f3f3f3;
 }
 
   @media only screen and (max-width: 992px) {
@@ -174,7 +174,7 @@ img::after{
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: rgb(243, 243, 243);
+    background: #f3f3f3;
     color: #fff;
     transition: all 0.3s;
 }
@@ -185,12 +185,12 @@ img::after{
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: rgb(243, 243, 243);
+    background: #f3f3f3;
 }
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid rgb(243, 243, 243);
+    border-bottom: 1px solid #f3f3f3;
 }
 
 #sidebar ul p {
@@ -205,14 +205,14 @@ img::after{
 }
 
 #sidebar ul li a:hover {
-    color: rgb(243, 243, 243);
+    color: #f3f3f3;
     background: #fff;
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: rgb(243, 243, 243);
+    background: #f3f3f3;
 }
 
 a[data-toggle="collapse"] {
@@ -230,7 +230,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: rgb(243, 243, 243);
+    background: #f3f3f3;
 }
 
 ul.CTAs {
@@ -248,7 +248,7 @@ ul.CTAs a {
 
 a.article,
 a.article:hover {
-    background: rgb(243, 243, 243) !important;
+    background: #f3f3f3 !important;
     color: #fff !important;
 }
 
@@ -258,7 +258,7 @@ a.article:hover {
 /*main*/
 
 .jumbotron {
-  background-color: rgba(238, 242, 248, 0.973);
+  background-color: #eef2f8f8;
 }
 .PostForm{
   padding: 40px 40px;

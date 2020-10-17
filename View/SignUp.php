@@ -9,14 +9,14 @@ if (isset($_GET["msgTimeUp"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <script src="javascript/main.js"></script>
     <title>Sign Up</title>
 </head>
 <style>
-    .md-form{
-        margin:5px;
+    .md-form {
+        margin: 5px;
     }
 </style>
 
@@ -37,12 +37,12 @@ if (isset($_GET["msgTimeUp"])) {
                     <input type="text" name="txtFullName" id="txtUserName" placeholder="Full Name" required class="form-control mt-3">
                 </div>
                 <!-- Birth Day -->
-                <div class="md-form" >
+                <div class="md-form">
                     <input type="date" name="txtDateOfBirth" id="txtDateOfBirth" value="Birth Day" required class="form-control mt-3">
                 </div>
 
                 <!-- Email -->
-                <div  class="md-form">
+                <div class="md-form">
                     <input type="email" name="txtEmail" id="txtEmail" placeholder="Email" required class="form-control mt-3">
                 </div>
 

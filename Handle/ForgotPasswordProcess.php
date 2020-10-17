@@ -17,7 +17,7 @@
             $_SESSION["FullName"] = $row["FullName"];
             SendMailResetPassword($email , $row["FullName"]);
         }else{
-            $ErrorMessage = "Your email does not exists";
+            $ErrorMessage = "Your email does not exists please try again";
             header("Location: ../View/ForgotPassword.php?msg=$ErrorMessage");
         }
         $connection->close();
