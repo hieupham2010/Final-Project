@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,12 +20,12 @@
       <div class="collapse navbar-collapse" id="navbar-list-6 col col-sm-3">
         <div class="navbar-nav ml-auto ">
           <a href="#" class="mt-4">
-            <span><?php echo $UserName ?></span>
+            <span><?php echo $FullName ?></span>
           </a>
           <ul class="list-unstyled mt-2">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="https://royale.apache.org/wp-content/uploads/2016/06/blank-profile-picture.png" width="40" height="40" class="rounded-circle">
+                <img src="<?php echo $avatar ?>" width="40" height="40" class="rounded-circle">
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="#">Dashboard</a>
@@ -34,7 +35,6 @@
             </li>
           </ul>
         </div>
-
     </nav>
 
   </div>

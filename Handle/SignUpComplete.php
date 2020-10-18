@@ -12,14 +12,18 @@
         $stmt = $connection->prepare($query);
         $stmt->bind_param("ssss", $FullName , $DateOfBirth , $Email , $PhoneNumber);
         $stmt->execute();
-        $lastId = $connection->insert_id;
-        $query = "INSERT INTO accounts(UserName , Password , UserID) VALUES(?,?,?)";
+        $lastIdUser = $connection->insert_id;
+        $query = "INSERT INTO avatars VALUES()";
         $stmt = $connection->prepare($query);
-        $stmt->bind_param("ssi" , $UserName , $Password , $lastId);
+        $stmt->execute();
+        $lastIdAvatar = $connection->insert_id;
+        $query = "INSERT INTO accounts(UserName , Password , UserID , AvatarID) VALUES(?,?,?,?)";
+        $stmt = $connection->prepare($query);
+        $stmt->bind_param("ssii" , $UserName , $Password , $lastIdUser, $lastIdAvatar);
         $stmt->execute();
         $connection->close();
         session_destroy();
-        header("Location: ../View/Redirect.php?msg=CompleteRegistration");
+        header("Location: ../View/RedirectPage.php?msg=CompleteRegistration");
         exit;
     }
 ?>
