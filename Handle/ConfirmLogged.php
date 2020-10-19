@@ -25,6 +25,7 @@
             $result = $stmt->get_result();
             $row = $result->fetch_assoc();
             $avatar = $row["ImageSrc"];
+            $connection->close();
         }
     }
 ?>
