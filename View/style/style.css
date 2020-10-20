@@ -4,10 +4,16 @@ body{
   position: relative;
 }
 
-img::after{
-  content: none !important;
+
+
+
+.btn-create {
+  margin-left: 30px;
 }
-/*header*/
+svg{
+  cursor: pointer;
+}
+
 /******************************** Index */
 
 .Sign-up-card{
@@ -102,11 +108,12 @@ img::after{
     box-shadow: 5px 10px #0000001f, 0 4px 8px #0000000f;
   }
   .list-group-item {
-    max-width: 300px;
-    height: 300px;
+    max-width: 350px;
+    max-height: 350px;
   }
 
   ol {
+    position: relative;
     list-style-type: none;
     flex-wrap: wrap;
     display: flex;
@@ -161,6 +168,28 @@ img::after{
       padding-left: 24px;
     }
   }
+
+  .card-text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+  }
+
+  .avatar {
+    position: absolute;
+  }
+a.nav-link.dropdown-toggle.align-left{
+  background-color: none !important;
+}
+
+dropdown-menu:active{
+  background-color: none !important;
+}
+.dropdown-svg{
+  color:white !important;
+  display: block;
+}
 
 
 
@@ -263,3 +292,4 @@ a.article:hover {
 .PostForm{
   padding: 40px 40px;
 }
+

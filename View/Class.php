@@ -1,4 +1,3 @@
-
 <?php require '../Handle/ConfirmLogged.php' ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,112 +15,7 @@
 </head>
 
 <style>
-	@media (min-width: 576px) {}
 
-	.jumbotron {
-		padding: 0rem 0rem;
-	}
-
-	.jumbotron {
-		padding: 2rem 1rem;
-		margin-bottom: 2rem;
-		background-color:lightblue;
-		border-radius: .3rem;
-	}
-
-	.lead {
-		font-size: 16px;
-	}
-
-	.form-control-file {
-		width: 20%;
-	}
-
-
-hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: 0;
-    border-top: 1px solid lightblue;
-}
-a {
-    color: #82b440;
-    text-decoration: none;
-}
-.blog-comment::before,
-.blog-comment::after,
-.blog-comment-form::before,
-.blog-comment-form::after{
-    content: "";
-	display: table;
-	clear: both;
-}
-
-.blog-comment{
-    padding-left: 15%;
-	padding-right: 15%;
-}
-
-.blog-comment ul{
-	list-style-type: none;
-	padding: 0;
-}
-
-.blog-comment img{
-	opacity: 1;
-	filter: Alpha(opacity=100);
-	-webkit-border-radius: 4px;
-	   -moz-border-radius: 4px;
-	  	 -o-border-radius: 4px;
-			border-radius: 4px;
-}
-
-.blog-comment img.avatar {
-	position: relative;
-	float: left;
-	margin-left: 0;
-	margin-top: 0;
-	width: 65px;
-	height: 65px;
-}
-
-.blog-comment .post-comments{
-	border: 1px solid #eee;
-    margin-bottom: 20px;
-    margin-left: 85px;
-	margin-right: 0px;
-    padding: 10px 20px;
-    position: relative;
-    -webkit-border-radius: 4px;
-       -moz-border-radius: 4px;
-       	 -o-border-radius: 4px;
-    		border-radius: 4px;
-	background: #fff;
-	color: #6b6e80;
-	position: relative;
-	background-color:lightblue;
-}
-
-.blog-comment .meta {
-	font-size: 13px;
-	color: #aaaaaa;
-	padding-bottom: 8px;
-	margin-bottom: 10px !important;
-	border-bottom: 1px solid lightblue;
-}
-
-.blog-comment ul.comments ul{
-	list-style-type: none;
-	padding: 0;
-	margin-left: 85px;
-}
-
-.blog-comment-form{
-	padding-left: 15%;
-	padding-right: 15%;
-	padding-top: 40px;
-	background-color:lightblue;
-}
 
 </style>
 
@@ -132,14 +26,31 @@ a {
 		<?php include 'Header.php' ?>
 
 		<!--body left-->
-		<div class="container mt-5">
+		<div class="container-fluid mt-5">
 			<div class="row">
+				<div class="col col-2">
+					<div class="d-flex" id="wrapper">
+
+						<!-- Sidebar -->
+						<div class="bg-light border-right" id="sidebar-wrapper">
+							<div class="sidebar-heading">Start Bootstrap </div>
+							<div class="list-group list-group-flush">
+								<a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+								<a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
+								<a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
+								<a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
+								<a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+								<a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+							</div>
+						</div>
+					</div>
+				</div>
 
 
 				<!--body main-->
-				<div class="col col-12">
+				<div class="col col-10 ">
 					<main role="main" class="container">
-						<div class="jumbotron .bg-light border border-info">
+						<div class="jumbotron  border border-info">
 							<h1>Class title</h1>
 							<hr class="my-4">
 							<a>
