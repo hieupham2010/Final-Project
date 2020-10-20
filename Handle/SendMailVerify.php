@@ -34,7 +34,7 @@
             <p>If it\'s not you, please ignore this email</p>
             </div><footer style="background-color:#5e5c5c;color:white;padding:16px 20px;"><p>&copy; Classroom</p></footer></div>';
             $mail->send();
-            header("Location: ../View/Redirect.php?msg=SignUp");
+            header("Location: ../View/RedirectPage.php?msg=SignUp");
         }catch(Exception $e) {
             echo $e->getMessage();
         }
@@ -70,7 +70,7 @@
             <p>If it\'s not you, please ignore this email</p>
             </div><footer style="background-color:#5e5c5c;color:white;padding:16px 20px;"><p>&copy;Classroom</p></footer></div>';
             $mail->send();
-            header("Location: ../View/Redirect.php?msg=ForgotPassword");
+            header("Location: ../View/RedirectPage.php?msg=ForgotPassword");
         }catch(Exception $e) {
             echo $e->getMessage();
         }
