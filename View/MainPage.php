@@ -33,13 +33,8 @@
 
         <ol class="list-group list-group-horizontal">
           <li class="list-group-item border-0 ">
-<<<<<<< HEAD
             <div class="card  border-info rounded-lg">
               <img src="http://placehold.it/700x400" class="card-img-top" alt="..." height="">
-=======
-            <div class="card border-info">
-              <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
->>>>>>> 2d2eba8ec342f293f6f79e2570f56843249649a4
               <!--Class-->
               <div class="card-body">
                 <h5 class="card-title">
