@@ -31,10 +31,12 @@
         <!--Element-->
 
         <ol class="list-group list-group-horizontal">
+          <?php require '../Handle/LoadClassProcess.php'?>
+          <!--
           <li class="list-group-item border-0 ">
             <div class="card border-info">
               <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
-              <!--Class-->
+             
               <div class="card-body">
                 <h5 class="card-title">
                   <a id="class" href="#">Class Name</a>
@@ -46,21 +48,7 @@
           <li class="list-group-item border-0 ">
             <div class="card border-info">
               <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
-              <!--Class-->
-              <div class="card-body">
-                <h5 class="card-title">
-                  <a id="class" href="#">Class Name</a>
-                </h5>
-                <p class="card-text">Description</p>
-
-              </div>
-            </div>
-          </li>
-
-          <li class="list-group-item border-0 ">
-            <div class="card border-info">
-              <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
-              <!--Class-->
+             
               <div class="card-body">
                 <h5 class="card-title">
                   <a id="class" href="#">Class Name</a>
@@ -74,7 +62,7 @@
           <li class="list-group-item border-0 ">
             <div class="card border-info">
               <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
-              <!--Class-->
+              
               <div class="card-body">
                 <h5 class="card-title">
                   <a id="class" href="#">Class Name</a>
@@ -88,7 +76,7 @@
           <li class="list-group-item border-0 ">
             <div class="card border-info">
               <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
-              <!--Class-->
+             
               <div class="card-body">
                 <h5 class="card-title">
                   <a id="class" href="#">Class Name</a>
@@ -102,7 +90,7 @@
           <li class="list-group-item border-0 ">
             <div class="card border-info">
               <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
-              <!--Class-->
+              
               <div class="card-body">
                 <h5 class="card-title">
                   <a id="class" href="#">Class Name</a>
@@ -113,6 +101,20 @@
             </div>
           </li>
 
+          <li class="list-group-item border-0 ">
+            <div class="card border-info">
+              <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
+              
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a id="class" href="#">Class Name</a>
+                </h5>
+                <p class="card-text">Description</p>
+
+              </div>
+            </div>
+          </li>
+-->
         </ol>
       </div>
       <!--Body right-->
