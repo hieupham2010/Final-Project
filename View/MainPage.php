@@ -14,10 +14,6 @@
   <script type="text/javascript" src="javascript/main.js"></script>
 
 </head>
-<style>
-
-
-</style>
 
 <body>
   <div class="container-fluid">
@@ -29,7 +25,6 @@
       <!--Body left-->
       <div class="col col-sm-10 mt-5">
         <!--Element-->
-
         <ol class="list-group list-group-horizontal">
           <?php require '../Handle/LoadClassProcess.php' ?>
           <div class="card-body">
@@ -109,17 +104,11 @@
             <li class="mt-1"><a href="">Nofitification 2</a></li>
             <li class="mt-1"><a href="">Nofitification 3</a></li>
             <li class="mt-1"><a href="">Nofitification 3</a></li>
-
           </ul>
         </aside>
-
       </div>
-
     </div>
-
-    </aside>
-
-    </row>
+  </div>
 </body>
 
 </html>
