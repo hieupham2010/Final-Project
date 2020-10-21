@@ -98,7 +98,6 @@
           </div>
 
           <div class="border-bottom"></div>
-
           <ul class="list-unstyled p-auto mt-2">
             <li class="mt-1"><a href="">Nofitification 1</a></li>
             <li class="mt-1"><a href="">Nofitification 2</a></li>

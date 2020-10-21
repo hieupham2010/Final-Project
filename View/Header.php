@@ -116,9 +116,6 @@
               </div>
             </div>
           </div>
-
-
-
           <a href="#" class="mt-4">
             <span><?php echo $FullName ?></span>
           </a>
