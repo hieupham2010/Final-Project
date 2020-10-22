@@ -22,9 +22,6 @@
                         <label for="txtRoom" class="col-form-label">Room</label>
                         <input type="text" class="form-control" id="txtRoom" name="txtRoom">
                     </div>
-                    <div class="form-group">
-                        <input type="hidden" class="form-control" id="txtUserName" name="txtUserName" value="<?php echo $UserName ?>">
-                    </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <input type="submit" class="btn btn-primary pl-3 pr-3" value="Create">

@@ -50,7 +50,6 @@ if (!isset($_SESSION["verifiedEmailForPassword"]) && $_SESSION["verifiedEmailFor
                 </div>
                 <!-- error show -->
 
-
                 <!-- Update button -->
                 <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" id="ButtonResetPassword" name="ButtonResetPassword" value="Update">Update</button>
                 <!-- Update button -->
