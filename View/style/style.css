@@ -4,9 +4,6 @@ body{
   position: relative;
 }
 
-
-
-
 .btn-create {
   margin-left: 30px;
 }
@@ -83,7 +80,6 @@ svg{
   .border {
     border: 1px solid #66a5e3 !important;
   }
- 
   .card {
     position: relative;
     display: -ms-flexbox;
@@ -129,12 +125,7 @@ svg{
     margin-inline-end: 0px;
     padding-inline-start: 40px;
   }
-  .dropdown-toggle::after{
-    border: none;
-    display: block;
 
-  
-  }
   .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -156,6 +147,7 @@ svg{
 }
 .dropdown-item{
   width: auto !important;
+  cursor: pointer;
 }
 .dropdown-item:focus{
   background-color: #f3f3f3;
@@ -254,8 +246,18 @@ a[data-toggle="collapse"] {
     top: 50%;
     right: 20px;
     transform: translateY(-50%);
+    content: none !important;
+    border: none;
 }
-
+.dropdown-toggle::before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  content: none !important;
+  border: none;
+}
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;

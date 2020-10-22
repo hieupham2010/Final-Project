@@ -27,6 +27,9 @@
         }else if($resultUserName->num_rows > 0) {
             $ErrorMessage = "Your user name already exists";
             header("Location: ../View/SignUp.php?msg2=$ErrorMessage");
+        }else if(strlen($password) < 8){
+            $ErrorMessage = "Your password isn't less than 8 characters";
+            header("Location: ../View/SignUp.php?msg3=$ErrorMessage");
         }else{
             require_once 'SendMailVerify.php';
             $_SESSION["FullName"] = $fullName;

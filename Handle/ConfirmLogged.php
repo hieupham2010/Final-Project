@@ -18,13 +18,13 @@
             $result = $stmt->get_result();
             $row = $result->fetch_assoc();
             $FullName = $row["FullName"];
-            $query = "SELECT * FROM avatars WHERE AvatarID = (SELECT AvatarID FROM accounts WHERE UserName = ?)";
+            $query = "SELECT AvatarSrc FROM accounts WHERE UserName = ?";
             $stmt = $connection->prepare($query);
             $stmt->bind_param("s" , $UserName);
             $stmt->execute();
             $result = $stmt->get_result();
             $row = $result->fetch_assoc();
-            $avatar = $row["ImageSrc"];
+            $AvatarSrc = $row["AvatarSrc"];
         }
     }
 ?>
