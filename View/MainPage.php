@@ -2,9 +2,8 @@
 require '../Handle/ConfirmLogged.php';
 include 'DialogAddClass.php';
 include 'DialogJoinClass.php';
-if (isset($_GET["msg"])) {
-  echo '<script>alert("' . $_GET["msg"] . '")</script>';
-}
+include 'DialogError.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -43,3 +42,6 @@ if (isset($_GET["msg"])) {
 </body>
 
 </html>
+<?php if (isset($_GET["msg"])) {
+  echo "<script>$('#ErrorClass').modal({show: true})</script>";
+}?>
