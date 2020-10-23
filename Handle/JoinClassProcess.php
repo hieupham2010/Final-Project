@@ -5,6 +5,7 @@
         $ClassID = $_POST["ClassID"];
         $query = "SELECT * FROM classrooms WHERE ClassID = ?";
         $stmt = $connection->prepare($query);
+        $stmt->bind_param("s" , $ClassID);
         $stmt->execute();
         $result = $stmt->get_result();
         if($result->num_rows > 0) {
@@ -13,11 +14,10 @@
             $stmt = $connection->prepare($query);
             $stmt->bind_param("ss", $UserName , $ClassID);
             $stmt->execute();
-            $connection->close();
             header("Location: ../View/MainPage.php");
         }else {
-            $errorMessage = "Class Code doesn't exists";
-            header("Location: ../View/MainPage.php?msg=$errorMessage");
+            header("Location: ../View/MainPage.php?msg=ErrorJoinClass");
         }
+        $connection->close();
     }
 ?>

@@ -2,8 +2,7 @@
 require '../Handle/ConfirmLogged.php';
 include 'DialogAddClass.php';
 include 'DialogJoinClass.php';
-include 'DialogError.php';
-
+include '../DialogMessage.php';
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +33,7 @@ include 'DialogError.php';
       <div class="col col-sm-12 mt-5">
         <!--Element-->
         <ol class="list-group list-group-horizontal">
-          <?php require '../Handle/LoadClassProcess.php'?>
+          <?php require '../Handle/LoadClassProcess.php' ?>
         </ol>
       </div>
     </div>
@@ -42,6 +41,8 @@ include 'DialogError.php';
 </body>
 
 </html>
-<?php if (isset($_GET["msg"])) {
-  echo "<script>$('#ErrorClass').modal({show: true})</script>";
-}?>
+<?php
+if (isset($_GET["msg"])) {
+  echo "<script>$('#Message').modal({show: true})</script>";
+}
+?>

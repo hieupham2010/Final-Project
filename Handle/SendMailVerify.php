@@ -1,6 +1,6 @@
 <?php
     use PHPMailer\PHPMailer\PHPMailer;
-    function SendMail($fullName ,$email,$userName,$password) {
+    function SendMail($fullName ,$email,$userName,$password,$hash) {
         require_once "PHPMailer/PHPMailer.php";
         require_once "PHPMailer/SMTP.php";
         require_once "PHPMailer/Exception.php";
@@ -29,17 +29,16 @@
             <p>Please click button bellow to complete registration</p>
             <button style="background-color:#4CAF50;border:none;border-radius:5px;padding: 10px 16px;">
             <a style="color:white;text-decoration: none;"
-            href="localhost/Final-Project/Handle/VerifiedEmailForSignUp.php">Verification</a></button>
+            href="localhost/Final-Project/Handle/VerifiedEmailForSignUp.php?email='.$email.'&hash='.$hash.'">Verification</a></button>
             <p style="color:red;">*This email is valid only within 10 minutes</p>
             <p>If it\'s not you, please ignore this email</p>
             </div><footer style="background-color:#5e5c5c;color:white;padding:16px 20px;"><p>&copy; Classroom</p></footer></div>';
             $mail->send();
-            header("Location: ../View/RedirectPage.php?msg=SignUp");
         }catch(Exception $e) {
             echo $e->getMessage();
         }
     }
-    function SendMailResetPassword($email , $fullName) {
+    function SendMailResetPassword($email , $fullName, $hash) {
         require_once "PHPMailer/PHPMailer.php";
         require_once "PHPMailer/SMTP.php";
         require_once "PHPMailer/Exception.php";
@@ -65,12 +64,11 @@
             <p>You have requested reset your password for a classroom account. Please click button bellow to reset your password</p>
             <button style="background-color:#4CAF50;border:none;border-radius:5px;padding:10px 16px;">
             <a style="color:white;text-decoration: none;"
-            href="localhost/Final-Project/Handle/VerifiedEmailForPassword.php">Verification</a></button>
+            href="localhost/Final-Project/Handle/VerifiedEmailForPassword.php?email='.$email.'&hash='.$hash.'">Verification</a></button>
             <p style="color:red;">*This email is valid only within 10 minutes</p>
             <p>If it\'s not you, please ignore this email</p>
             </div><footer style="background-color:#5e5c5c;color:white;padding:16px 20px;"><p>&copy;Classroom</p></footer></div>';
             $mail->send();
-            header("Location: ../View/RedirectPage.php?msg=ForgotPassword");
         }catch(Exception $e) {
             echo $e->getMessage();
         }

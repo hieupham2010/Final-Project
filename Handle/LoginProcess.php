@@ -26,7 +26,7 @@
             header("Location: ../View/MainPage.php");
         }else {
             $errorMessage = "Invalid user name or password please try again";
-            header("Location: ../index.php?msg=$errorMessage");
+            header("Location: ../index.php?msg1=$errorMessage");
         }
         $connection->close();
     }
