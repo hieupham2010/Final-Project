@@ -51,7 +51,7 @@
                 <img src="<?php echo $AvatarSrc ?>" width="40" height="40" class="rounded-circle">
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Dashboard</a>
+                <a class="dropdown-item" href="MainPage.php">Dashboard</a>
                 <a class="dropdown-item" href="#">Edit Profile</a>
                 <a class="dropdown-item" href="../Handle/LogoutProcess.php">Log Out</a>
               </div>

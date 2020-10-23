@@ -1,7 +1,10 @@
-<?php 
+<?php
 require '../Handle/ConfirmLogged.php';
 include 'DialogAddClass.php';
 include 'DialogJoinClass.php';
+if (isset($_GET["msg"])) {
+  echo '<script>alert("' . $_GET["msg"] . '")</script>';
+}
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +35,7 @@ include 'DialogJoinClass.php';
       <div class="col col-sm-12 mt-5">
         <!--Element-->
         <ol class="list-group list-group-horizontal">
-          <?php require '../Handle/LoadClassProcess.php' ?>
+          <?php require '../Handle/LoadClassProcess.php'?>
         </ol>
       </div>
     </div>

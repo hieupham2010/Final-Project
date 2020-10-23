@@ -12,7 +12,6 @@
                     <div class="form-group">
                         <p>Ask your teacher class code, and enter it here</p>
                         <input type="text" class="form-control" id="ClassID" name="ClassID">
-                        <input type="hidden" class="form-control" id="UserName" name="UserName" value="<?php //echo $UserName ?>">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
