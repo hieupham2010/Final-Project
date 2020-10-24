@@ -13,7 +13,7 @@
         $DateOfBirth = $row["DateOfBirth"];
         $PhoneNumber = $row["PhoneNumber"];
         $UserName = $row["UserName"];
-        $Password = $row["Password"];
+        $Password = password_hash($row["Password"] , PASSWORD_DEFAULT);
         if(time() - $row["Time"] > 600) {
             $query = "DELETE FROM verification WHERE Email = ? AND Hash = ?";
             $stmt = $connection->prepare($query);

@@ -15,6 +15,7 @@
             $stmt = $connection->prepare($query);
             $stmt->bind_param("ss" , $Email , $Hash);
             $stmt->execute();
+            session_destroy();
             header("Location: ../View/ForgotPassword.php?msg=ForgotPasswordTimeOut");
         }else{
             $query = "SELECT * FROM users WHERE Email = ?";

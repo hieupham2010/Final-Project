@@ -14,17 +14,27 @@
         if($result->num_rows > 0) {
             require_once 'SendMailVerify.php';
             $row = $result->fetch_assoc();
-            SendMailResetPassword($email , $row["FullName"], $hash);
-            $query = "INSERT INTO verifypassword(Email, Hash, Time) VALUES(?,?,?)";
+            $query = "DELETE FROM verifypassword WHERE TimeStamp < DATE_SUB(NOW(), INTERVAL 10 MINUTE)";
             $stmt = $connection->prepare($query);
-            $stmt->bind_param("sss" , $email, $hash, $time);
             $stmt->execute();
-            header("Location: ../View/ForgotPassword.php?msg=ForgotPassword");
+            $query = "SELECT * FROM verifypassword WHERE Email = ?";
+            $stmt = $connection->prepare($query);
+            $stmt->bind_param("s" , $email);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            if($result->num_rows > 0) {
+                header("Location: ../View/ForgotPassword.php?msg=ForgotPassword");
+            }else {
+                $query = "INSERT INTO verifypassword(Email, Hash, Time) VALUES(?,?,?)";
+                $stmt = $connection->prepare($query);
+                $stmt->bind_param("sss" , $email, $hash, $time);
+                $stmt->execute();
+                header("Location: ../View/ForgotPassword.php?msg=ForgotPassword");
+                SendMailResetPassword($email , $row["FullName"], $hash);
+            }
         }else{
             $ErrorMessage = "Your email does not exists please try again";
             header("Location: ../View/ForgotPassword.php?msg1=$ErrorMessage");
         }
         $connection->close();
     }
-    
-?>

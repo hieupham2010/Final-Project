@@ -14,9 +14,10 @@
                 header("Location: ../View/ResetPassword.php?msg1=$errorMessage");
             }else{
                 require_once 'DataAccess.php';
+                $Password = password_hash($newPassword , PASSWORD_DEFAULT);
                 $query = "UPDATE accounts SET Password = ? WHERE UserID = (SELECT UserID FROM users WHERE Email = ?)" ;
                 $stmt = $connection->prepare($query); 
-                $stmt->bind_param("ss" , $newPassword , $Email);
+                $stmt->bind_param("ss" , $Password , $Email);
                 $stmt->execute();
                 $query = "DELETE FROM verifypassword WHERE Email = ? AND Hash = ?";
                 $stmt = $connection->prepare($query);
