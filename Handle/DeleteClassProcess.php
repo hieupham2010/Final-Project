@@ -1,7 +1,7 @@
 <?php 
-    if(isset($_POST["ClassID"]) && !empty($_POST["ClassID"])) {
+    if(isset($_POST["DelClassID"]) && !empty($_POST["DelClassID"])) {
         require_once 'DataAccess.php';
-        $ClassID = $_POST["ClassID"];
+        $ClassID = $_POST["DelClassID"];
         $query = "DELETE FROM classmembers WHERE ClassID = ?";
         $stmt = $connection->prepare($query);
         $stmt->bind_param("s", $ClassID);

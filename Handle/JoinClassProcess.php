@@ -1,8 +1,8 @@
 <?php
     session_start();
-    if(!empty($_POST["ClassID"])) {
+    if(!empty($_POST["JoinClassID"])) {
         require_once 'DataAccess.php';
-        $ClassID = $_POST["ClassID"];
+        $ClassID = $_POST["JoinClassID"];
         $query = "SELECT * FROM classrooms WHERE ClassID = ?";
         $stmt = $connection->prepare($query);
         $stmt->bind_param("s" , $ClassID);

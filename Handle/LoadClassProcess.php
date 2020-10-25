@@ -1,7 +1,14 @@
 <?php
 require_once 'DataAccess.php';
-require 'AccountRole.php';
-$query = "SELECT * FROM classrooms WHERE ClassID IN (SELECT ClassID FROM classmembers WHERE UserName = ?)";
+if(isset($_GET["key"]) && !empty($_GET["key"])) {
+    $key = $_GET["key"];
+    $query = "SELECT * FROM classrooms WHERE ClassID IN (SELECT ClassID FROM classmembers WHERE UserName = ?) 
+    AND ClassName LIKE BINARY '%$key%' OR SubjectName LIKE BINARY '%$key%' OR Room LIKE BINARY '%$key%' 
+    OR ClassName LIKE '%$key%' OR SubjectName LIKE '%$key%' OR Room LIKE '%$key%'";
+   
+}else {
+    $query = "SELECT * FROM classrooms WHERE ClassID IN (SELECT ClassID FROM classmembers WHERE UserName = ?)";
+}
 $stmt = $connection->prepare($query);
 $stmt->bind_param("s", $UserName);
 $stmt->execute();

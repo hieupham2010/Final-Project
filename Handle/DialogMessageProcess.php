@@ -15,7 +15,7 @@ if (isset($_GET["msg"]) && !empty($_GET["msg"])) {
         $title = "Forgot Password";
         $content = "Reset password was successful";
     }else if($_GET["msg"] === "ErrorJoinClass") {
-        $title = "Error";
+        $title = "Class not found";
         $content = "Your class code doesn't exists";
     }else if($_GET["msg"] === "SignUpTimeOut") {
         $title = "Sign Up";

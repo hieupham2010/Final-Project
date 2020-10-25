@@ -11,19 +11,19 @@
             <div class="modal-body">
                 <form action="../Handle/UpdateClassProcess.php" method="POST">
                     <div class="form-group">
-                        <label for="txtClassName" class="col-form-label">Class Name</label>
-                        <input type="text" class="form-control" id="txtClassName" name="txtClassName" value="<?php echo $row["ClassName"]?>" required>
+                        <label for="txtClassNameUD" class="col-form-label">Class Name</label>
+                        <input type="text" class="form-control" id="txtClassNameUD" name="txtClassNameUD" value="<?php echo $row["ClassName"]?>" required>
                     </div>
                     <div class="form-group">
-                        <label for="txtSubjectName" class="col-form-label">Subject</label>
-                        <input type="text" class="form-control" id="txtSubjectName" name="txtSubjectName" value="<?php echo $row["SubjectName"] ?>"required>
+                        <label for="txtSubjectNameUD" class="col-form-label">Subject</label>
+                        <input type="text" class="form-control" id="txtSubjectNameUD" name="txtSubjectNameUD" value="<?php echo $row["SubjectName"] ?>"required>
                     </div>
                     <div class="form-group">
-                        <label for="txtRoom" class="col-form-label">Room</label>
-                        <input type="text" class="form-control" id="txtRoom" name="txtRoom" value="<?php echo $row["Room"] ?>"required>
+                        <label for="txtRoomUD" class="col-form-label">Room</label>
+                        <input type="text" class="form-control" id="txtRoomUD" name="txtRoomUD" value="<?php echo $row["Room"] ?>"required>
                     </div>
                     <div class="form-group">
-                        <input type="hidden" class="form-control" id="ClassID" name="ClassID" value="<?php echo $row["ClassID"] ?>"required>
+                        <input type="hidden" class="form-control" id="UDClassID" name="UDClassID" value="<?php echo $row["ClassID"] ?>"required>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

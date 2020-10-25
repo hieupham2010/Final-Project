@@ -1,11 +1,9 @@
-<?php
-require '../Handle/ConfirmLogged.php';
-
-?>
-<?php
-if (isset($_GET["msgTimeUp"])) {
-    echo '<script>alert("' . $_GET["msgTimeUp"] . '")</script>';
-}
+<?php 
+    require '../Handle/ConfirmLogged.php';
+    if(!isset($_GET["request"]) || empty($_GET["request"])) {
+        header("Location: MainPage.php");
+        exit;
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,12 +23,7 @@ if (isset($_GET["msgTimeUp"])) {
 </head>
 
 <body>
-    <?php include 'Header.php'
-    
-     ?>
-
-
-
+    <?php include 'Header.php'?>
     <div class="container  main-secction border mt-5">
         <div class="row ml-auto tab-pane active" id="View-Profile">
             <div class="row user-left-part">

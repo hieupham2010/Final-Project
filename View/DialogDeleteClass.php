@@ -11,7 +11,7 @@
                 <form action="../Handle/DeleteClassProcess.php" method="POST">
                     <div class="form-group">
                         <p>Are you sure remove this class?</p>
-                        <input type="hidden" class="form-control" id="ClassID" name="ClassID" value="<?php echo $row["ClassID"] ?>">
+                        <input type="hidden" class="form-control" id="DelClassID" name="DelClassID" value="<?php echo $row["ClassID"] ?>">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
