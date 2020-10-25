@@ -12,11 +12,20 @@
 	<script src="main.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Class</title>
+
+	<script>
+		$(document).ready(function() {
+			$(".nav-tabs a").click(function() {
+				$(this).tab('show');
+			});
+		});
+	</script>
 </head>
-
 <style>
-
-
+	 .nav-link{
+		border: none !important;
+		border-bottom: none !important;
+	}
 </style>
 
 <body>
@@ -25,91 +34,121 @@
 
 		<?php include 'Header.php' ?>
 
-		<!--body left-->
-		<div class="container-fluid mt-5">
-			<div class="row">
-				<div class="col col-2">
-					<div class="d-flex" id="wrapper">
+		<div class="container">
 
-						<!-- Sidebar -->
-						<div class="bg-light border-right" id="sidebar-wrapper">
-							<div class="sidebar-heading">Start Bootstrap </div>
-							<div class="list-group list-group-flush">
-								<a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-								<a href="#" class="list-group-item list-group-item-action bg-light">Shortcuts</a>
-								<a href="#" class="list-group-item list-group-item-action bg-light">Overview</a>
-								<a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-								<a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-								<a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+			<!--inside navbar-->
+			<ul class="nav nav-tabs nav-justified">
+				<li class="nav-item">
+					<a class="nav-link active" href="#home">Class</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#menu1">Class Work</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#menu2">People</a>
+				</li>
+			</ul>
+
+			<!--inside navbar-->
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div id="home" class="container tab-pane active">
+					<div class="container-fluid mt-5">
+						<div class="row">
+							<!--body main-->
+							<div class="col col-12 ">
+								<main role="main" class="container">
+									<!--jumbotron-->
+									<div class="jumbotron  border border-info shadow">
+										<h1>Class title</h1>
+										<hr class="my-4">
+										<a>
+											<p class="lead">Some link teacher post</p>
+										</a>
+									</div>
+									<!--jumbotron-->
+
+
+
+									<!--Display post area-->
+
+									<div class="container ">
+										<div class="row">
+											<div class="col-sm-3  shadow">
+												<!-- Sidebar -->
+												<aside class="border rounded-lg mt-4 justify-content-left ">
+													<h1>Class Work</h1>
+													<ul class="list-unstyled ml-4">
+														<li><a>Class Work 1</a></li>
+														<li><a>Class Work 1</a></li>
+														<li><a>Class Work 1</a></li>
+														<li><a>Class Work 1</a></li>
+													</ul>
+												</aside>
+											</div>
+
+
+											<div class="col-sm-9">
+
+												<!--Post area-->
+												<div class="Comment-Area .bg-white shadow rounded-lg ">
+													<form class="PostForm .bg-white">
+														<div class="form-group">
+															<input class="form-control input-lg" type="text"name="comment" class="form-control" placeholder="Share your ideas"></input>
+														</div>
+
+														<span><input type="file" class="form-control-file w-25" id="chooseFile" style="float: left;"></span>
+														<span><input type="submit" class="form-control-file btn btn-info w-25" style="float: right;"></span>
+
+													</form>
+												</div>
+												<!-- End  Post area-->
+
+												<!--Comment area-->
+												<div class="blog-comment shadow ">
+													<hr />
+													<ul class="comments list-unstyled d-flex justify-content-center rounded">
+														<li class="clearfix">
+															<img src="images/avatarUploads/DefaultAvatar.png" class="avatar" alt="" width="40" height="40">
+															<div class="post-comments">
+																<p class="meta">Dec 19, 2014 <a href="#">JohnDoe</a> says : <i class="pull-right"><a href="#"><small>Reply</small></a></i></p>
+																<p>
+																	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+																	Etiam a sapien odio, sit amet
+																</p>
+															</div>
+
+														</li>
+													</ul>
+												</div>
+												<!--Comment area-->
+											</div>
+
+
+										</div>
+									</div>
+									<!-- End Display post area-->
+								</main>
 							</div>
+
 						</div>
 					</div>
 				</div>
-
-
-				<!--body main-->
-				<div class="col col-10 ">
-					<main role="main" class="container">
-						<div class="jumbotron  border border-info">
-							<h1>Class title</h1>
-							<hr class="my-4">
-							<a>
-								<p class="lead">Some link teacher post</p>
-							</a>
-						</div>
-
-
-						<!--Post area-->
-						<div class="Comment-Area .bg-white">
-							<form class="PostForm .bg-white">
-								<div class="form-group">
-									<textarea name="comment" class="form-control" rows="3" placeholder="Share your ideas"></textarea>
-								</div>
-								<div class="">
-									<span><input type="file" class="form-control-file" id="chooseFile" style="float: left;"></span>
-									<span><input type="submit" class="btn btn-info ml-auto" style="float: right;"></span>
-								</div>
-							</form>
-						</div>
-						<!-- End  Post area-->
-
-						<!--Display post area-->
-						<div>
-
-							<!--Hiển thị nội dung ở đây -->
-
-
-							<div class="container bootstrap snippets bootdey">
-								<div class="row">
-									<div class="col-md-12">
-										<div class="blog-comment">
-											<hr />
-											<ul class="comments">
-												<li class="clearfix">
-													<img src="https://bootdey.com/img/Content/user_2.jpg" class="avatar" alt="">
-													<div class="post-comments">
-														<p class="meta">Dec 19, 2014 <a href="#">JohnDoe</a> says : <i class="pull-right"><a href="#"><small>Reply</small></a></i></p>
-														<p>
-															Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-															Etiam a sapien odio, sit amet
-														</p>
-													</div>
-
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-
-						</div>
-						<!-- End Display post area-->
-					</main>
+				<div id="menu1" class="container tab-pane fade">
+					<h3>Menu 1</h3>
 				</div>
-
+				<div id="menu2" class="container tab-pane fade">
+					<h3>Menu 2</h3>
+				</div>
 			</div>
-		</div>
 
+
+
+
+			<!--body left-->
+
+		</div>
 
 </body>
 

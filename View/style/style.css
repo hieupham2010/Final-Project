@@ -1,7 +1,11 @@
 
+
+
 /*header*/
 body{
   position: relative;
+
+  
 }
 
 .btn-create {
@@ -10,7 +14,12 @@ body{
 svg{
   cursor: pointer;
 }
+div.search-Bar {
 
+  display: flex;
+  flex-wrap: wrap;
+  
+}
 /******************************** Index */
 
 .Sign-up-card{
@@ -24,6 +33,7 @@ svg{
   height: 540px;
   box-shadow: 5px 10px  #6db3db; 
   border: 2px solid #6db3db;
+  background-color:#fff !important;
 }
 
 .Login-card{
@@ -38,6 +48,7 @@ svg{
   flex-wrap: wrap;
   box-shadow: 5px 10px  #6db3db; 
   border: 2px solid #6db3db;
+  background-color: #fff !important;
 }
 .reset-card{
   position: absolute;
@@ -293,5 +304,45 @@ a.article:hover {
 }
 .PostForm{
   padding: 40px 40px;
+}
+
+/*Profile*/
+
+.border {
+  border-bottom: 1px solid #F1F1F1;
+  margin-bottom: 10px;
+}
+
+.main-secction {
+  box-shadow: 5px 5px 5px 5px;
+  border-radius: 10px;
+  border: 1px solid;
+  height: 100% !important;
+}
+
+
+.user-image {
+  position: absolute;
+  margin-top: 50px;
+}
+
+.user-left-part {
+  margin: 0px;
+}
+
+.user-image img {
+  width: 150px;
+  height: 150px;
+}
+.profile-right-section {
+  padding: 20px 20px 10px 15px;
+
+}
+
+table {
+  word-wrap: break-word;
+  border-radius: .5rem;
+  background-color: #eee;
+  box-shadow: 5px 5px 5px 5px #eee;
 }
 
