@@ -12,15 +12,15 @@
                 <form action="../Handle/CreateClassProcess.php" method="POST">
                     <div class="form-group">
                         <label for="txtClassName" class="col-form-label">Class Name</label>
-                        <input type="text" class="form-control" id="txtClassName" name="txtClassName">
+                        <input type="text" class="form-control" id="txtClassName" name="txtClassName" required>
                     </div>
                     <div class="form-group">
                         <label for="txtSubjectName" class="col-form-label">Subject</label>
-                        <input type="text" class="form-control" id="txtSubjectName" name="txtSubjectName">
+                        <input type="text" class="form-control" id="txtSubjectName" name="txtSubjectName" required>
                     </div>
                     <div class="form-group">
                         <label for="txtRoom" class="col-form-label">Room</label>
-                        <input type="text" class="form-control" id="txtRoom" name="txtRoom">
+                        <input type="text" class="form-control" id="txtRoom" name="txtRoom" required>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

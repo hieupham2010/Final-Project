@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION["verifiedEmailForPassword"]) && $_SESSION["verifiedEmailForPassword"] !== true) {
+if (!isset($_SESSION["Email"]) && !isset($_SESSION["Hash"])) {
     header("Location: ForgotPassword.php");
     exit;
 }
@@ -22,31 +22,30 @@ if (!isset($_SESSION["verifiedEmailForPassword"]) && $_SESSION["verifiedEmailFor
     <div class="reset-card rounded-lg d-flex justify-content-center mt-5">
         <!--Card content-->
         <div class="card-body px-lg-5 pt-0 mt-3 mb-5">
-            <div class="mb-5  d-flex justify-content-center">
-                <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/1/1b/T%C4%90T_logo.png/200px-T%C4%90T_logo.png" alt="Logo" width="120" height="80">
+            <div class="mb-2 d-flex justify-content-center">
+                <img src="images/LogoTDT/LogoTDT.png" alt="Logo" width="120" height="120">
             </div>
             <!-- Form -->
             <form class="text-center " action="../Handle/ResetPasswordProcess.php" method="POST">
 
 
                 <div class="md-form mt-2">
-                    <p >Hello <?php if (isset($_SESSION["FullName"])) echo $_SESSION["FullName"]; ?> </p>
+                    <p >Hi <?php if (isset($_SESSION["FullName"])) echo $_SESSION["FullName"];  ?></p>
+                    <p>Please reset your password here</p>
                 </div>
-                <div class="md-form mt-2">
-                    <input class="form-control" type="hidden" name="Email" value="<?php if (isset($_SESSION["Email"])) echo $_SESSION["Email"] ?>">
-                </div>
-
                 <div class="md-form mt-3">
                     <input class="form-control" type="password" name="txtNewPassword" id="txtNewPassword" placeholder="New Password" required>
-
                 </div>
-                <div class="md-form mt-2">
+                <div class="text-danger small text-left">
+                    <span id="errorMessage"><?php if (isset($_GET["msg2"])) echo $_GET["msg2"]; ?></span>
+                </div>
+                <div class="md-form mt-3">
                     <input class="form-control" type="password" name="txtConfirmPassword" id="txtConfirmPassword" placeholder="Confirm Password" required>
                 </div>
 
                 <!-- error show -->
-                <div class="text-danger small text-center">
-                    <span id="errorMessage"><?php if (isset($_GET["msg"])) echo $_GET["msg"]; ?></span>
+                <div class="text-danger small text-left">
+                    <span id="errorMessage"><?php if (isset($_GET["msg1"])) echo $_GET["msg1"]; ?></span>
                 </div>
                 <!-- error show -->
 

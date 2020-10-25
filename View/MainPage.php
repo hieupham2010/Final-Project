@@ -1,7 +1,8 @@
-<?php 
+<?php
 require '../Handle/ConfirmLogged.php';
 include 'DialogAddClass.php';
 include 'DialogJoinClass.php';
+include '../DialogMessage.php';
 ?>
 
 <!DOCTYPE html>
@@ -40,3 +41,8 @@ include 'DialogJoinClass.php';
 </body>
 
 </html>
+<?php
+if (isset($_GET["msg"])) {
+  echo "<script>$('#Message').modal({show: true})</script>";
+}
+?>

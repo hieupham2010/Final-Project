@@ -1,7 +1,5 @@
 <?php
-if (isset($_GET["msgTimeUp"])) {
-    echo '<script>alert("' . $_GET["msgTimeUp"] . '")</script>';
-}
+include '../DialogMessage.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +9,9 @@ if (isset($_GET["msgTimeUp"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="javascript/main.js"></script>
     <title>Sign Up</title>
 </head>
@@ -20,10 +21,9 @@ if (isset($_GET["msgTimeUp"])) {
         <!--Card content-->
         <div class="card-body px-lg-5 pt-0 mt-3 mb-5">
             <!--logo-->
-            <div class="mb-5 d-flex justify-content-center">
-                <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/1/1b/T%C4%90T_logo.png/200px-T%C4%90T_logo.png" alt="Logo" width="120" height="80">
+            <div class="mb-2 d-flex justify-content-center">
+                <img src="images/LogoTDT/LogoTDT.png" alt="Logo" width="120" height="120">
             </div>
-
 
             <!-- Form -->
             <form class="text-center" action="../Handle/SignUpProcess.php" method="POST">
@@ -60,15 +60,16 @@ if (isset($_GET["msgTimeUp"])) {
                 </div>
                 <!-- error show -->
                 <div class="text-danger small text-left">
-                    <span id="errorMessage"><?php if (isset($_GET["msg2"])) echo $_GET["msg2"]; ?>
-                </div>
-                <!-- error show -->
-                <div class="text-danger small text-left">
                     <span id="errorMessage"><?php if (isset($_GET["msg3"])) echo $_GET["msg3"]; ?>
+                </div>
+                <div class="md-form mt-3">
+                    <input type="password" name="txtConfirmPassword" id="txtConfirmPassword" placeholder="Confirm Password" required class="form-control mt-3">
+                </div>
+                <div class="text-danger small text-left">
+                    <span id="errorMessage"><?php if (isset($_GET["msg4"])) echo $_GET["msg4"]; ?>
                 </div>
                 <!-- Sign in button -->
                 <button class="btn btn-outline-info btn-rounded btn-block my-4 mb-3 waves-effect z-depth-0" type="submit" id="buttonSignUp" name="buttonSignUp" value="Sign Up">Sign up</button>
-
             </form>
             <!-- Form -->
         </div>
@@ -77,3 +78,8 @@ if (isset($_GET["msgTimeUp"])) {
 </body>
 
 </html>
+<?php
+if (isset($_GET["msg"])) {
+    echo "<script>$('#Message').modal({show: true})</script>";
+}
+?>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'DialogMessage.php';
 if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
     header("Location: View/MainPage.php");
     exit;
@@ -14,6 +15,10 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
     <link rel="stylesheet" href="View/style/style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/vi/1/1b/T%C4%90T_logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <script src="javascript/main.js"></script>
 
@@ -30,8 +35,8 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
     <div class="Login-card rounded-lg">
         <!--Card content-->
         <div class="card-body px-lg-5 pt-0 mt-3 mb-5">
-            <div class="mb-5  d-flex justify-content-center">
-                <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/1/1b/T%C4%90T_logo.png/200px-T%C4%90T_logo.png" alt="Logo" width="120" height="80">
+            <div class="mb-2 d-flex justify-content-center">
+                <img src="View/images/LogoTDT/LogoTDT.png" alt="Logo" width="120" height="120">
             </div>
             <!-- Form -->
             <form class="text-center " action="Handle/LoginProcess.php" method="POST">
@@ -57,9 +62,9 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
 
                 <!-- error show -->
                 <div class="text-danger small text-left mt-3">
-                    <?php if (isset($_GET["msg"])) echo $_GET["msg"] ?>
+                    <?php if (isset($_GET["msg1"])) echo $_GET["msg1"] ?>
                 </div>
-                <!-- error show --> 
+                <!-- error show -->
 
                 <!-- Sign in button -->
                 <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" id="buttonLogin" name="buttonLogin" value="Login">Sign in</button>
@@ -74,7 +79,7 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
 
                 <!--forgot message -->
                 <p>
-                    <?php if (isset($_GET["msg"])) echo '<a href="View/ForgotPassword.php">Forgot Password</a>' ?>
+                    <?php if (isset($_GET["msg1"])) echo '<a href="View/ForgotPassword.php">Forgot Password</a>' ?>
                 </p>
                 <!------------------->
 
@@ -86,3 +91,8 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
 </body>
 
 </html>
+<?php
+if (isset($_GET["msg"])) {
+    echo "<script>$('#Message').modal({show: true})</script>";
+}
+?>
