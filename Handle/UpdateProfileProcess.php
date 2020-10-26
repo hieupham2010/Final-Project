@@ -29,6 +29,10 @@
                 $stmt = $connection->prepare($query);
                 $stmt->bind_param("ss" , $AvatarSrc , $UserName);
                 $stmt->execute();
+                $query = "UPDATE classrooms SET AvatarSrc = ? WHERE ClassID IN (SELECT ClassID FROM classmembers WHERE UserName = ?)";
+                $stmt = $connection->prepare($query);
+                $stmt->bind_param("ss" , $AvatarSrc , $UserName);
+                $stmt->execute();
                 header("Location: ../View/Profile.php?request=profile&msg=UpdateSuccess");
             }
         }else{
