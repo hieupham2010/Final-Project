@@ -1,8 +1,8 @@
 <?php
     session_start();
-    if(!empty($_POST["ClassID"])) {
+    if(!empty($_POST["JoinClassID"])) {
         require_once 'DataAccess.php';
-        $ClassID = $_POST["ClassID"];
+        $ClassID = $_POST["JoinClassID"];
         $query = "SELECT * FROM classrooms WHERE ClassID = ?";
         $stmt = $connection->prepare($query);
         $stmt->bind_param("s" , $ClassID);
@@ -10,11 +10,21 @@
         $result = $stmt->get_result();
         if($result->num_rows > 0) {
             $UserName = $_SESSION["username"];
-            $query = "INSERT INTO classmembers VALUES(?,?)";
+            $query = "SELECT * FROM classmembers WHERE UserName = ? AND ClassID = ?";
             $stmt = $connection->prepare($query);
             $stmt->bind_param("ss", $UserName , $ClassID);
             $stmt->execute();
-            header("Location: ../View/MainPage.php");
+            $result = $stmt->get_result();
+            if($result->num_rows > 0) {
+                header("Location: ../View/MainPage.php?msg=ErrorJoinClassExists");
+            }else {
+                $query = "INSERT INTO classmembers VALUES(?,?)";
+                $stmt = $connection->prepare($query);
+                $stmt->bind_param("ss", $UserName , $ClassID);
+                $stmt->execute();
+                header("Location: ../View/MainPage.php");
+            }
+            
         }else {
             header("Location: ../View/MainPage.php?msg=ErrorJoinClass");
         }

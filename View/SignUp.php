@@ -29,13 +29,12 @@ include '../DialogMessage.php';
             <form class="text-center" action="../Handle/SignUpProcess.php" method="POST">
 
                 <div class="md-form">
-                    <input type="text" name="txtFullName" id="txtUserName" placeholder="Full Name" required class="form-control mt-3">
+                    <input type="text" name="txtFullName" id="txtFullName" placeholder="Full Name" required class="form-control mt-3">
                 </div>
                 <!-- Birth Day -->
                 <div class="md-form">
                     <input type="date" name="txtDateOfBirth" id="txtDateOfBirth" value="Birth Day" required class="form-control mt-3">
                 </div>
-
                 <!-- Email -->
                 <div class="md-form">
                     <input type="email" name="txtEmail" id="txtEmail" placeholder="Email" required class="form-control mt-3">

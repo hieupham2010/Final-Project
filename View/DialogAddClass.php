@@ -11,16 +11,16 @@
             <div class="modal-body">
                 <form action="../Handle/CreateClassProcess.php" method="POST">
                     <div class="form-group">
-                        <label for="txtClassName" class="col-form-label">Class Name</label>
-                        <input type="text" class="form-control" id="txtClassName" name="txtClassName" required>
+                        <label for="txtClassNameAdd" class="col-form-label">Class Name</label>
+                        <input type="text" class="form-control" id="txtClassNameAdd" name="txtClassNameAdd" required>
                     </div>
                     <div class="form-group">
-                        <label for="txtSubjectName" class="col-form-label">Subject</label>
-                        <input type="text" class="form-control" id="txtSubjectName" name="txtSubjectName" required>
+                        <label for="txtSubjectNameAdd" class="col-form-label">Subject</label>
+                        <input type="text" class="form-control" id="txtSubjectNameAdd" name="txtSubjectNameAdd" required>
                     </div>
                     <div class="form-group">
-                        <label for="txtRoom" class="col-form-label">Room</label>
-                        <input type="text" class="form-control" id="txtRoom" name="txtRoom" required>
+                        <label for="txtRoomAdd" class="col-form-label">Room</label>
+                        <input type="text" class="form-control" id="txtRoomAdd" name="txtRoomAdd" required>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

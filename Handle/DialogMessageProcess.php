@@ -15,7 +15,7 @@ if (isset($_GET["msg"]) && !empty($_GET["msg"])) {
         $title = "Forgot Password";
         $content = "Reset password was successful";
     }else if($_GET["msg"] === "ErrorJoinClass") {
-        $title = "Error";
+        $title = "Class not found";
         $content = "Your class code doesn't exists";
     }else if($_GET["msg"] === "SignUpTimeOut") {
         $title = "Sign Up";
@@ -23,6 +23,15 @@ if (isset($_GET["msg"]) && !empty($_GET["msg"])) {
     }else if($_GET["msg"] === "ForgotPasswordTimeOut") {
         $title = "Forgot Password";
         $content = "The confirmation time has expired please confirm again";
+    }else if($_GET["msg"] === "InvalidImage") {
+        $title = "Update failed";
+        $content = "Only JPG, JPEG, PNG & GIF files are allowed";
+    }else if($_GET["msg"] === "UpdateSuccess") {
+        $title = "Update success";
+        $content = "Your account has been updated";
+    }else if($_GET["msg"] === "ErrorJoinClassExists") {
+        $title = "Error";
+        $content = "You have already participated in this class";
     }
 }
 ?>

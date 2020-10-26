@@ -1,12 +1,12 @@
 <?php
     session_start();
-    if(!empty($_POST["txtClassName"]) && !empty($_POST["txtSubjectName"]) && !empty($_POST["txtRoom"])) {
+    if(!empty($_POST["txtClassNameAdd"]) && !empty($_POST["txtSubjectNameAdd"]) && !empty($_POST["txtRoomAdd"])) {
         require 'DataAccess.php';
         require 'GenerateClassCode.php';
         $classCode = classCode();
-        $className = $_POST["txtClassName"];
-        $subjectName = $_POST["txtSubjectName"];
-        $room = $_POST["txtRoom"];
+        $className = $_POST["txtClassNameAdd"];
+        $subjectName = $_POST["txtSubjectNameAdd"];
+        $room = $_POST["txtRoomAdd"];
         $UserName = $_SESSION["username"];
         $query = "SELECT * FROM accounts WHERE UserName = ?";
         $stmt = $connection->prepare($query);

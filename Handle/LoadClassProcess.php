@@ -1,7 +1,18 @@
 <?php
 require_once 'DataAccess.php';
-require 'AccountRole.php';
-$query = "SELECT * FROM classrooms WHERE ClassID IN (SELECT ClassID FROM classmembers WHERE UserName = ?)";
+$ciphering = "AES-128-CTR"; 
+$iv_length = openssl_cipher_iv_length($ciphering); 
+$options = 0; 
+$encryption_iv = '2010200978194772'; 
+$encryption_key = "518H0501"; 
+if(isset($_GET["key"]) && !empty($_GET["key"])) {
+    $key = $_GET["key"];
+    $query = "SELECT * FROM classrooms WHERE ClassID IN (SELECT ClassID FROM classmembers WHERE UserName = ?) 
+    AND ClassName LIKE BINARY '%$key%' OR SubjectName LIKE BINARY '%$key%' OR Room LIKE BINARY '%$key%' 
+    OR ClassName LIKE '%$key%' OR SubjectName LIKE '%$key%' OR Room LIKE '%$key%'";
+}else {
+    $query = "SELECT * FROM classrooms WHERE ClassID IN (SELECT ClassID FROM classmembers WHERE UserName = ?)";
+}
 $stmt = $connection->prepare($query);
 $stmt->bind_param("s", $UserName);
 $stmt->execute();
@@ -30,13 +41,13 @@ while ($row = $result->fetch_assoc()) {
                                     <?php if ($AccountType == 0) { ?>
                                         <a class="dropdown-item" data-toggle="modal" data-target="#UpdateClass<?php echo $id ?>">Update Class</a>
                                         <a class="dropdown-item" data-toggle="modal" data-target="#DeleteClass<?php echo $id ?>">Delete Class</a>
-                                        <a class="dropdown-item" href="Class.php">Go To Class</a>
+                                        <a class="dropdown-item" href="Class.php?id=<?php echo urlencode(openssl_encrypt($row["ClassID"], $ciphering, $encryption_key, $options, $encryption_iv));?>">Go To Class</a>
                                     <?php } else if ($AccountType == 1) { ?>
                                         <a class="dropdown-item" data-toggle="modal" data-target="#UpdateClass<?php echo $id ?>">Update Class</a>
                                         <a class="dropdown-item" data-toggle="modal" data-target="#DeleteClass<?php echo $id ?>">Delete Class</a>
-                                        <a class="dropdown-item" href="Class.php">Go To Class</a>
+                                        <a class="dropdown-item" href="Class.php?id=<?php echo urlencode(openssl_encrypt($row["ClassID"], $ciphering, $encryption_key, $options, $encryption_iv));?>">Go To Class</a>
                                     <?php } else { ?>
-                                        <a class="dropdown-item" href="Class.php">Go To Class</a>
+                                        <a class="dropdown-item" href="Class.php?id=<?php echo urlencode(openssl_encrypt($row["ClassID"], $ciphering, $encryption_key, $options, $encryption_iv));?>">Go To Class</a>
                                     <?php } ?>
                                 </div>
                             </div>
@@ -45,7 +56,7 @@ while ($row = $result->fetch_assoc()) {
                         <div class="float-right ml-auto" id="backdrop" style="z-index: 1; position: absolute; right: 10px; top: 150px">
                             <img src="<?php echo $row["AvatarSrc"] ?>" alt="avatar" width="60" height="60" class="rounded-circle">
                         </div>
-                        <a class="card-text mt-3" id="class" href="Class.php"><?php echo $row["ClassName"] ?></a>
+                        <a class="card-text mt-3" id="class" href="Class.php?id=<?php echo urlencode(openssl_encrypt($row["ClassID"], $ciphering, $encryption_key, $options, $encryption_iv));?>"><?php echo $row["ClassName"] ?></a>
                     </div>
                 </h5>
                 <p class="card-text"><?php echo $row["SubjectName"] ?>-<?php echo $row["Room"] ?></p>

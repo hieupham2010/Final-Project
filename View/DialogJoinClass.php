@@ -11,7 +11,7 @@
                 <form action="../Handle/JoinClassProcess.php" method="POST">
                     <div class="form-group">
                         <p>Ask your teacher class code, and enter it here</p>
-                        <input type="text" class="form-control" id="ClassID" name="ClassID">
+                        <input type="text" class="form-control" id="JoinClassID" name="JoinClassID">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
