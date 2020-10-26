@@ -11,7 +11,7 @@
 </head>
 <style>
   div.search-Bar {
-    margin-top: 20px;
+    margin-top: -6px;
     display: inline-block;
   }
 
@@ -20,14 +20,15 @@
   }
 
   .dr-plus {
-    margin-top: -6px;
+    margin-top: -10px;
 
 
   }
 
   .dr-bell {
-    margin-top: 4px;
-    margin-left: 12px;
+    margin-top: -2px;
+    margin-left: 16px;
+    margin-right: 12px;
   }
 
   .dropdown-menu-bell {
@@ -50,15 +51,16 @@
     border-radius: .25rem;
     width: 250px;
   }
-  .list-notifications li{
+
+  .list-notifications li {
     border: 1px solid;
     border-radius: .25rem;
     padding: 10px;
     margin-right: 20px;
   }
 
-  .list-notifications li a{
-text-decoration: none;
+  .list-notifications li a {
+    text-decoration: none;
   }
 </style>
 
@@ -84,11 +86,35 @@ text-decoration: none;
           <div class="collapse navbar-collapse">
             <div class="navbar-nav ml-auto ">
 
+
+
+
+
+
+              <div class="dr-plus dropdown">
+                <a class="nav-link dropdown-toggle waves-effect waves-light mr-1 align-center " id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <svg focusable="false" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
+                    <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
+                  </svg>
+                </a>
+                <div class=" dropdown-menu dropdown-menu-right dropdown-info mr-3" aria-labelledby="navbarDropdownMenuLink-4">
+                  <?php require '../Handle/AccountRole.php'; ?>
+                  <?php if ($AccountType == 0) { ?>
+                    <a class="dropdown-item waves-effect waves-light" data-toggle="modal" data-target="#JoinClass">Join Class</a>
+                    <a class="dropdown-item waves-effect waves-light" data-target="#AddClass" data-toggle="modal">Add Class</a>
+                  <?php } else if ($AccountType == 1) { ?>
+                    <a class="dropdown-item waves-effect waves-light" data-target="#AddClass" data-toggle="modal">Add Class</a>
+                  <?php } else { ?>
+                    <a class="dropdown-item waves-effect waves-light" data-toggle="modal" data-target="#JoinClass">Join Class</a>
+                  <?php } ?>
+                </div>
+              </div>
               <!--Search -->
-              <div class="search-Bar mt-0">
+              <div class="search-Bar">
                 <div class="input-group input-group-sm">
                   <!--input-->
-                  <input class="form-control p-3 " type="text" placeholder="Search" aria-label="Search">
+                  <input class="form-control p-3 " type="search" placeholder="Search" aria-label="Search">
                   <!--input-->
                   <!--img-->
                   <div class="input-group-prepend .bg-white">
@@ -105,8 +131,6 @@ text-decoration: none;
                 </div>
               </div>
               <!--Search -->
-
-
               <!--Notification-->
               <div class="dr-bell dropdown  dropdown-menu-right ">
                 <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -144,33 +168,12 @@ text-decoration: none;
                         </div>
                       </a>
                     </li>
-                  
+
                   </ul>
                 </div>
               </div>
 
               <!--Notification-->
-
-              <div class="dr-plus dropdown">
-                <a class="nav-link dropdown-toggle waves-effect waves-light mr-1 align-center " id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <svg focusable="false" width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
-                    <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
-                  </svg>
-                </a>
-                <div class=" dropdown-menu dropdown-menu-right dropdown-info mr-3" aria-labelledby="navbarDropdownMenuLink-4">
-                  <?php require '../Handle/AccountRole.php'; ?>
-                  <?php if ($AccountType == 0) { ?>
-                    <a class="dropdown-item waves-effect waves-light" data-toggle="modal" data-target="#JoinClass">Join Class</a>
-                    <a class="dropdown-item waves-effect waves-light" data-target="#AddClass" data-toggle="modal">Add Class</a>
-                  <?php } else if ($AccountType == 1) { ?>
-                    <a class="dropdown-item waves-effect waves-light" data-target="#AddClass" data-toggle="modal">Add Class</a>
-                  <?php } else { ?>
-                    <a class="dropdown-item waves-effect waves-light" data-toggle="modal" data-target="#JoinClass">Join Class</a>
-                  <?php } ?>
-                </div>
-              </div>
-
               <a href="Profile.php">
                 <span><?php echo $FullName ?></span>
               </a>
@@ -186,8 +189,6 @@ text-decoration: none;
                   </div>
                 </li>
               </ul>
-
-
             </div>
           </div>
         </nav>

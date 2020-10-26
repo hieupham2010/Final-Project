@@ -9,12 +9,7 @@ if (isset($_GET["msgTimeUp"])) {
 ?>
 <!DOCTYPE html>
 <html>
-<style>
-    .Bio-card {
-        width: 70%;
-        justify-content: center;
-    }
-</style>
+
 
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -23,11 +18,41 @@ if (isset($_GET["msgTimeUp"])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
+<style>
+    .Bio-card {
+        width: 70%;
+        justify-content: center;
+    }
+
+
+    .mainsecction {
+        position: relative;
+
+    }
+
+
+
+    @media only screen and (max-width: 1100px),
+    (min-device-width: 768px) and (max-device-width: 750px) {
+
+        /* Force table to not be like tables anymore */
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr,
+        input[type="file"] {
+            display: block;
+            overflow: hidden;
+        }
+    }
+</style>
 
 <body>
     <?php include 'Header.php'
-    
-     ?>
+
+    ?>
 
 
 
@@ -38,9 +63,10 @@ if (isset($_GET["msgTimeUp"])) {
                     <div class="row ">
                         <div class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center d-flex justify-content-center">
 
-                            <div>
+                            <div class="input-file-avtar text-center ">
                                 <img src="images/avatarUploads/DefaultAvatar.png" class="rounded-circle">
-                                <input type="file" id="myfile" name="myfile">
+                                <input class="ml-5" type="file" id="myfile" name="myfile" value="">
+                               
                             </div>
 
 
