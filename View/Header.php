@@ -171,9 +171,8 @@
                 </div>
               <?php } ?>
               <!--Notification-->
-              <a href="Profile.php?request=profile">
-                <span><?php echo $FullName ?></span>
-              </a>
+              
+              <span><?php echo $FullName ?></span>
               <ul class="nav-img list-unstyled ">
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

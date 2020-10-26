@@ -29,6 +29,9 @@ if (isset($_GET["msg"]) && !empty($_GET["msg"])) {
     }else if($_GET["msg"] === "UpdateSuccess") {
         $title = "Update success";
         $content = "Your account has been updated";
+    }else if($_GET["msg"] === "ErrorJoinClassExists") {
+        $title = "Error";
+        $content = "You have already participated in this class";
     }
 }
 ?>

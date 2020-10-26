@@ -1,4 +1,7 @@
-<?php require '../Handle/ConfirmLogged.php' ?>
+<?php
+require '../Handle/ConfirmLogged.php';
+require '../Handle/ClassInfoProcess.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,15 +64,12 @@
 								<main role="main" class="container">
 									<!--jumbotron-->
 									<div class="jumbotron  border border-info shadow">
-										<h1>Class title</h1>
+										<h1><?php echo $ClassName ?></h1>
 										<hr class="my-4">
-										<a>
-											<p class="lead">Some link teacher post</p>
-										</a>
+										<p class="lead font-italic"><span class="font-weight-bold">Subject</span> <?php echo $SubjectName?></p>
+										<p class="lead font-italic"><span class="font-weight-bold">Room</span> <?php echo $Room?></p>
 									</div>
 									<!--jumbotron-->
-
-
 
 									<!--Display post area-->
 
