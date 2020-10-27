@@ -25,28 +25,7 @@ require '../Handle/ClassInfoProcess.php';
 	</script>
 </head>
 <style>
-	.nav-link {
-		border: none !important;
-		border-bottom: none !important;
-	}
-
-	.People-Card-List {
-		width: 200%;
-	}
-
-	.people-type {
-		border-bottom: 1px solid #5086de;
-	}
-
-	.list-group {
-		margin-top: 32px;
-	}
-
-	.nav-link:active {
-		border-bottom: 1px solid #5086de;
-	}
-
-	.card-post {
+	.assignment-card {
 		position: relative;
 		display: -ms-flexbox;
 		display: flex;
@@ -59,25 +38,6 @@ require '../Handle/ClassInfoProcess.php';
 		border: 1px solid #00000020;
 		border-radius: 0.5rem;
 
-	}
-
-	#share-idea {
-		cursor: pointer;
-	}
-
-
-	@media only screen and (max-width: 1100px),
-	(min-device-width: 976px) and (max-device-width: 750px) {
-
-
-		aside {
-			display: inline-block;
-		}
-	}
-	.input-group-prepend .input-group-text{
-		background: none !important;
-		margin-bottom: -3px;
-		border: none;
 	}
 </style>
 
@@ -140,11 +100,11 @@ require '../Handle/ClassInfoProcess.php';
 
 											<div class="col-sm-9">
 												<!--Comment area-->
-												<div class="blog-comment h-50 relative">
+												<div class="blog-comment h-50 relative ">
 
 													<ul class="comments list-unstyled  ">
 														<li class="cmt-detail shadow rounded h-75 ">
-															<div id="share-idea" class="shadow mt-5 rounded f-flex justify-content-left p-4 ">
+															<div id="share-idea" class="share-idea  shadow mt-5 rounded f-flex justify-content-left p-4 ">
 																<img src="images/avatarUploads/DefaultAvatar.png" class="avatar rounded-circle" alt="" width="40" height="40" aria-hidden="true">
 																Share your idea
 															</div>
@@ -193,14 +153,14 @@ require '../Handle/ClassInfoProcess.php';
 
 															</div>
 															<hr>
-															<div class="  rounded f-flex justify-content-left">
+															<div class="rounded f-flex justify-content-left">
 																<form class="form-control-lg">
 																	<div class="input-group mb-3">
-																		<div class="input-group-prepend .bg-black">
-																			<span class="input-group-text .bg-black" id="basic-addon1"><img src="images/avatarUploads/DefaultAvatar.png" class="avatar rounded-circle" alt="" width="30" height="30" aria-hidden="true"></span>
+																		<div class="input-group-prepend">
+																			<span class="avt-group-text mr-2 mt-0" id="basic-addon1"><img src="images/avatarUploads/DefaultAvatar.png" class="avatar rounded-circle" alt="" width="35" height="35" aria-hidden="true"></span>
 																		</div>
-																		<input type="text" class="form-control mt-1 rounded-pill" rows="3" placeholder="..." aria-describedby="basic-addon1">
-																		<button class="btn btn-outline-secondary form-control-md mt-1 rounded-pill" type="button">Comment</button></input>
+																		<input type="text" class="form-control mt-0 rounded-pill mr-2" rows="3" placeholder="..." aria-describedby="basic-addon1">
+																		<button class="btn btn-outline-secondary form-control-md mt-0 rounded-pill" type="button">Comment</button></input>
 																	</div>
 																</form>
 															</div>
@@ -213,90 +173,53 @@ require '../Handle/ClassInfoProcess.php';
 												</div>
 											</div>
 											<!-- End Display post area-->
+										</div>
+									</div>
 								</main>
 							</div>
 
 						</div>
 					</div>
 				</div>
+
+
 				<div id="ClassWork" class="container tab-pane fade">
-					<ul>
-						<li>
-							<!--Accordion wrapper-->
-							<div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+					<div class="faqs-page block col-md-12 mt-5">
+						<ul class="list-unstyled p-2">
+							<li class="p-5">
+								<div class="panel-group shadow-sm h-100 border p-2 rounded-sm" id="accordion2" role="tablist" aria-multiselectable="true">
+									<div class="panel panel-default ">
+										<div class="mt-2">
+											<a role="button" class="item-question collapsed text-decoration-none  text-dark font-weight-bold" data-toggle="collapse" href="#collapse1a" aria-expanded="false" aria-controls="collapse1a">
+												<h5 class="d-block">SomeThing teacher post</h5>
+											</a>
+											
+										</div>
 
-								<!-- Accordion card -->
-								<div class="ClassWord-card shadow rounded">
-
-									<!-- Card header -->
-									<div class="card-header" role="tab" id="headingOne1">
-
-										<div data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
-											<h5 class="mb-0">
-												ClassWork TitleadfClassWork TitleadfClassWork TitleadfClassWork TitleadfClassWork TitleadfClassWork TitleadfClassWork TitleadfClassWork TitleadfClassWork Titleadf
-											</h5>
-											Due Date/Time: <span id="due-datetime"></span>
+										<hr>
+										<div id="collapse1a" class="panel-collapse collapse" role="tabpanel">
+											<div class="panel-body border-bottom">
+												<p>
+													Detail assingments
+													Detail assingments
+													Detail assingments
+													Detail assingments
+													Detail assingmentsDetail assingmentsDetail assingmentsDetail assingmentsDetail assingmentsDetail assingmentsDetail assingments
+												</p>
+											</div class="panel-body border">
+											<div class="p-3 mt-2">
+												<a href="DetailClassWorks.php" class="text-decoration-none text-dark mt-3 font-weight-bold">View full assignment details</a>
+											</div>
 										</div>
 
 									</div>
-
-									<!-- Card body -->
-									<div id="collapseOne1" class="collapse show " role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
-										<p>Date/Time: <span id="datetime"></span></p>
-										<div class="card-body">
-
-										</div>
-									</div>
-
 								</div>
-								<!-- Accordion card -->
+							</li>
+						</ul>
 
-							</div>
-							<!-- Accordion wrapper -->
-						</li>
-
-
-						<li>
-							<!--Accordion wrapper-->
-							<div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
-
-								<!-- Accordion card -->
-								<div class="ClassWord-card shadow rounded">
-
-									<!-- Card header -->
-									<div class="card-header" role="tab" id="headingOne1">
-
-										<div data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
-											<h5 class="mb-0">
-												ClassWork Title
-											</h5>
-											Due Date/Time: <span id="due-datetime"></span>
-										</div>
-
-									</div>
-
-									<!-- Card body -->
-									<div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
-										<p>Date/Time: <span id="datetime"></span></p>
-										<div class="card-body">
-
-										</div>
-										<div>
-											<input type="text">
-										</div>
-									</div>
-
-								</div>
-								<!-- Accordion card -->
-
-							</div>
-							<!-- Accordion wrapper -->
-						</li>
-					</ul>
+					</div>
 
 				</div>
-
-
 
 				<div id="People" class="container tab-pane fade">
 					<div class="col-12 People-Card-List mt-5">

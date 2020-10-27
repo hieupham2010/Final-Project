@@ -10,58 +10,7 @@
   <script href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </head>
 <style>
-  div.search-Bar {
-    margin-top: -6px;
-    display: inline-block;
-  }
 
-  .nav-img {
-    margin-top: -16px;
-  }
-
-  .dr-plus {
-    margin-top: -3px;
-
-
-  }
-
-  .dr-bell {
-    margin-top: -2px;
-    margin-left: 16px;
-    margin-right: 12px;
-  }
-
-  .dropdown-menu-bell {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    z-index: 1000;
-    display: none;
-    float: left;
-    min-width: 10rem;
-    padding: .5rem 0;
-    margin: .125rem 0 0;
-    font-size: 1rem;
-    color: #212529;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, .15);
-    border-radius: .25rem;
-    width: 250px;
-  }
-
-  .list-notifications li {
-    border: 1px solid;
-    border-radius: .25rem;
-    padding: 10px;
-    margin-right: 20px;
-  }
-
-  .list-notifications li a {
-    text-decoration: none;
-  }
 </style>
 
 <body>
