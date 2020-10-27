@@ -74,6 +74,11 @@ require '../Handle/ClassInfoProcess.php';
 			display: inline-block;
 		}
 	}
+	.input-group-prepend .input-group-text{
+		background: none !important;
+		margin-bottom: -3px;
+		border: none;
+	}
 </style>
 
 <body>
@@ -149,51 +154,64 @@ require '../Handle/ClassInfoProcess.php';
 															<div class="collapse" id="collapseShow">
 																<div class="card-post card-body">
 																	<div class="md-form">
-																		<textarea class="md-textarea form-control" rows="3" value="...">....</textarea>
-																		<div class="input-group mt-2">
-																			<div class="custom-file">
-																				<input type="file" class="custom-file-input" id="inputGroupFile04">
-																				<label class="custom-file-label" for="inputGroupFile04">Choose file</label>
-																			</div>
-																			<div class="input-group-append">
-																				<button type="reset" class="btn btn-outline-secondary" id="cancel">Cancel</button>
-																			</div>
+																		<form action="">
+																			<textarea class="md-textarea form-control" rows="3" placeholder="..."></textarea>
+																			<div class="input-group mt-2">
+																				<div class="custom-file">
+																					<input type="file" class="custom-file-input" id="inputGroupFile04">
+																					<label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+																				</div>
+																				<div class="input-group-append">
+																					<button type="reset" class="btn btn-outline-secondary" id="cancel">Cancel</button>
+																				</div>
 
-																			<div class="input-group-append">
-																				<button class="btn btn-outline-secondary" type="button">Post</button>
+																				<div class="input-group-append">
+																					<button class="btn btn-outline-secondary" type="button">Post</button>
+																				</div>
 																			</div>
-																		</div>
+																		</form>
+
 																	</div>
 																</div>
 															</div>
 															<!-- End Post area-->
 														</li>
 													</ul>
-													<div class="shadow mt-5 rounded f-flex justify-content-left p-3">
-														<img src="images/avatarUploads/DefaultAvatar.png" class="avatar rounded-circle" alt="" width="40" height="40" aria-hidden="true">
-														<span class="meta">Dec 19, 2014 <a href="#">JohnDoe</a> says : <i class="pull-right"><a href="#"><small>Reply</small></a></i></span>
-														<div class="post-comments">
-															<p>
-																Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-																Etiam a sapien odio, sit amet
-															</p>
+													<div>
+														<div class="shadow  rounded f-flex justify-content-left p-5 border">
+
+															<div class="">
+																<img src="images/avatarUploads/DefaultAvatar.png" class="avatar rounded-circle" alt="" width="40" height="40" aria-hidden="true">
+																<span class="meta">Dec 19, 2014 <a href="#">JohnDoe</a> says : <i class="pull-right"><a href="#"><small>Reply</small></a></i></span>
+															</div>
+															<hr>
+															<div class="post-comments">
+																<p>
+																	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+																	Etiam a sapien odio, sit amet
+																</p>
+
+
+															</div>
+															<hr>
+															<div class="  rounded f-flex justify-content-left">
+																<form class="form-control-lg">
+																	<div class="input-group mb-3">
+																		<div class="input-group-prepend .bg-black">
+																			<span class="input-group-text .bg-black" id="basic-addon1"><img src="images/avatarUploads/DefaultAvatar.png" class="avatar rounded-circle" alt="" width="30" height="30" aria-hidden="true"></span>
+																		</div>
+																		<input type="text" class="form-control mt-1 rounded-pill" rows="3" placeholder="..." aria-describedby="basic-addon1">
+																		<button class="btn btn-outline-secondary form-control-md mt-1 rounded-pill" type="button">Comment</button></input>
+																	</div>
+																</form>
+															</div>
 														</div>
-														<form action="">
-															<div>
-																<textarea class="sm-textarea form-control " rows="3" value="...">....</textarea>
-															</div>
-															<div class="mt-2 ml-auto">
-																<button class="btn btn-outline-secondary" type="button">Comment</button>
-															</div>
-														</form>
 
 
 													</div>
 
 													<!--Comment area-->
-
 												</div>
-
 											</div>
 											<!-- End Display post area-->
 								</main>
@@ -334,12 +352,6 @@ require '../Handle/ClassInfoProcess.php';
 					</div>
 				</div>
 			</div>
-
-
-
-
-
-
 			<!--body left-->
 
 		</div>
