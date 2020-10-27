@@ -2,7 +2,7 @@
     session_start();
 
     if (!isset($_SESSION["logged"]) && $_SESSION["logged"] !== true) {
-        header("Location: ../index.php");
+        header("Location: ../index");
         exit;
     } else {
         if (isset($_SESSION["timeLoginExpire"]) && time() - $_SESSION["timeLoginExpire"] > 600) {

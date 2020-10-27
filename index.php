@@ -39,7 +39,7 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
                 <img src="View/images/LogoTDT/LogoTDT.png" alt="Logo" width="120" height="120">
             </div>
             <!-- Form -->
-            <form class="text-center " action="Handle/LoginProcess.php" method="POST">
+            <form class="text-center " action="Handle/LoginProcess" method="POST">
 
                 <!-- Email -->
                 <div class="md-form mt-2">
@@ -73,13 +73,13 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
 
                 <!-- Register -->
                 <p>Don't have an account? |
-                    <a href="View/SignUp.php">Register</a>
+                    <a href="View/SignUp">Register</a>
                 </p>
                 <!-- Register -->
 
                 <!--forgot message -->
                 <p>
-                    <?php if (isset($_GET["msg1"])) echo '<a href="View/ForgotPassword.php">Forgot Password</a>' ?>
+                    <?php if (isset($_GET["msg1"])) echo '<a href="View/ForgotPassword">Forgot Password</a>' ?>
                 </p>
                 <!------------------->
 
@@ -93,6 +93,6 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
 </html>
 <?php
 if (isset($_GET["msg"])) {
-    echo "<script>$('#Message').modal({show: true})</script>";
+  echo "<script>$('#Message').modal({show: true})</script>";
 }
 ?>

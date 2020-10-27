@@ -11,6 +11,6 @@
         $stmt->bind_param("s", $ClassID);
         $stmt->execute();
         $connection->close();
-        header("Location: ../View/MainPage.php");
+        header("Location: ../View/MainPage");
     }
 ?>

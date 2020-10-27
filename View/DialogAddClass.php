@@ -9,7 +9,7 @@
             </div>
             <!-- class content -->
             <div class="modal-body">
-                <form action="../Handle/CreateClassProcess.php" method="POST">
+                <form action="../Handle/CreateClassProcess" method="POST">
                     <div class="form-group">
                         <label for="txtClassNameAdd" class="col-form-label">Class Name</label>
                         <input type="text" class="form-control" id="txtClassNameAdd" name="txtClassNameAdd" required>

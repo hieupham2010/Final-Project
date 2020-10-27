@@ -24,12 +24,12 @@
                 setcookie("UserName" , "" ,time() - (86400 * 30) , "/" , false);
                 setcookie("Password" , "" ,time() - (86400 * 30), "/" , false);
             }
-            header("Location: ../View/MainPage.php");
+            header("Location: ../View/MainPage");
         }else {
             $errorMessage = "Invalid user name or password please try again";
             setcookie("UserName" , "" ,time() - (86400 * 30) , "/" , false);
             setcookie("Password" , "" ,time() - (86400 * 30), "/" , false);
-            header("Location: ../index.php?msg1=$errorMessage");
+            header("Location: ../index?msg1=$errorMessage");
         }
         $connection->close();
     }

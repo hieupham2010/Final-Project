@@ -16,7 +16,7 @@
             $stmt->bind_param("ss" , $Email , $Hash);
             $stmt->execute();
             session_destroy();
-            header("Location: ../View/ForgotPassword.php?msg=ForgotPasswordTimeOut");
+            header("Location: ../View/ForgotPassword?msg=ForgotPasswordTimeOut");
         }else{
             $query = "SELECT * FROM users WHERE Email = ?";
             $stmt = $connection->prepare($query);
@@ -27,7 +27,7 @@
             $_SESSION["FullName"] = $row["FullName"];
             $_SESSION["Hash"] = $Hash;
             $_SESSION["Email"] = $Email;
-            header("Location: ../View/ResetPassword.php");
+            header("Location: ../View/ResetPassword");
         }
         $connection->close();
     }

@@ -55,7 +55,7 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
     <div class="container  main-secction border mt-5">
         <div class="row ml-auto tab-pane active" id="View-Profile">
             <div class="row user-left-part">
-                <form action="../Handle/UpdateProfileProcess.php" method="POST" enctype="multipart/form-data">
+                <form action="../Handle/UpdateProfileProcess" method="POST" enctype="multipart/form-data">
                     <div class="col-md-3 col-sm-3 col-xs-12 user-profile-part pull-left">
                         <div class="row ">
                             <div class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center d-flex justify-content-center">

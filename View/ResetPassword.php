@@ -26,7 +26,7 @@ if (!isset($_SESSION["Email"]) && !isset($_SESSION["Hash"])) {
                 <img src="images/LogoTDT/LogoTDT.png" alt="Logo" width="120" height="120">
             </div>
             <!-- Form -->
-            <form class="text-center " action="../Handle/ResetPasswordProcess.php" method="POST">
+            <form class="text-center " action="../Handle/ResetPasswordProcess" method="POST">
 
 
                 <div class="md-form mt-2">

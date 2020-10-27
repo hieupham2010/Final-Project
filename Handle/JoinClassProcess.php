@@ -16,17 +16,17 @@
             $stmt->execute();
             $result = $stmt->get_result();
             if($result->num_rows > 0) {
-                header("Location: ../View/MainPage.php?msg=ErrorJoinClassExists");
+                header("Location: ../View/MainPage?msg=ErrorJoinClassExists");
             }else {
                 $query = "INSERT INTO classmembers VALUES(?,?)";
                 $stmt = $connection->prepare($query);
                 $stmt->bind_param("ss", $UserName , $ClassID);
                 $stmt->execute();
-                header("Location: ../View/MainPage.php");
+                header("Location: ../View/MainPage");
             }
             
         }else {
-            header("Location: ../View/MainPage.php?msg=ErrorJoinClass");
+            header("Location: ../View/MainPage?msg=ErrorJoinClass");
         }
         $connection->close();
     }

@@ -61,9 +61,9 @@ require '../Handle/ClassInfoProcess.php';
 
 	}
 
-	#share-idea {
+#share-idea {
 		cursor: pointer;
-	}
+}
 
 
 	@media only screen and (max-width: 1100px),
@@ -74,7 +74,8 @@ require '../Handle/ClassInfoProcess.php';
 			display: inline-block;
 		}
 	}
-	.input-group-prepend .input-group-text{
+
+	.input-group-prepend .input-group-text {
 		background: none !important;
 		margin-bottom: -3px;
 		border: none;

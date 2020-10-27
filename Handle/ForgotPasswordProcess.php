@@ -23,18 +23,18 @@
             $stmt->execute();
             $result = $stmt->get_result();
             if($result->num_rows > 0) {
-                header("Location: ../View/ForgotPassword.php?msg=ForgotPassword");
+                header("Location: ../View/ForgotPassword?msg=ForgotPassword");
             }else {
                 $query = "INSERT INTO verifypassword(Email, Hash, Time) VALUES(?,?,?)";
                 $stmt = $connection->prepare($query);
                 $stmt->bind_param("sss" , $email, $hash, $time);
                 $stmt->execute();
-                header("Location: ../View/ForgotPassword.php?msg=ForgotPassword");
+                header("Location: ../View/ForgotPassword?msg=ForgotPassword");
                 SendMailResetPassword($email , $row["FullName"], $hash);
             }
         }else{
             $ErrorMessage = "Your email does not exists please try again";
-            header("Location: ../View/ForgotPassword.php?msg1=$ErrorMessage");
+            header("Location: ../View/ForgotPassword?msg1=$ErrorMessage");
         }
         $connection->close();
     }

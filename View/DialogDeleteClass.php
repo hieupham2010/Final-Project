@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="../Handle/DeleteClassProcess.php" method="POST">
+                <form action="../Handle/DeleteClassProcess" method="POST">
                     <div class="form-group">
                         <p>Are you sure remove this class?</p>
                         <input type="hidden" class="form-control" id="DelClassID" name="DelClassID" value="<?php echo $row["ClassID"] ?>">
