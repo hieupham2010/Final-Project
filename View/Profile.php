@@ -78,14 +78,6 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-12 pull-right">
                         <div class="row profile-right-section-row">
-                            <div class="col-md-12 profile-header">
-                                <div class="row mt-4">
-                                    <div class="col-md-8 col-sm-6 col-xs-6 profile-header-section1 pull-left">
-                                        <h2>User Name</h2>
-                                        <p>User Type</p>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="col-md-11">
                                 <div class="row">
                                     <div class="col-md-12">

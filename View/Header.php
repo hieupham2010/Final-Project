@@ -85,7 +85,7 @@
             <div class="navbar-nav ml-auto">
 
               <?php require '../Handle/AccountRole.php'; ?>
-              <?php if (!isset($_GET["request"])) { ?>
+              <?php if (!isset($_GET["request"]) && !isset($_GET["id"])) { ?>
                 <div class="dr-plus dropdown mb-3">
                   <a class="nav-link dropdown-toggle waves-effect waves-light mr-1 align-center " id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <svg focusable="false" width="24" height="24" viewBox="0 0 24 24">

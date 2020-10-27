@@ -108,9 +108,10 @@ require '../Handle/ClassInfoProcess.php';
 							<div class="col col-12 ">
 								<main role="main" class="container">
 									<!--jumbotron-->
-									<div class="jumbotron  border border-info shadow">
+									<div class="jumbotron border border-info shadow pt-4 pb-4">
 										<h1><?php echo $ClassName ?></h1>
 										<hr class="my-4">
+										<p class="lead font-italic"><span class="font-weight-bold">Class Code</span> <?php echo $ClassID ?></p>
 										<p class="lead font-italic"><span class="font-weight-bold">Subject</span> <?php echo $SubjectName ?></p>
 										<p class="lead font-italic"><span class="font-weight-bold">Room</span> <?php echo $Room ?></p>
 									</div>
