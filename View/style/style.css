@@ -10,8 +10,6 @@ div.search-Bar {
 
 .dr-plus {
   margin-top: -3px;
-
-
 }
 
 .dr-bell {
@@ -28,22 +26,22 @@ div.search-Bar {
   display: none;
   float: left;
   min-width: 10rem;
-  padding: .5rem 0;
-  margin: .125rem 0 0;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
   font-size: 1rem;
   color: #212529;
   text-align: left;
   list-style: none;
   background-color: #fff;
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, .15);
-  border-radius: .25rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
   width: 250px;
 }
 
 .list-notifications li {
   border: 1px solid;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   padding: 10px;
   margin-right: 20px;
 }
@@ -51,8 +49,6 @@ div.search-Bar {
 .list-notifications li a {
   text-decoration: none;
 }
-
-
 
 body {
   position: relative;
@@ -235,7 +231,6 @@ ol li {
   display: block;
 }
 
-
 a.nav-link.dropdown-toggle.align-left {
   background-color: none !important;
 }
@@ -395,9 +390,7 @@ table {
   box-shadow: 5px 5px 5px 5px #eee;
 }
 
-
 /*class */
-
 
 .nav-link {
   border: none !important;
@@ -432,24 +425,34 @@ table {
   background-clip: border-box;
   border: 1px solid #00000020;
   border-radius: 0.5rem;
-
 }
 
-#share-idea {
-  cursor: pointer;
+.share-idea {
+  cursor: pointer !important;
 }
-
 
 @media only screen and (max-width: 1100px),
-(min-device-width: 976px) and (max-device-width: 750px) {
-
-
+  (min-device-width: 976px) and (max-device-width: 750px) {
   aside {
     display: inline-block;
   }
 }
-.input-group-prepend .input-group-text{
+.avt-group-text{
   background: none !important;
-  margin-bottom: -3px;
-  border: none;
+  border: none !important;
+}
+
+.assignment-card{
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #00000020;
+  border-radius: 0.5rem;
+
 }
