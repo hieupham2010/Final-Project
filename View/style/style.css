@@ -1,4 +1,58 @@
 /*header*/
+div.search-Bar {
+  margin-top: -6px;
+  display: inline-block;
+}
+
+.nav-img {
+  margin-top: -16px;
+}
+
+.dr-plus {
+  margin-top: -3px;
+
+
+}
+
+.dr-bell {
+  margin-top: -2px;
+  margin-left: 16px;
+  margin-right: 12px;
+}
+
+.dropdown-menu-bell {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: .5rem 0;
+  margin: .125rem 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: .25rem;
+  width: 250px;
+}
+
+.list-notifications li {
+  border: 1px solid;
+  border-radius: .25rem;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+.list-notifications li a {
+  text-decoration: none;
+}
+
+
 
 body {
   position: relative;
@@ -339,4 +393,63 @@ table {
   border-radius: 0.5rem;
   background-color: #eee;
   box-shadow: 5px 5px 5px 5px #eee;
+}
+
+
+/*class */
+
+
+.nav-link {
+  border: none !important;
+  border-bottom: none !important;
+}
+
+.People-Card-List {
+  width: 200%;
+}
+
+.people-type {
+  border-bottom: 1px solid #5086de;
+}
+
+.list-group {
+  margin-top: 32px;
+}
+
+.nav-link:active {
+  border-bottom: 1px solid #5086de;
+}
+
+.card-post {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #00000020;
+  border-radius: 0.5rem;
+
+}
+
+#share-idea {
+  cursor: pointer;
+}
+
+
+@media only screen and (max-width: 1100px),
+(min-device-width: 976px) and (max-device-width: 750px) {
+
+
+  aside {
+    display: inline-block;
+  }
+}
+.input-group-prepend .input-group-text{
+  background: none !important;
+  margin-bottom: -3px;
+  border: none;
 }
