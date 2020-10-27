@@ -61,10 +61,9 @@ require '../Handle/ClassInfoProcess.php';
 
 	}
 
-#share-idea {
+	#share-idea {
 		cursor: pointer;
-}
-
+	}
 
 	@media only screen and (max-width: 1100px),
 	(min-device-width: 976px) and (max-device-width: 750px) {
@@ -93,7 +92,7 @@ require '../Handle/ClassInfoProcess.php';
 			<!--inside navbar-->
 			<ul class="nav nav-tabs nav-justified">
 				<li class="nav-item">
-					<a class="nav-link active" href="#home">Class</a>
+					<a class="nav-link active" href="#Class">Class</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#ClassWork">Class Work</a>
@@ -107,7 +106,7 @@ require '../Handle/ClassInfoProcess.php';
 
 			<!-- Tab panes -->
 			<div class="tab-content ">
-				<div id="home" class="container tab-pane active">
+				<div id="Class" class="container tab-pane active">
 					<div class="container-fluid mt-5">
 						<div class="row ">
 							<!--body main-->
@@ -116,10 +115,16 @@ require '../Handle/ClassInfoProcess.php';
 									<!--jumbotron-->
 									<div class="jumbotron border border-info shadow pt-4 pb-4">
 										<h1><?php echo $ClassName ?></h1>
+										<?php require '../Handle/AccountRole.php' ?>
 										<hr class="my-4">
-										<p class="lead font-italic"><span class="font-weight-bold">Class Code</span> <?php echo $ClassID ?></p>
-										<p class="lead font-italic"><span class="font-weight-bold">Subject</span> <?php echo $SubjectName ?></p>
-										<p class="lead font-italic"><span class="font-weight-bold">Room</span> <?php echo $Room ?></p>
+										<?php if ($AccountType == 0 || $AccountType == 1) { ?>
+											<p class="lead font-italic"><span class="font-weight-bold">Class Code</span> <?php echo $ClassID ?></p>
+											<p class="lead font-italic"><span class="font-weight-bold">Subject</span> <?php echo $SubjectName ?></p>
+											<p class="lead font-italic"><span class="font-weight-bold">Room</span> <?php echo $Room ?></p>
+										<?php } else { ?>
+											<p class="lead font-italic"><span class="font-weight-bold">Subject</span> <?php echo $SubjectName ?></p>
+											<p class="lead font-italic"><span class="font-weight-bold">Room</span> <?php echo $Room ?></p>
+										<?php } ?>
 									</div>
 									<!--jumbotron-->
 
@@ -155,11 +160,12 @@ require '../Handle/ClassInfoProcess.php';
 															<div class="collapse" id="collapseShow">
 																<div class="card-post card-body">
 																	<div class="md-form">
-																		<form action="">
-																			<textarea class="md-textarea form-control" rows="3" placeholder="..."></textarea>
+																		<form action="../Handle/CreateCommentProcess" method="POST" enctype="multipart/form-data">
+																			<textarea class="md-textarea form-control" name="txtComment" rows="3" placeholder=". . ."></textarea>
 																			<div class="input-group mt-2">
 																				<div class="custom-file">
-																					<input type="file" class="custom-file-input" id="inputGroupFile04">
+																					<input type="hidden" name="encryptCode" value="<?php echo $encryptCode ?>">
+																					<input type="file" class="custom-file-input" id="inputGroupFile04" name="fileUpload">
 																					<label class="custom-file-label" for="inputGroupFile04">Choose file</label>
 																				</div>
 																				<div class="input-group-append">
@@ -167,7 +173,7 @@ require '../Handle/ClassInfoProcess.php';
 																				</div>
 
 																				<div class="input-group-append">
-																					<button class="btn btn-outline-secondary" type="button">Post</button>
+																					<button class="btn btn-outline-secondary" type="submit">Post</button>
 																				</div>
 																			</div>
 																		</form>
@@ -214,7 +220,7 @@ require '../Handle/ClassInfoProcess.php';
 													<!--Comment area-->
 												</div>
 											</div>
-											<!-- End Display post area-->
+										</div>	<!-- End Display post area-->
 								</main>
 							</div>
 

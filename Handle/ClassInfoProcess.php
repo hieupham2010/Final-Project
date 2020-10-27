@@ -6,7 +6,8 @@
         $options = 0;
         $decryption_iv = '2010200978194772'; 
         $decryption_key = "518H0501"; 
-        $ClassID = openssl_decrypt ($_GET["id"], $ciphering, $decryption_key, $options, $decryption_iv);
+        $encryptCode = $_GET["id"];
+        $ClassID = openssl_decrypt ($encryptCode, $ciphering, $decryption_key, $options, $decryption_iv);
         $query = "SELECT * FROM classrooms WHERE ClassID = ?";
         $stmt = $connection->prepare($query);
         $stmt->bind_param("s" , $ClassID);
