@@ -8,10 +8,10 @@
             $Hash = $_SESSION["Hash"];
             if(strlen($newPassword) < 8) {
                 $errorMessage = "Your password isn't less than 8 characters";
-                header("Location: ../View/ResetPassword.php?msg2=$errorMessage");
+                header("Location: ../View/ResetPassword?msg2=$errorMessage");
             }else if($newPassword != $confirmPassword) {
                 $errorMessage = "New password and confirm password doesn't match";
-                header("Location: ../View/ResetPassword.php?msg1=$errorMessage");
+                header("Location: ../View/ResetPassword?msg1=$errorMessage");
             }else{
                 require_once 'DataAccess.php';
                 $Password = password_hash($newPassword , PASSWORD_DEFAULT);
@@ -25,7 +25,7 @@
                 $stmt->execute();
                 $connection->close();
                 session_destroy();
-                header("Location: ../index.php?msg=CompleteResetPassword");
+                header("Location: ../index?msg=CompleteResetPassword");
             }
         }
     }

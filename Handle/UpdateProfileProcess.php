@@ -16,7 +16,7 @@
             $imageFileType = strtolower(pathinfo($destinationFile,PATHINFO_EXTENSION));
             if($imageFileType != "jpg" && $imageFileType != "png" 
             && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
-                header("Location: ../View/Profile.php?request=profile&msg=InvalidImage");
+                header("Location: ../View/Profile?request=profile&msg=InvalidImage");
             }else {
                 move_uploaded_file($_FILES["imageUpload"]["tmp_name"], $destinationFile);
                 $query = "UPDATE users SET FullName = ?, DateOfBirth = ?, Email = ?, PhoneNumber = ? 
@@ -33,7 +33,7 @@
                 $stmt = $connection->prepare($query);
                 $stmt->bind_param("ss" , $AvatarSrc , $UserName);
                 $stmt->execute();
-                header("Location: ../View/Profile.php?request=profile&msg=UpdateSuccess");
+                header("Location: ../View/Profile?request=profile&msg=UpdateSuccess");
             }
         }else{
             $query = "UPDATE users SET FullName = ?, DateOfBirth = ?, Email = ?, PhoneNumber = ? 
@@ -41,7 +41,7 @@
             $stmt = $connection->prepare($query);
             $stmt->bind_param("sssss", $FullName , $DateOfBirth , $Email , $PhoneNumber, $UserName);
             $stmt->execute();
-            header("Location: ../View/Profile.php?request=profile&msg=UpdateSuccess");
+            header("Location: ../View/Profile?request=profile&msg=UpdateSuccess");
         }
     }
 ?>

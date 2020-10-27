@@ -29,7 +29,7 @@
             <p>Please click button bellow to complete registration</p>
             <button style="background-color:#4CAF50;border:none;border-radius:5px;padding: 10px 16px;">
             <a style="color:white;text-decoration: none;"
-            href="localhost/Final-Project/Handle/VerifiedEmailForSignUp.php?email='.$email.'&hash='.$hash.'">Verification</a></button>
+            href="localhost/Final-Project/Handle/VerifiedEmailForSignUp?email='.$email.'&hash='.$hash.'">Verification</a></button>
             <p style="color:red;">*This email is valid only within 10 minutes</p>
             <p>If it\'s not you, please ignore this email</p>
             </div><footer style="background-color:#5e5c5c;color:white;padding:16px 20px;"><p>&copy; Classroom</p></footer></div>';
@@ -64,7 +64,7 @@
             <p>You have requested reset your password for a classroom account. Please click button bellow to reset your password</p>
             <button style="background-color:#4CAF50;border:none;border-radius:5px;padding:10px 16px;">
             <a style="color:white;text-decoration: none;"
-            href="localhost/Final-Project/Handle/VerifiedEmailForPassword.php?email='.$email.'&hash='.$hash.'">Verification</a></button>
+            href="localhost/Final-Project/Handle/VerifiedEmailForPassword?email='.$email.'&hash='.$hash.'">Verification</a></button>
             <p style="color:red;">*This email is valid only within 10 minutes</p>
             <p>If it\'s not you, please ignore this email</p>
             </div><footer style="background-color:#5e5c5c;color:white;padding:16px 20px;"><p>&copy;Classroom</p></footer></div>';

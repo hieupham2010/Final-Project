@@ -19,7 +19,7 @@
             $stmt = $connection->prepare($query);
             $stmt->bind_param("ss" , $Email , $Hash);
             $stmt->execute();
-            header("Location: ../View/SignUp.php?msg=SignUpTimeOut");
+            header("Location: ../View/SignUp?msg=SignUpTimeOut");
         }else{
             $query = "INSERT INTO users(FullName , DateOfBirth , Email , PhoneNumber) VALUES(?,?,?,?)";
             $stmt = $connection->prepare($query);
@@ -34,7 +34,7 @@
             $stmt = $connection->prepare($query);
             $stmt->bind_param("ss" , $Email , $Hash);
             $stmt->execute();
-            header("Location: ../index.php?msg=CompleteRegistration");
+            header("Location: ../index?msg=CompleteRegistration");
         }
         $connection->close();
     }

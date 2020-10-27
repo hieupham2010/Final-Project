@@ -24,6 +24,6 @@
         $stmt->bind_param("ss" , $UserName , $classCode);
         $stmt->execute();
         $connection->close();
-        header("Location: ../View/MainPage.php");
+        header("Location: ../View/MainPage");
     }
 ?>

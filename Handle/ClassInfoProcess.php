@@ -17,7 +17,7 @@
         $SubjectName = $row["SubjectName"];
         $Room = $row["Room"];
     }else {
-        header("Location: MainPage.php");
+        header("Location: MainPage");
         exit;
     }
 ?>

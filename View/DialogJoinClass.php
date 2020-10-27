@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="../Handle/JoinClassProcess.php" method="POST">
+                <form action="../Handle/JoinClassProcess" method="POST">
                     <div class="form-group">
                         <p>Ask your teacher class code, and enter it here</p>
                         <input type="text" class="form-control" id="JoinClassID" name="JoinClassID">

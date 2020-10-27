@@ -26,7 +26,7 @@
             <div class="mb-2">
                 <p>Enter the registered email to reset password!</p>
             </div>
-            <form class="text-center" form action="../Handle/ForgotPasswordProcess.php" method="POST">
+            <form class="text-center" form action="../Handle/ForgotPasswordProcess" method="POST">
                 <!-- Email -->
                 <div class="md-form">
                     <input type="email" name="txtEmail" id="txtEmail" placeholder="Email" required class="form-control">

@@ -9,7 +9,7 @@
             </div>
             <!-- class content -->
             <div class="modal-body">
-                <form action="../Handle/UpdateClassProcess.php" method="POST">
+                <form action="../Handle/UpdateClassProcess" method="POST">
                     <div class="form-group">
                         <label for="txtClassNameUD" class="col-form-label">Class Name</label>
                         <input type="text" class="form-control" id="txtClassNameUD" name="txtClassNameUD" value="<?php echo $row["ClassName"]?>" required>

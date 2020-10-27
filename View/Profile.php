@@ -55,7 +55,7 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
     <div class="container  main-secction border mt-5">
         <div class="row ml-auto tab-pane active" id="View-Profile">
             <div class="row user-left-part">
-                <form action="../Handle/UpdateProfileProcess.php" method="POST" enctype="multipart/form-data">
+                <form action="../Handle/UpdateProfileProcess" method="POST" enctype="multipart/form-data">
                     <div class="col-md-3 col-sm-3 col-xs-12 user-profile-part pull-left">
                         <div class="row ">
                             <div class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center d-flex justify-content-center">
@@ -78,14 +78,6 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-12 pull-right">
                         <div class="row profile-right-section-row">
-                            <div class="col-md-12 profile-header">
-                                <div class="row mt-4">
-                                    <div class="col-md-8 col-sm-6 col-xs-6 profile-header-section1 pull-left">
-                                        <h2>User Name</h2>
-                                        <p>User Type</p>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="col-md-11">
                                 <div class="row">
                                     <div class="col-md-12">

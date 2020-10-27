@@ -20,7 +20,7 @@
     <div class="row mt-4 border-bottom">
 
       <div class="col-2 mt-2">
-        <a class="navbar-brand" href="MainPage.php" id="logo">
+        <a class="navbar-brand" href="MainPage" id="logo">
           <img src="images/LogoTDT/LogoTDT.png" width="30" height="30" alt="logo">
           <span>TDT Classroom</span>
         </a>
@@ -34,7 +34,7 @@
             <div class="navbar-nav ml-auto">
 
               <?php require '../Handle/AccountRole.php'; ?>
-              <?php if (!isset($_GET["request"])) { ?>
+              <?php if (!isset($_GET["request"]) && !isset($_GET["id"])) { ?>
                 <div class="dr-plus dropdown mb-3">
                   <a class="nav-link dropdown-toggle waves-effect waves-light mr-1 align-center " id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <svg focusable="false" width="24" height="24" viewBox="0 0 24 24">
@@ -56,7 +56,7 @@
                 </div>
                 <!--Search -->
                 <div class="search-Bar mt-0">
-                  <form action="MainPage.php" method="GET">
+                  <form action="MainPage" method="GET">
                     <div class="input-group input-group-sm">
                       <!--input-->
                       <input class="form-control" type="text" name="key" placeholder="Search" aria-label="Search" value="<?php if (isset($_GET["key"])) echo $_GET["key"]; ?>">
@@ -129,9 +129,9 @@
                     <img src="<?php echo $AvatarSrc ?>" width="40" height="40" class="rounded-circle">
                   </a>
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Dashboard</a>
-                    <a class="dropdown-item" href="Profile.php?request=profile">Profile</a>
-                    <a class="dropdown-item" href="../Handle/LogoutProcess.php">Log Out</a>
+                    <a class="dropdown-item" href="MainPage">Dashboard</a>
+                    <a class="dropdown-item" href="Profile?request=profile">Profile</a>
+                    <a class="dropdown-item" href="../Handle/LogoutProcess">Log Out</a>
                   </div>
                 </li>
               </ul>

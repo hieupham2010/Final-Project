@@ -11,6 +11,6 @@
         $stmt->bind_param("ssss", $ClassName , $Subject , $Room , $ClassID);
         $stmt->execute();
         $connection->close();
-        header("Location: ../View/MainPage.php");
+        header("Location: ../View/MainPage");
     }
 ?>

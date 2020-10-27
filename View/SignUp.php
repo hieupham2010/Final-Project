@@ -26,7 +26,7 @@ include '../DialogMessage.php';
             </div>
 
             <!-- Form -->
-            <form class="text-center" action="../Handle/SignUpProcess.php" method="POST">
+            <form class="text-center" action="../Handle/SignUpProcess" method="POST">
 
                 <div class="md-form">
                     <input type="text" name="txtFullName" id="txtFullName" placeholder="Full Name" required class="form-control mt-3">
