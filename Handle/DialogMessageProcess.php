@@ -32,6 +32,9 @@ if (isset($_GET["msg"]) && !empty($_GET["msg"])) {
     }else if($_GET["msg"] === "ErrorJoinClassExists") {
         $title = "Error";
         $content = "You have already participated in this class";
+    }else if($_GET["msg"] === "ErrorEmptyPost") {
+        $title = "Error";
+        $content = "Post can't be empty";
     }
 }
 ?>

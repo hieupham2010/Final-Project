@@ -12,6 +12,8 @@ require '../Handle/ClassInfoProcess.php';
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="javascript/main.js"></script>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Class</title>
 </head>
@@ -86,8 +88,8 @@ require '../Handle/ClassInfoProcess.php';
 
 													<ul class="comments list-unstyled  ">
 														<li class="cmt-detail shadow rounded h-75 ">
-															<div id="share-idea" class="  shadow mt-5 rounded f-flex justify-content-left p-4 " data-toggle="collapse">
-																<img src="images/avatarUploads/DefaultAvatar.png" class="avatar rounded-circle" alt="" width="40" height="40" aria-hidden="true">
+															<div id="share-idea" class="share-idea  shadow mt-5 rounded f-flex justify-content-left p-4" data-toggle="collapse">
+																<img src="<?php echo $AvatarSrc ?>" class="avatar rounded-circle" alt="" width="40" height="40" aria-hidden="true">
 																Share your idea
 															</div>
 															<!--Post area-->
@@ -95,7 +97,7 @@ require '../Handle/ClassInfoProcess.php';
 															<div class="collapse" id="collapseShow">
 																<div class="card-post card-body">
 																	<div class="md-form">
-																		<form action="../Handle/CreateCommentProcess" method="POST" enctype="multipart/form-data">
+																		<form action="../Handle/CreatePostProcess" method="POST" enctype="multipart/form-data">
 																			<textarea class="md-textarea form-control" name="txtComment" rows="3" placeholder=". . ."></textarea>
 																			<div class="input-group mt-2">
 																				<div class="custom-file">
@@ -119,39 +121,7 @@ require '../Handle/ClassInfoProcess.php';
 															<!-- End Post area-->
 														</li>
 													</ul>
-													<div>
-														<div class="shadow  rounded f-flex justify-content-left p-5 border">
-
-															<div class="">
-																<img src="images/avatarUploads/DefaultAvatar.png" class="avatar rounded-circle" alt="" width="40" height="40" aria-hidden="true">
-																<span class="meta">Dec 19, 2014 <a href="#">JohnDoe</a> says : <i class="pull-right"><a href="#"><small>Reply</small></a></i></span>
-															</div>
-															<hr>
-															<div class="post-comments">
-																<p>
-																	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-																	Etiam a sapien odio, sit amet
-																</p>
-
-
-															</div>
-															<hr>
-															<div class="rounded f-flex justify-content-left">
-																<form class="form-control-lg">
-																	<div class="input-group mb-3">
-																		<div class="input-group-prepend">
-																			<span class="avt-group-text mr-2 mt-0" id="basic-addon1"><img src="images/avatarUploads/DefaultAvatar.png" class="avatar rounded-circle" alt="" width="35" height="35" aria-hidden="true"></span>
-																		</div>
-																		<input type="text" class="form-control mt-0 rounded-pill mr-2" rows="3" placeholder="..." aria-describedby="basic-addon1">
-																		<button class="btn btn-outline-secondary form-control-md mt-0 rounded-pill" type="button">Comment</button></input>
-																	</div>
-																</form>
-															</div>
-														</div>
-
-
-													</div>
-
+													<?php include '../Handle/LoadPostedProcess.php' ?>
 													<!--Comment area-->
 												</div>
 											</div>
@@ -353,3 +323,9 @@ require '../Handle/ClassInfoProcess.php';
 </body>
 
 </html>
+<?php
+include '../DialogMessage.php';
+if (isset($_GET["msg"])) {
+	echo "<script>$('#Message').modal({show: true})</script>";
+}
+?>
