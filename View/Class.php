@@ -8,7 +8,7 @@ require '../Handle/ClassInfoProcess.php';
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	
+
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -17,6 +17,7 @@ require '../Handle/ClassInfoProcess.php';
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Class</title>
 </head>
+
 <body>
 
 	<div class="container-fluid">
@@ -28,7 +29,7 @@ require '../Handle/ClassInfoProcess.php';
 			<!--inside navbar-->
 			<ul class="nav nav-tabs nav-justified">
 				<li class="nav-item">
-					<a class="nav-link active" href="#Class">Class</a>
+					<a class="nav-link active" href="#Class" data-toggle="tab">Class</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#ClassWork" data-toggle="tab">Class Work</a>
@@ -140,31 +141,49 @@ require '../Handle/ClassInfoProcess.php';
 							<li class="p-5">
 								<div class="panel-group shadow-sm h-100 border p-2 rounded-sm" id="accordion2" role="tablist" aria-multiselectable="true">
 									<div class="panel panel-default ">
-										<div class="mt-2">
-											<a role="button" class="item-question collapsed text-decoration-none  text-dark font-weight-bold" data-toggle="collapse" href="#collapse1a" aria-expanded="false" aria-controls="collapse1a">
-												<h5 class="d-block">SomeThing teacher post</h5>
-											</a>
+										<form action="">
+											<div class="mt-2">
+												<a role="button" class="item-question collapsed text-decoration-none  text-dark " data-toggle="collapse" href="#collapse1a" aria-expanded="false" aria-controls="collapse1a">
+													<div class="form-group ">
+														<h5 class="block">SomeThing teacher post
+															<div class="dropdown-tdoc dropdown dropdown-menu-right float-right ">
+																<a class="dropdown-toggle mb-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+																		<path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+																	</svg>
+																</a>
+																<div class="dropdown-menu dropdown-menu-right dropdown-info active-none" aria-labelledby="navbarDropdownMenuLink-4">
+																	<a class="dropdown-item" data-toggle="dropdown">Delete ClassWork</a>
+																	<a class="dropdown-item" data-toggle="dropdown">Report</a>
+																	<a class="dropdown-item" data-toggle="dropdown">Coppy link</a>
+																</div>
+															</div>
+														</h5>
 
-										</div>
+													</div>
+												</a>
 
-										<hr>
-										<div id="collapse1a" class="panel-collapse collapse" role="tabpanel">
-											<div class="panel-body border-bottom">
-												<p>
-													Detail assingments
-													Detail assingments
-													Detail assingments
-													Detail assingments
-													Detail assingmentsDetail assingmentsDetail assingmentsDetail assingmentsDetail assingmentsDetail assingmentsDetail assingments
-												</p>
-											</div class="panel-body border">
-											<div class="p-3 mt-2">
-												<a href="DetailClassWorks.php" class="text-decoration-none text-dark mt-3 font-weight-bold">View full assignment details</a>
+
+												<hr>
+												<div id="collapse1a" class="panel-collapse collapse" role="tabpanel">
+													<div class="panel-body border-bottom">
+														<p>
+															Detail assingments
+															Detail assingments
+															Detail assingments
+															Detail assingments
+															Detail assingmentsDetail assingmentsDetail assingmentsDetail assingmentsDetail assingmentsDetail assingmentsDetail assingments
+														</p>
+													</div class="panel-body border">
+													<div class="p-3 mt-2">
+														<a href="DetailClassWorks.php" class="text-decoration-none text-muted mt-3 font-weight-bold">View full assignment details</a>
+													</div>
+												</div>
+
 											</div>
-										</div>
+										</form>
 
 									</div>
-								</div>
 							</li>
 						</ul>
 
@@ -173,53 +192,122 @@ require '../Handle/ClassInfoProcess.php';
 				</div>
 
 				<div id="People" class="container tab-pane fade">
+
 					<div class="col-12 People-Card-List mt-5">
+
+						<!--Dialog Assignment-->
+						<div class="dropdown">
+							<button class="btn btn-secondary-outline dropdown-toggle  rounded-pill" type="button" data-toggle="dropdown">Add ClassWork
+								<span class="caret"></span></button>
+							<ul class="dropdown-menu list-unstyled 	text-left">
+								<li><a class="dropdown-item" href="#" data-toggle="modal" data-target="#CrClassWork">Assignment</a></li>
+								<li><a class="dropdown-item" href="#">Quiz</a></li>
+							</ul>
+
+
+
+
+
+						</div>
+						<!--Dialog Assignment-->
+
 						<ul class="list-group list-unstyled">
+
 							<h2 class="people-type">
 								Teachers
+								<!-- Add people-->
+								<a class="btn btn-link float-right p-1 " type="button" data-toggle="modal" data-target="#InviteStudent">
+									<svg class="" width="2em" height="2em" viewBox="0 0 20 20" class="bi bi-person-plus-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7.5-3a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+									</svg>
+								</a>
 							</h2>
 							<li class="List-Teahcer p-3 border-bottom">
 								<div>
-									<img id="teacher-1" src="images/avatarUploads/DefaultAvatar.png" width="40" height="40" class="rounded-circle">
-									<label for="teacher-1">Teacher 1</label>
+									<ul class="list-unstyled">
+										<li>
+											<form action="">
+												<div class="form-group">
+													<img id="teacher-1" src="images/avatarUploads/DefaultAvatar.png" width="40" height="40" class="rounded-circle">
+													<span class="">Teacher 1</span>
+
+
+													<!-- 3 chấm teacher -->
+													<div class="dropdown-tdoc dropdown dropdown-menu-right " style="z-index: 1; position: absolute; top: 150px; right: 30px;">
+														<a class="dropdown-toggle bg-transparent  d-flex flex-wrap" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+															<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+																<path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+															</svg>
+														</a>
+														<div class="dropdown-menu dropdown-menu-right dropdown-info active-none" aria-labelledby="navbarDropdownMenuLink-4">
+															<a class="dropdown-item" data-toggle="dropdown">Remove people</a>
+														</div>
+													</div>
+													<!-- 3 chấm teacher -->
+												</div>
+
+
+											</form>
+
+										</li>
+									</ul>
+
+
+
+
 								</div>
+
 							</li>
 						</ul>
 						<ul class="list-group list-unstyled ">
-							<h2 class="people-type">Students</h2>
+							<h2 class="people-type">Students
+								<!-- Add people-->
+								<a class="btn btn-link float-right p-1 " type="button" data-toggle="modal" data-target="#InviteStudent">
+									<svg class="" width="2em" height="2em" viewBox="0 0 20 20" class="bi bi-person-plus-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7.5-3a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+									</svg>
+								</a></h2>
 							<li class="List-Student p-3 border-bottom">
-								<div>
-									<img id="student-1" src="images/avatarUploads/DefaultAvatar.png" width="40" height="40" class="rounded-circle">
-									<label for="student-1">Student 1</label>
 
-								</div>
+								<form action="">
+									<div class="form-group">
+										<img id="student-1" src="images/avatarUploads/DefaultAvatar.png" width="40" height="40" class="rounded-circle">
+										<span>Student 1</span>
+										<div class="dropdown-tdoc dropdown dropdown-menu-right float-right mt-2	">
+											<a class="dropdown-toggle bg-transparent  d-flex flex-wrap" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+												</svg>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right dropdown-info active-none" aria-labelledby="navbarDropdownMenuLink-4">
+												<a class="dropdown-item" data-toggle="dropdown">Remove people</a>
+											</div>
+										</div>
+									</div>
+								</form>
 
 							</li>
 							<li class="List-Student p-3 border-bottom">
 
-								<div>
-									<img id="student-2" src="images/avatarUploads/DefaultAvatar.png" width="40" height="40" class="rounded-circle">
-									<label for="student-2">Student 2</label>
-
-								</div>
+								<form action="">
+									<div class="form-group">
+										<img id="student-1" src="images/avatarUploads/DefaultAvatar.png" width="40" height="40" class="rounded-circle">
+										<span>Student 1</span>
+										<div class="dropdown-tdoc dropdown dropdown-menu-right float-right mt-2	">
+											<a class="dropdown-toggle bg-transparent  d-flex flex-wrap" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+													<path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+												</svg>
+											</a>
+											<div class="dropdown-menu dropdown-menu-right dropdown-info active-none" aria-labelledby="navbarDropdownMenuLink-4">
+												<a class="dropdown-item" data-toggle="dropdown">Remove people</a>
+											</div>
+										</div>
+									</div>
+								</form>
 
 							</li>
-							<li class="List-Student p-3 border-bottom">
 
-								<div>
-									<img id="student-3" src="images/avatarUploads/DefaultAvatar.png" width="40" height="40" class="rounded-circle">
-									<label for="student-3">Student 3</label>
-
-								</div>
-
-							</li>
-							<li class="List-Student p-3 border-bottom">
-								<div>
-									<img id="student-4" src="images/avatarUploads/DefaultAvatar.png" width="40" height="40" class="rounded-circle">
-									<label for="student-4">Student 4</label>
-
-								</div>
-							</li>
 						</ul>
 
 					</div>

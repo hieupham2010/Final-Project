@@ -92,8 +92,12 @@
 
                         <a href="" class="content-list-unstyled">
                           <div class="notification-item">
+
                             <h4 class="item-title">PTTK</h4>
                             <p class="item-info">PTTK reminder</p>
+                            <button type="button" class="close" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
                           </div>
                         </a>
                       </li>
