@@ -80,7 +80,6 @@ require '../Handle/ClassInfoProcess.php';
 													</ul>
 												</aside>
 											</div>
-
 											<div class="col-sm-9">
 												<!--Comment area-->
 												<div class="blog-comment h-50 relative ">
