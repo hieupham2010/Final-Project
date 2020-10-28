@@ -20,10 +20,13 @@ function displayDate (){
 }
 
 
-    $(".nav-tabs a").click(function() {
-        $(this).tab('show');
-    });
+$(document).ready(function(){
+    activaTab('home');
+});
 
+function activaTab(){
+    $('.nav-tabs a[href="#' + tab + '"]').tab('show');
+};
 
 $("#share-idea").click(function() {
     $("#share-idea").hide("slow", function() {});
