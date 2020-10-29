@@ -23,7 +23,7 @@ function displayDate() {
 
 
 $(document).ready(function() {
-    activaTab('home');
+    activaTab('Class');
 });
 
 function activaTab() {

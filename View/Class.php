@@ -5,15 +5,17 @@ require '../Handle/ClassInfoProcess.php';
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="style/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<script src="javascript/main.js"></script>
-
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Class</title>
 </head>
@@ -27,15 +29,15 @@ require '../Handle/ClassInfoProcess.php';
 		<div class="container ">
 
 			<!--inside navbar-->
-			<ul class="nav nav-tabs nav-justified">
+			<ul class="nav nav-tabs nav-justified text-dark">
 				<li class="nav-item">
-					<a class="nav-link active" href="#Class" data-toggle="tab">Class</a>
+					<a class="nav-link active text-dark" href="#Class" data-toggle="tab">Class</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#ClassWork" data-toggle="tab">Class Work</a>
+					<a class="nav-link text-dark" href="#ClassWork" data-toggle="tab">Class Work</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#People" data-toggle="tab">People</a>
+					<a class="nav-link text-dark" href="#People" data-toggle="tab">People</a>
 				</li>
 			</ul>
 
@@ -72,7 +74,10 @@ require '../Handle/ClassInfoProcess.php';
 											<div class="col-sm-3 mt-4">
 												<!-- Sidebar -->
 												<aside class="border rounded-lg mt-4 justify-content-left p-2 shadow">
-													<h2>Class Work</h2>
+													<a href="" class="text-decoration-none  text-dark ">
+														<h2>Class Work</h2>
+													</a>
+
 													<ul class="list-unstyled ml-4">
 														<li><a>Class Work 1</a></li>
 														<li><a>Class Work 1</a></li>
@@ -81,14 +86,15 @@ require '../Handle/ClassInfoProcess.php';
 													</ul>
 												</aside>
 											</div>
-											<div class="col-sm-9">
-												<!--Comment area-->
-												<div class="blog-comment h-50 relative ">
 
-													<ul class="comments list-unstyled  ">
+											<div class="col-sm-9 ">
+												<!--Comment area-->
+												<div class="blog-comment h-50 relative">
+
+													<ul class="comments list-unstyled ">
 														<li class="cmt-detail shadow rounded h-75 ">
-															<div id="share-idea" class="share-idea  shadow mt-5 rounded f-flex justify-content-left p-4" data-toggle="collapse">
-																<img src="<?php echo $AvatarSrc ?>" class="avatar rounded-circle" alt="" width="40" height="40" aria-hidden="true">
+															<div id="share-idea" class="  shadow mt-5 rounded f-flex justify-content-left p-4 " data-toggle="collapse">
+																<img src="images/avatarUploads/DefaultAvatar.png" class="avatar rounded-circle" alt="" width="40" height="40" aria-hidden="true">
 																Share your idea
 															</div>
 															<!--Post area-->
@@ -96,7 +102,7 @@ require '../Handle/ClassInfoProcess.php';
 															<div class="collapse" id="collapseShow">
 																<div class="card-post card-body">
 																	<div class="md-form">
-																		<form action="../Handle/CreatePostProcess" method="POST" enctype="multipart/form-data">
+																		<form action="../Handle/CreateCommentProcess" method="POST" enctype="multipart/form-data">
 																			<textarea class="md-textarea form-control" name="txtComment" rows="3" placeholder=". . ."></textarea>
 																			<div class="input-group mt-2">
 																				<div class="custom-file">
@@ -120,7 +126,81 @@ require '../Handle/ClassInfoProcess.php';
 															<!-- End Post area-->
 														</li>
 													</ul>
-													<?php include '../Handle/LoadPostedProcess.php' ?>
+													<div class="border">
+														<div class="shadow  rounded f-flex justify-content-left p-5 ">
+
+															<div class="">
+																<a class="dropdown-toggle mb-5 float-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+																		<path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+																	</svg>
+																</a>
+																<div class="dropdown-menu dropdown-menu-right dropdown-info active-none" aria-labelledby="navbarDropdownMenuLink-4">
+																	<a class="dropdown-item" data-toggle="dropdown">Delete</a>
+																	<a class="dropdown-item" data-toggle="dropdown">Edit</a>
+																	<a class="dropdown-item" data-toggle="dropdown">Report</a>
+																</div>
+																<img src="images/avatarUploads/DefaultAvatar.png" class="avatar rounded-circle" alt="" width="40" height="40" aria-hidden="true">
+																<span class="meta">Dec 19, 2014 <a href="#">JohnDoe</a> says : <i class="pull-right"><a href="#"><small>Reply</small></a></i></span>
+															</div>
+															<hr>
+															<div class="post-comments">
+																<p>
+																	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+																	Etiam a sapien odio, sit amet
+																</p>
+
+
+															</div>
+															<hr>
+															<!-- Display comment area-->
+															<div class="display comment">
+																<div class="comment">
+																	<form action="">
+																		<div class="">
+																			<div>
+
+																				<div class="ml-2 mb-2">
+																					<a class="dropdown-toggle mb-5 float-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																						<svg width="14px" height="14px" viewBox="0 0 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+																							<path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+																						</svg>
+																					</a>
+																					<div class="dropdown-menu dropdown-menu-right dropdown-info active-none" aria-labelledby="navbarDropdownMenuLink-4">
+																						<a class="dropdown-item" data-toggle="dropdown">Delete</a>
+																						<a class="dropdown-item" data-toggle="dropdown">Report</a>
+																					</div>
+																					<img src="images/avatarUploads/DefaultAvatar.png" class="avatar rounded-circle" alt="" width="30" height="30" aria-hidden="true">
+																					<span class="meta m">date time<a href="#">Name reply</a><a href="#"><small>Reply</small></a></span>
+																				</div>
+																			</div>
+																			<div class="ml-3">
+																				<span class="ml-3 mt-5 text-dark"> Some comment</span>
+																			</div>
+
+																		</div>
+																	</form>
+																</div>
+															</div>
+															<hr>
+															<div class="rounded f-flex justify-content-left">
+
+																<form class="form-control-lg">
+																	<div class="input-group mb-3">
+																		<div class="input-group-prepend">
+																			<span class="avt-group-text mr-2 mt-0" id="basic-addon1"><img src="images/avatarUploads/DefaultAvatar.png" class="avatar rounded-circle" alt="" width="35" height="35" aria-hidden="true"></span>
+																		</div>
+																		<input type="text" class="form-control mt-0 rounded-pill mr-2" rows="3" placeholder="..." aria-describedby="basic-addon1">
+																		<button class="btn btn-outline-secondary form-control-md mt-0 rounded-pill" type="button">Comment</button>
+																		</input>
+																	</div>
+																</form>
+															</div>
+														</div>
+
+
+													</div>
+
 													<!--Comment area-->
 												</div>
 											</div>
@@ -137,6 +217,21 @@ require '../Handle/ClassInfoProcess.php';
 
 				<div id="ClassWork" class="container tab-pane fade">
 					<div class="faqs-page block col-md-12 mt-5">
+						<!--Dialog Assignment-->
+						<div class="dropdown ml-5">
+							<button class="btn btn-primary dropdown-toggle  rounded-pill" type="button" data-toggle="dropdown">Add ClassWork
+								<span class="caret"></span></button>
+							<ul class="dropdown-menu list-unstyled 	text-left">
+								<li><a class="dropdown-item" href="#" data-toggle="modal" data-target="#CrClassWork">Assignment</a></li>
+								<li><a class="dropdown-item" href="#">Quiz</a></li>
+							</ul>
+
+
+
+
+
+						</div>
+						<!--Dialog Assignment-->
 						<ul class="list-unstyled p-2">
 							<li class="p-5">
 								<div class="panel-group shadow-sm h-100 border p-2 rounded-sm" id="accordion2" role="tablist" aria-multiselectable="true">
@@ -144,7 +239,7 @@ require '../Handle/ClassInfoProcess.php';
 										<form action="">
 											<div class="mt-2">
 												<a role="button" class="item-question collapsed text-decoration-none  text-dark " data-toggle="collapse" href="#collapse1a" aria-expanded="false" aria-controls="collapse1a">
-													<div class="form-group ">
+													<div class="form-group text">
 														<h5 class="block">SomeThing teacher post
 															<div class="dropdown-tdoc dropdown dropdown-menu-right float-right ">
 																<a class="dropdown-toggle mb-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -195,21 +290,7 @@ require '../Handle/ClassInfoProcess.php';
 
 					<div class="col-12 People-Card-List mt-5">
 
-						<!--Dialog Assignment-->
-						<div class="dropdown">
-							<button class="btn btn-secondary-outline dropdown-toggle  rounded-pill" type="button" data-toggle="dropdown">Add ClassWork
-								<span class="caret"></span></button>
-							<ul class="dropdown-menu list-unstyled 	text-left">
-								<li><a class="dropdown-item" href="#" data-toggle="modal" data-target="#CrClassWork">Assignment</a></li>
-								<li><a class="dropdown-item" href="#">Quiz</a></li>
-							</ul>
 
-
-
-
-
-						</div>
-						<!--Dialog Assignment-->
 
 						<ul class="list-group list-unstyled">
 
@@ -233,7 +314,7 @@ require '../Handle/ClassInfoProcess.php';
 
 
 													<!-- 3 chấm teacher -->
-													<div class="dropdown-tdoc dropdown dropdown-menu-right " style="z-index: 1; position: absolute; top: 150px; right: 30px;">
+													<div class="dropdown-tdoc dropdown dropdown-menu-right float-right">
 														<a class="dropdown-toggle bg-transparent  d-flex flex-wrap" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 															<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 																<path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
@@ -316,15 +397,8 @@ require '../Handle/ClassInfoProcess.php';
 			<!--body left-->
 
 		</div>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<link rel="stylesheet" href="style/style.css">
-		<script type="text/javascript" src="main.js"></script>
+
 </body>
+<script type="text/javascript" src="javascript/main.js"></script>
 
 </html>
-<?php
-include '../DialogMessage.php';
-if (isset($_GET["msg"])) {
-	echo "<script>$('#Message').modal({show: true})</script>";
-}
-?>

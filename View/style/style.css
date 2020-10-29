@@ -1,4 +1,11 @@
-/*header*/
+/*header*//*body{
+  background: url('https://i.pinimg.com/originals/3b/8a/d2/3b8ad2c7b1be2caf24321c852103598a.jpg') no-repeat center center fixed !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}*/
+
 div.search-Bar {
   margin-top: -6px;
   display: inline-block;
@@ -410,6 +417,10 @@ table {
   border-bottom: 1px solid #5086de;
 }
 
+aside a{
+  cursor: pointer;
+}
+
 .card-post {
   position: relative;
   display: -ms-flexbox;
@@ -449,4 +460,9 @@ table {
   border: 1px solid #00000020;
   border-radius: 0.5rem;
 
+}
+.nav-tabs a:active,
+a:hover,
+a:focus {
+  background-color: #eee;
 }

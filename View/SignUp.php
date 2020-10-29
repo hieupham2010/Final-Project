@@ -7,26 +7,22 @@ include '../DialogMessage.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="javascript/main.js"></script>
+    
+
     <title>Sign Up</title>
 </head>
 
 <body>
-    <div class="Sign-up-card rounded-lg">
+    <div class="Sign-up-card rounded-lg border-info h-auto ">
         <!--Card content-->
-        <div class="card-body px-lg-5 pt-0 mt-3 mb-5">
+        <div class="card-body ">
             <!--logo-->
-            <div class="mb-2 d-flex justify-content-center">
+            <div class=" d-flex justify-content-center">
                 <img src="images/LogoTDT/LogoTDT.png" alt="Logo" width="120" height="120">
             </div>
 
             <!-- Form -->
-            <form class="text-center" action="../Handle/SignUpProcess" method="POST">
+            <form class="text-center pb-3  mb-" action="../Handle/SignUpProcess" method="POST">
 
                 <div class="md-form">
                     <input type="text" name="txtFullName" id="txtFullName" placeholder="Full Name" required class="form-control mt-3">
@@ -75,10 +71,15 @@ include '../DialogMessage.php';
     </div>
 
 </body>
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    
+    <script src="javascript/main.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
 </html>
 <?php
 if (isset($_GET["msg"])) {
     echo "<script>$('#Message').modal({show: true})</script>";
 }
-?>
+?>  
