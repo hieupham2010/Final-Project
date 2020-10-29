@@ -454,3 +454,7 @@ table {
     border: 1px solid #00000020;
     border-radius: 0.5rem;
 }
+
+.ContainHideComment span {
+    cursor: pointer;
+}

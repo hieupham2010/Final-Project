@@ -13,26 +13,15 @@ function randomImgDisplay() {
     }
 }
 
-function displayDate() {
-    var dt = new Date();
-    document.getElementById("datetime").innerHTML = dt.toLocaleString();
-    document.getElementById("due-datetime").innerHTML = dt.toLocaleString();
-    var x = document.getElementById("share-idea");
 
-}
-
-
-$(document).ready(function() {
-    activaTab('home');
-});
 
 function activaTab() {
     $('.nav-tabs a[href="#' + tab + '"]').tab('show');
 };
 
 $("#share-idea").click(function() {
-    $("#share-idea").hide("slow", function() {});
-    $("#collapseShow").show("slow", function() {
+    $("#share-idea").hide(function() {});
+    $("#collapseShow").show(function() {
         // Animation complete.
     });
 
@@ -43,10 +32,9 @@ $("#share-idea").click(function() {
 
 
 $("#cancel").click(function() {
-    $("#collapseShow").hide("slow", function() {});
-    $("#share-idea").show("slow", function() {
-        $("#share-idea").show("slow", function() {
-
+    $("#collapseShow").hide(function() {});
+    $("#share-idea").show(function() {
+        $("#share-idea").show(function() {
 
         });
 
