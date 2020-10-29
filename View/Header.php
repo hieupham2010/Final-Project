@@ -132,7 +132,7 @@
                   <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img src="<?php echo $AvatarSrc ?>" width="40" height="40" class="rounded-circle">
                   </a>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                  <div class="dropdown-menu dropdown-menu-right flex-wrap" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="MainPage">Dashboard</a>
                     <a class="dropdown-item" href="Profile?request=profile">Profile</a>
                     <a class="dropdown-item" href="../Handle/LogoutProcess">Log Out</a>
