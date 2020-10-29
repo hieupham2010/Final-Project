@@ -19,36 +19,7 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
-<style>
-    .Bio-card {
-        width: 70%;
-        justify-content: center;
-    }
 
-
-    .mainsecction {
-        position: relative;
-
-    }
-
-
-
-    @media only screen and (max-width: 1100px),
-    (min-device-width: 768px) and (max-device-width: 750px) {
-
-        /* Force table to not be like tables anymore */
-        table,
-        thead,
-        tbody,
-        th,
-        td,
-        tr,
-        input[type="file"] {
-            display: block;
-            overflow: hidden;
-        }
-    }
-</style>
 
 <body>
     <?php include 'Header.php' ?>
@@ -58,10 +29,10 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
                 <form action="../Handle/UpdateProfileProcess" method="POST" enctype="multipart/form-data">
                     <div class="col-md-3 col-sm-3 col-xs-12 user-profile-part pull-left">
                         <div class="row ">
-                            <div class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center d-flex justify-content-center">
+                            <div class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center">
                                 <div>
                                     <img src="<?php echo $AvatarSrc ?>" class="rounded-circle">
-                                    <input type="file" id="imageUpload" name="imageUpload">
+                                    <input type="file" id="imageUpload" name="imageUpload" class="rounded-pill btn-outline">
                                 </div>
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center">
@@ -81,7 +52,7 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
                             <div class="col-md-11">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="table-responsive">
+                                        <div class="table-responsive mt-5">
                                             <table class="table table-borderless border">
                                                 <tr>
                                                     <td><span>Full Name:</span></td>
