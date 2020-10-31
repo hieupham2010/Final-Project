@@ -4,21 +4,29 @@
         require 'EncryptClassCode.php';
         $encryptCode = urlencode($_POST["encryptCode"]);
         $ClassID = decryptClassCode($_POST["encryptCode"]);
-        if(isset($_POST["txtComment"]) && !empty($_POST["txtComment"])) {
+        if(isset($_POST["txtPost"]) && !empty($_POST["txtPost"])) {
             require_once 'DataAccess.php';
-            $Message = $_POST["txtComment"];
+            $Message = $_POST["txtPost"];
             $UserName = $_SESSION["username"];
             $Hash = md5(rand(0,1000));
-            if($_FILES["fileUpload"]["name"] != "") {
-                $destination = "../View/DocumentUpload/";
-                $fileUpload = $UserName . $Hash . $_FILES["fileUpload"]["name"];
-                $destinationFile = $destination . basename($fileUpload);
-                move_uploaded_file($_FILES["fileUpload"]["tmp_name"], $destinationFile);
-                $FileSrc = "DocumentUpload/" . $fileUpload;
-                $query = "INSERT post(Message , FileSrc , UserName, ClassID) VALUES(?,?,?,?)";
+            if(file_exists($_FILES["fileUpload"]["tmp_name"][0])) {
+                $CountFile = count($_FILES["fileUpload"]["name"]);
+                $query = "INSERT post(Message , UserName, ClassID) VALUES(?,?,?)";
                 $stmt = $connection->prepare($query);
-                $stmt->bind_param("ssss", $Message ,$FileSrc, $UserName, $ClassID);
+                $stmt->bind_param("sss", $Message, $UserName, $ClassID);
                 $stmt->execute();
+                $lastInsert = $connection->insert_id;
+                $destination = "../View/DocumentUpload/";
+                for($i = 0; $i < $CountFile ; $i++) {
+                    $fileUpload = $UserName . $Hash . $_FILES["fileUpload"]["name"][$i];
+                    $destinationFile = $destination . basename($fileUpload);
+                    move_uploaded_file($_FILES["fileUpload"]["tmp_name"][$i], $destinationFile);
+                    $FileSrc = "DocumentUpload/" . $fileUpload;
+                    $query = "INSERT documents(PostID, FileSrc) VALUES(?,?)";
+                    $stmt = $connection->prepare($query);
+                    $stmt->bind_param("is", $lastInsert, $FileSrc);
+                    $stmt->execute();
+                }
                 header("Location: ../View/Class?id=$encryptCode&state=posted");
             }else{
                 $query = "INSERT post(Message, UserName, ClassID) VALUES(?,?,?)";

@@ -29,10 +29,18 @@
                 $stmt = $connection->prepare($query);
                 $stmt->bind_param("ss" , $AvatarSrc , $UserName);
                 $stmt->execute();
-                $query = "UPDATE classrooms SET AvatarSrc = ? WHERE ClassID IN (SELECT ClassID FROM classmembers WHERE UserName = ?)";
+                $query = "SELECT * FROM accounts WHERE UserName = ?";
                 $stmt = $connection->prepare($query);
-                $stmt->bind_param("ss" , $AvatarSrc , $UserName);
+                $stmt->bind_param("s" ,$UserName);
                 $stmt->execute();
+                $result = $stmt->get_result();
+                $row = $result->fetch_assoc();
+                if($row["AccountType"] == 1 || $row["AccountType"] == 0) {
+                    $query = "UPDATE classrooms SET AvatarSrc = ? WHERE ClassID IN (SELECT ClassID FROM classmembers WHERE UserName = ?)";
+                    $stmt = $connection->prepare($query);
+                    $stmt->bind_param("ss" , $AvatarSrc , $UserName);
+                    $stmt->execute();
+                }
                 header("Location: ../View/Profile?request=profile&msg=UpdateSuccess");
             }
         }else{
@@ -44,4 +52,3 @@
             header("Location: ../View/Profile?request=profile&msg=UpdateSuccess");
         }
     }
-?>

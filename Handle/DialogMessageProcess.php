@@ -38,6 +38,12 @@ if (isset($_GET["msg"]) && !empty($_GET["msg"])) {
     }else if($_GET["msg"] === "ErrorEmptyComment") {
         $title = "Error";
         $content = "Comment can't be empty";
+    }else if($_GET["msg"] === "DeletePostSuccess") {
+        $title = "Delete Post";
+        $content = "Remove post success";
+    }else if($_GET["msg"] === "DeleteCommentSuccess") {
+        $title = "Delete Comment";
+        $content = "Remove comment success";
     }
 }
 ?>

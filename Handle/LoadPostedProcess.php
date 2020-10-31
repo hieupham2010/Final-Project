@@ -1,6 +1,7 @@
 <?php
 require_once 'DataAccess.php';
 require_once 'EncryptClassCode.php';
+require 'AccountRole.php';
 $query = "SELECT * FROM post WHERE ClassID = ? ORDER BY PostID DESC";
 $stmt = $connection->prepare($query);
 $stmt->bind_param("s", $ClassID);
@@ -8,32 +9,64 @@ $stmt->execute();
 $result = $stmt->get_result();
 $id = 0;
 while ($row = $result->fetch_assoc()) {
+    require '../View/DialogUpdatePost.php';
+    require '../View/DialogDeletePost.php';
     $query = "SELECT FullName FROM users WHERE UserID = (SELECT UserID FROM accounts WHERE UserName = ?)";
     $stmt = $connection->prepare($query);
     $stmt->bind_param("s", $row["UserName"]);
     $stmt->execute();
-    $result1 = $stmt->get_result();
-    $row1 = $result1->fetch_assoc();
+    $resultFullName = $stmt->get_result();
+    $rowFullName = $resultFullName->fetch_assoc();
 
     $query = "SELECT AvatarSrc FROM accounts WHERE UserName = ?";
     $stmt = $connection->prepare($query);
     $stmt->bind_param("s", $row["UserName"]);
     $stmt->execute();
-    $result2 = $stmt->get_result();
-    $row2 = $result2->fetch_assoc();
-
+    $resultAvatarSrc = $stmt->get_result();
+    $rowAvatarSrc = $resultAvatarSrc->fetch_assoc();
 ?>
     <div>
-        <div class="shadow  rounded f-flex justify-content-left p-5 border">
-
+        <div class="shadow rounded f-flex justify-content-left p-5 border">
             <div class="">
-                <img src="<?php echo $row2["AvatarSrc"] ?>" class="avatar rounded-circle" alt="" width="50" height="50" aria-hidden="true">
-                <span class="meta"><?php echo $row1["FullName"] ?></span>
-                <span class="meta small font-italic">(Posted: <?php echo $row["Time"] ?>)</span>
+                <div class="mb-2">
+                    <?php if ($AccountType == 0 || $AccountType == 1 || $UserName == $row["UserName"]) { ?>
+                        <a class="dropdown-toggle mb-5 float-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-info active-none" aria-labelledby="navbarDropdownMenuLink-4">
+                            <a class="dropdown-item" data-toggle="modal" data-target="#UpdatePost<?php echo $id ?>">Update</a>
+                            <a class="dropdown-item" data-toggle="modal" data-target="#DeletePost<?php echo $id ?>">Delete</a>
+                        </div>
+                    <?php } ?>
+                    <img src="<?php echo $rowAvatarSrc["AvatarSrc"] ?>" class="avatar rounded-circle" alt="" width="50" height="50" aria-hidden="true">
+                    <span class="meta"><?php echo $rowFullName["FullName"] ?></span>
+                    <span class="meta small font-italic">(Posted: <?php echo $row["Time"] ?>)</span>
+                </div>
             </div>
             <hr>
             <div class="post-comments">
-                <p><?php echo $row["Message"] ?></p>
+                <p class="text-break"><?php echo $row["Message"] ?></p>
+                <?php
+                $query = "SELECT * FROM documents WHERE PostID = ?";
+                $stmt = $connection->prepare($query);
+                $stmt->bind_param("s", $row["PostID"]);
+                $stmt->execute();
+                $resultDocument = $stmt->get_result(); ?>
+                <?php if ($resultDocument->num_rows > 0) { ?>
+
+                    <?php
+                    while ($rowDocument = $resultDocument->fetch_assoc()) {
+                    ?>
+
+                        <div class="d-inline-block">
+                            <iframe scrolling="no" src="<?php echo $rowDocument["FileSrc"] ?>" class="mr-4 ml-4 mt-2" width="160.5px" height="130px" class="border-0"></iframe><br>
+                            <a class="ml-5 p-3" href="../Handle/DownloadFileProcess?file=<?php echo urlencode($rowDocument["FileSrc"]) ?>">Download</a>
+                        </div>
+                    <?php } ?>
+
+                <?php } ?>
             </div>
             <hr>
             <?php
@@ -41,37 +74,54 @@ while ($row = $result->fetch_assoc()) {
             $stmt = $connection->prepare($query);
             $stmt->bind_param("s", $row["PostID"]);
             $stmt->execute();
-            $result3 = $stmt->get_result(); ?>
-            <?php if ($result3->num_rows > 0) { ?>
+            $resultComment = $stmt->get_result(); ?>
+            <?php if ($resultComment->num_rows > 0) { ?>
                 <div class="ContainHideComment">
-                    <span class="CommentHide<?php echo $id ?> ml-4"><?php echo $result3->num_rows ?> class comments</span>
+                    <span class="CommentHide<?php echo $id ?> ml-4"><?php echo $resultComment->num_rows ?> class comments</span>
                 </div>
-
             <?php } ?>
-            <div class="Comment<?php echo $id ?>">
-                <?php while ($row3 = $result3->fetch_assoc()) {
+            <div class="Comment<?php echo $id ?> ml-3">
+
+                <?php $idComment = 0;
+                while ($rowComment = $resultComment->fetch_assoc()) {
+
+                    require '../View/DialogDeleteComment.php';
+                    require '../View/DialogUpdateComment.php';
                     $query = "SELECT AvatarSrc FROM accounts WHERE UserName = ?";
                     $stmt = $connection->prepare($query);
-                    $stmt->bind_param("s", $row3["UserName"]);
+                    $stmt->bind_param("s", $rowComment["UserName"]);
                     $stmt->execute();
-                    $result4 = $stmt->get_result();
-                    $row4 = $result4->fetch_assoc();
+                    $resultAvatarSrcComment = $stmt->get_result();
+                    $rowAvatarSrcComment = $resultAvatarSrcComment->fetch_assoc();
                     $query = "SELECT FullName FROM users WHERE UserID = (SELECT UserID FROM accounts WHERE UserName = ?)";
                     $stmt = $connection->prepare($query);
-                    $stmt->bind_param("s", $row3["UserName"]);
+                    $stmt->bind_param("s", $rowComment["UserName"]);
                     $stmt->execute();
-                    $result5 = $stmt->get_result();
-                    $row5 = $result5->fetch_assoc();
+                    $resultFullNameComment = $stmt->get_result();
+                    $rowFullNameComment = $resultFullNameComment->fetch_assoc();
                 ?>
-                    <div class="post-comments ml-3 mb-2 mt-3">
-                        <img src="<?php echo $row4["AvatarSrc"] ?>" class="avatar rounded-circle" width="30" height="30" aria-hidden="true">
-                        <span><?php echo $row5["FullName"] ?></span>
-                        <span class="meta small font-italic">(Commented: <?php echo $row3["Time"] ?>)</span>
+                    <div class="post-comments mb-2 mt-3">
+
+                        <img src="<?php echo $rowAvatarSrcComment["AvatarSrc"] ?>" class="avatar rounded-circle" width="30" height="30" aria-hidden="true">
+                        <span><?php echo $rowFullNameComment["FullName"] ?></span>
+                        <span class="meta small font-italic">(Commented: <?php echo $rowComment["Time"] ?>)</span>
+                        <?php if ($AccountType == 0 || $AccountType == 1 || $UserName == $rowComment["UserName"]) { ?>
+                            <a class="dropdown-toggle mb-5 float-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <svg width="15px" height="15px" viewBox="0 0 16 16" class="bi bi-three-dots-vertical float-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                                </svg>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-info active-none" aria-labelledby="navbarDropdownMenuLink-4">
+                                <a class="dropdown-item" data-toggle="modal" data-target="#UpdateComment<?php echo $idComment ?>">Edit</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#DeleteComment<?php echo $idComment ?>">Remove</a>
+                            </div>
+                        <?php } ?>
                         <div class="post-comments ml-5">
-                            <p><?php echo $row3["Message"] ?></p>
+                            <p><?php echo $rowComment["Message"] ?></p>
                         </div>
                     </div>
-                <?php } ?>
+                <?php $idComment++;
+                } ?>
             </div>
             <div class="rounded f-flex justify-content-left mt-3">
                 <form class="form-control-lg" action="../Handle/CreateCommentProcess" method="POST">
@@ -81,7 +131,7 @@ while ($row = $result->fetch_assoc()) {
                         </div>
                         <input type="hidden" name="ClassID" value="<?php echo encryptClassCode($ClassID) ?>">
                         <input type="hidden" name="PostID" value="<?php echo $row["PostID"] ?>">
-                        <input type="text" class="form-control mt-0 rounded-pill mr-2" name="txtComment" rows="3" placeholder=". . ." aria-describedby="basic-addon1">
+                        <input type="text" class="form-control mt-0 rounded-pill mr-2" name="txtComment" rows="3" aria-describedby="basic-addon1">
                         <button class="btn btn-outline-secondary form-control-md mt-0 rounded-pill" type="submit">Comment</button></input>
                     </div>
                 </form>
