@@ -142,7 +142,7 @@ require '../Handle/ClassInfoProcess.php';
 						<!--Dialog Assignment-->
 						<?php if ($AccountType == 0 || $AccountType == 1) { ?>
 							<div class="mr-5 text-right">
-								<button class="btn btn-secondary-outline dropdown-toggle btn-primary rounded-pill" type="button" data-target="#CreateClasswork" data-toggle="modal">Create Classwork<span class="caret"></span></button>
+								<button class="btn btn-secondary-outline btn-primary rounded-pill" type="button" data-target="#CreateClasswork" data-toggle="modal">Create Classwork<span class="caret"></span></button>
 							</div>
 						<?php } ?>
 						<!--Dialog Assignment-->

@@ -34,7 +34,7 @@
             <p>Please click button bellow to complete registration</p>
             <button style="background-color:#38c4d3;border:none;border-radius:5px;padding:10px 20px;">
             <a style="color:white;text-decoration: none;"
-            href="http://localhost/Final-Project/Handle/VerifiedEmailForSignUp?email='.$email.'&hash='.$hash.'">Verification</a></button>
+            href="https://tdtuclassroom.herokuapp.com/Handle/VerifiedEmailForSignUp?email='.$email.'&hash='.$hash.'">Verification</a></button>
             <p style="color:red;">*This email is valid only within 10 minutes</p>
             <p>If it\'s not you, please ignore this email</p>
             </div><footer style="background-color:#1fa9b8;color:white;padding:30px;"><p>&copy; Copyright by Hieu & Duy</p></footer></div>';
@@ -72,7 +72,7 @@
             <p>You have requested reset your password for a classroom account. Please click button bellow to reset your password</p>
             <button style="background-color:#38c4d3;border:none;border-radius:5px;padding:10px 20px;">
             <a style="color:white;text-decoration: none;"
-            href="http://localhost/Final-Project/Handle/VerifiedEmailForPassword?email='.$email.'&hash='.$hash.'">Verification</a></button>
+            href="https://tdtuclassroom.herokuapp.com/Handle/VerifiedEmailForPassword?email='.$email.'&hash='.$hash.'">Verification</a></button>
             <p style="color:red;">*This email is valid only within 10 minutes</p>
             <p>If it\'s not you, please ignore this email</p>
             </div><footer style="background-color:#1fa9b8;color:white;padding:30px;"><p>&copy; Copyright by Hieu & Duy</p></footer></div>';
@@ -110,7 +110,7 @@
                 <p>Please click button below to accept</p>
                 <button style="background-color:#38c4d3;border:none;border-radius:5px;padding:10px 20px;">
                 <a style="color:white;text-decoration: none;"
-                href="http://localhost/Final-Project/Handle/VerifiedEmailForJoin?Email='.$email.'&Hash='.$hash.'">Accept</a>
+                href="https://tdtuclassroom.herokuapp.com/Handle/VerifiedEmailForJoin?Email='.$email.'&Hash='.$hash.'">Accept</a>
                 </button>
             </div><footer style="background-color:#1fa9b8;color:white;padding:30px;"><p>&copy; Copyright by Hieu & Duy</p></footer></div>';
             $mail->send();
@@ -148,7 +148,7 @@
                 <p>Please click button below to accept</p>
                 <button style="background-color:#38c4d3;border:none;border-radius:5px;padding:10px 20px;">
                 <a style="color:white;text-decoration: none;"
-                href="http://localhost/Final-Project/Handle/VerifiedEmailForInvite?Email='.$email.'&Hash='.$hash.'">Accept</a>
+                href="https://tdtuclassroom.herokuapp.com/Handle/VerifiedEmailForInvite?Email='.$email.'&Hash='.$hash.'">Accept</a>
                 </button>
             </div><footer style="background-color:#1fa9b8;color:white;padding:30px;"><p>&copy; Copyright by Hieu & Duy</p></footer></div>';
             $mail->send();
@@ -185,7 +185,7 @@
             <h3>Hello '.$StudentName.'</h3>
             <p>'.$LectureName.' posted '.$Title.' in '.$classInfo.'</p>
             <button style="background-color:#38c4d3;border:none;border-radius:5px;padding:10px 20px;">
-            <a style="color:white;text-decoration: none;" href="http://localhost/Final-Project/index">Open</a></button>
+            <a style="color:white;text-decoration: none;" href="https://tdtuclassroom.herokuapp.com/index">Open</a></button>
             </div><footer style="background-color:#1fa9b8;color:white;padding:30px;"><p>&copy; Copyright by Hieu & Duy</p></footer></div>';
             $mail->send();
         }catch(Exception $e) {
