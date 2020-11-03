@@ -1,1 +1,0 @@
-<iframe scrolling="no" src="https://ruwix.com/widget/stopwatch-gen/" frameborder="" width="120px" height="55x"></iframe>

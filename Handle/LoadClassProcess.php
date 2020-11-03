@@ -1,6 +1,12 @@
 <?php
 require_once 'DataAccess.php';
 require 'EncryptClassCode.php';
+$query = "SELECT * FROM classmembers WHERE UserName = ?";
+$stmt = $connection->prepare($query);
+$stmt->bind_param("s", $UserName);
+$stmt->execute();
+$resultFounder = $stmt->get_result();
+$rowFounder = $resultFounder->fetch_assoc();
 if(isset($_GET["key"]) && !empty($_GET["key"])) {
     $key = $_GET["key"];
     $query = "SELECT * FROM classrooms WHERE ClassID IN (SELECT ClassID FROM classmembers WHERE UserName = ?) 
@@ -35,11 +41,7 @@ while ($row = $result->fetch_assoc()) {
                                     </svg>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-info active-none" aria-labelledby="navbarDropdownMenuLink-4">
-                                    <?php if ($AccountType == 0) { ?>
-                                        <a class="dropdown-item" data-toggle="modal" data-target="#UpdateClass<?php echo $id ?>">Update Class</a>
-                                        <a class="dropdown-item" data-toggle="modal" data-target="#DeleteClass<?php echo $id ?>">Delete Class</a>
-                                        <a class="dropdown-item" href="Class?id=<?php echo urlencode(encryptClassCode($row["ClassID"]));?>">Go To Class</a>
-                                    <?php } else if ($AccountType == 1) { ?>
+                                    <?php if ($AccountType == 0 || $AccountType == 1 && $rowFounder["Founder"] == 1) { ?>
                                         <a class="dropdown-item" data-toggle="modal" data-target="#UpdateClass<?php echo $id ?>">Update Class</a>
                                         <a class="dropdown-item" data-toggle="modal" data-target="#DeleteClass<?php echo $id ?>">Delete Class</a>
                                         <a class="dropdown-item" href="Class?id=<?php echo urlencode(encryptClassCode($row["ClassID"]));?>">Go To Class</a>

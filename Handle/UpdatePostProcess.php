@@ -1,9 +1,7 @@
 <?php
 session_start();
 if (isset($_POST["encryptCode"]) && !empty($_POST["encryptCode"])) {
-    require 'EncryptClassCode.php';
     $encryptCode = urlencode($_POST["encryptCode"]);
-    $ClassID = decryptClassCode($_POST["encryptCode"]);
     if (isset($_POST["txtPost"]) && !empty($_POST["txtPost"]) 
         && isset($_POST["PostID"]) && !empty($_POST["PostID"])) {
         require_once 'DataAccess.php';
@@ -26,24 +24,24 @@ if (isset($_POST["encryptCode"]) && !empty($_POST["encryptCode"])) {
                 $fileUpload = $UserName . $Hash . $_FILES["fileUpload"]["name"][$i];
                 $destinationFile = $destination . basename($fileUpload);
                 move_uploaded_file($_FILES["fileUpload"]["tmp_name"][$i], $destinationFile);
+                $temp = pathinfo($_FILES["fileUpload"]["name"][$i] , PATHINFO_EXTENSION);
+                $FileName = basename($_FILES["fileUpload"]["name"][$i] , "." . $temp);
                 $FileSrc = "DocumentUpload/" . $fileUpload;
-                $query = "INSERT documents(PostID, FileSrc) VALUES(?,?)";
+                $query = "INSERT documents(PostID, FileSrc, FileName) VALUES(?,?,?)";
                 $stmt = $connection->prepare($query);
-                $stmt->bind_param("is", $PostID, $FileSrc);
+                $stmt->bind_param("iss", $PostID, $FileSrc,$FileName);
                 $stmt->execute();
             }
-            header("Location: ../View/Class?id=$encryptCode&state=updated");
+            header("Location: ../View/Class?id=$encryptCode&msg=PostUpdated");
         } else {
             $query = "UPDATE post SET Message = ? WHERE PostID = ?";
             $stmt = $connection->prepare($query);
             $stmt->bind_param("si", $Message, $PostID);
             $stmt->execute();
-            header("Location: ../View/Class?id=$encryptCode&state=updated");
+            header("Location: ../View/Class?id=$encryptCode&msg=PostUpdated");
         }
     } else {
         header("Location: ../View/Class?id=$encryptCode&msg=ErrorEmptyPost");
     }
 }
-?>
-
 ?>

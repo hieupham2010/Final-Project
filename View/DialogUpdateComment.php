@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="ModalLongTitle">Update Comment</h5>
+                <h5 class="modal-title" id="ModalLongTitle">Edit Comment</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -17,7 +17,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-primary pl-3 pr-3" value="Update">
+                        <input type="submit" class="btn btn-primary pl-3 pr-3" value="Edit">
                     </div>
                 </form>
             </div>

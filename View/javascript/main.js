@@ -24,8 +24,6 @@ $("#share-idea").click(function() {
     $("#collapseShow").show(function() {
         // Animation complete.
     });
-
-
 });
 
 
@@ -37,12 +35,17 @@ $("#cancel").click(function() {
         $("#share-idea").show(function() {
 
         });
-
     });
 });
 
+$(".custom-file-input").on("change", function() {
+    var fileName = $(this).val().split("\\").pop();
+    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+
 $(document).ready(function() {
-    $(".nav-tabs a").click(function() {
-        $(this).tab('show');
+    $(".Comment").hide();
+    $(".CommentHide").click(function() {
+        $(".Comment").toggle(300);
     });
 });

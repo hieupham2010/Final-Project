@@ -3,7 +3,7 @@
         require_once 'DataAccess.php';
         require 'EncryptClassCode.php';
         $encryptCode = $_GET["id"];
-        $ClassID = decryptClassCode($encryptCode) ;
+        $ClassID = decryptClassCode($encryptCode);
         $query = "SELECT * FROM classrooms WHERE ClassID = ?";
         $stmt = $connection->prepare($query);
         $stmt->bind_param("s" , $ClassID);

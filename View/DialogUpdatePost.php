@@ -16,7 +16,10 @@
                     <div class="form-group">
                         <input type="hidden" class="form-control" name="PostID" value="<?php echo $row["PostID"]?>">
                         <input type="hidden" class="form-control" name="encryptCode" value="<?php echo encryptClassCode($ClassID) ?>" required>
-                        <input type="file" name="fileUpload[]" id="inputGroupFile02" multiple />
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFile" name="fileUpload[]" id="inputGroupFile02" multiple />
+                            <label class="custom-file-label text-truncate" for="customFile">Choose file</label>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

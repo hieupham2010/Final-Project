@@ -17,6 +17,7 @@
         $stmt = $connection->prepare($query);
         $stmt->bind_param("i", $PostID);
         $stmt->execute();
+        $connection->close();
         header("Location: ../View/Class?id=$encryptCode&msg=DeletePostSuccess");
     }
 ?>

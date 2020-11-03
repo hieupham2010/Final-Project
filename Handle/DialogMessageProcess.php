@@ -40,10 +40,52 @@ if (isset($_GET["msg"]) && !empty($_GET["msg"])) {
         $content = "Comment can't be empty";
     }else if($_GET["msg"] === "DeletePostSuccess") {
         $title = "Delete Post";
-        $content = "Remove post success";
+        $content = "post has been deleted";
     }else if($_GET["msg"] === "DeleteCommentSuccess") {
         $title = "Delete Comment";
-        $content = "Remove comment success";
+        $content = "Comment has been deleted";
+    }else if($_GET["msg"] === "DeleteLecturerSuccess") {
+        $title = "Delete Lecturer";
+        $content = "Lecturer has been deleted";
+    }else if($_GET["msg"] === "DeleteStudentSuccess") {
+        $title = "Delete Student";
+        $content = "Student has been deleted";
+    }else if($_GET["msg"] ===  "EmailNotExists") {
+        $title = "Invite People";
+        $content = "Email doesn't exists please try again";
+    }else if($_GET["msg"] === "Invited") {
+        $title = "Invite Success";
+        $content = "Your class invitation has been sent";
+    }else if($_GET["msg"] === "JoinClassSuccess") {
+        $title = "Join Class";
+        $content = "Join class success";
+    }else if($_GET["msg"] === "RequestJoinSuccess") {
+        $title = "Join Class";
+        $content = "Your request to join this class has been sent";
+    }else if($_GET["msg"] === "posted") {
+        $title = "Post success";
+        $content = "You have posted in your class";
+    }else if($_GET["msg"] === "DeleteMaterialSuccess") {
+        $title = "Delete Classwork";
+        $content = "Classwork has been deleted";
+    }else if($_GET["msg"] === "PostUpdated") {
+        $title = "Update Post";
+        $content = "Update post success";
+    }else if($_GET["msg"] === "MaterialUpdated") {
+        $title = "Update Classwork";
+        $content = "Update classwork success";
+    }else if($_GET["msg"] === "UpdateCommentSuccess") {
+        $title = "Edit Comment";
+        $content = "Update comment success";
+    }else if($_GET["msg"] === "DeleteCommentSuccess") {
+        $title = "Delete Comment";
+        $content = "Delete comment success";
+    }else if($_GET["msg"] === "AssignmentSubmitted") {
+        $title = "Submit Classwork";
+        $content = "Submit classwork success";
+    }else if($_GET["msg"] === "ErrorSubmit") {
+        $title = "Submit Classwork";
+        $content = "Please attach your file";
     }
 }
 ?>

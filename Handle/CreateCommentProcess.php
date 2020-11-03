@@ -12,6 +12,7 @@
             $stmt = $connection->prepare($query);
             $stmt->bind_param("sis" , $Comment , $PostID, $UserName);
             $stmt->execute();
+            $connection->close();
             header("Location: ../View/Class?id=$EncryptCode");
         }else{
             header("Location: ../View/Class?id=$EncryptCode&msg=ErrorEmptyComment");

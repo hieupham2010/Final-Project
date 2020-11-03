@@ -1,7 +1,6 @@
 <?php
 require_once 'DataAccess.php';
 require_once 'EncryptClassCode.php';
-require 'AccountRole.php';
 $query = "SELECT * FROM post WHERE ClassID = ? ORDER BY PostID DESC";
 $stmt = $connection->prepare($query);
 $stmt->bind_param("s", $ClassID);
@@ -35,7 +34,7 @@ while ($row = $result->fetch_assoc()) {
                                 <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
                             </svg>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-info active-none" aria-labelledby="navbarDropdownMenuLink-4">
+                        <div class="dropdown-menu dropdown-menu-right dropdown-info active-none text-left" aria-labelledby="navbarDropdownMenuLink-4">
                             <a class="dropdown-item" data-toggle="modal" data-target="#UpdatePost<?php echo $id ?>">Update</a>
                             <a class="dropdown-item" data-toggle="modal" data-target="#DeletePost<?php echo $id ?>">Delete</a>
                         </div>
@@ -61,8 +60,10 @@ while ($row = $result->fetch_assoc()) {
                     ?>
 
                         <div class="d-inline-block">
-                            <iframe scrolling="no" src="<?php echo $rowDocument["FileSrc"] ?>" class="mr-4 ml-4 mt-2" width="160.5px" height="130px" class="border-0"></iframe><br>
-                            <a class="ml-5 p-3" href="../Handle/DownloadFileProcess?file=<?php echo urlencode($rowDocument["FileSrc"]) ?>">Download</a>
+                            <!-- <iframe src="http://docs.google.com/gview?url=<?php //echo $rowDocument["FileSrc"] 
+                                                                                ?>&embedded=true" frameborder="0"></iframe> -->
+                            <embed scrolling="no" src="<?php echo $rowDocument["FileSrc"] ?>" class="mr-4 ml-4 mt-2" width="160.5px" height="130px"></embed><br>
+                            <a class="ml-5 p-3" href="http://localhost/Final-Project/View/<?php echo $rowDocument["FileSrc"] ?>" download="<?php echo $rowDocument["FileName"] ?>">Download</a>
                         </div>
                     <?php } ?>
 
@@ -77,8 +78,10 @@ while ($row = $result->fetch_assoc()) {
             $resultComment = $stmt->get_result(); ?>
             <?php if ($resultComment->num_rows > 0) { ?>
                 <div class="ContainHideComment">
-                    <span class="CommentHide<?php echo $id ?> ml-4"><?php echo $resultComment->num_rows ?> class comments</span>
+                    <span class="CommentHide<?php echo $id ?> ml-4"><?php echo $resultComment->num_rows ?> Class comments</span>
                 </div>
+            <?php } else { ?>
+                <span class="ml-4">Class comments</span>
             <?php } ?>
             <div class="Comment<?php echo $id ?> ml-3">
 
@@ -106,17 +109,17 @@ while ($row = $result->fetch_assoc()) {
                         <span><?php echo $rowFullNameComment["FullName"] ?></span>
                         <span class="meta small font-italic">(Commented: <?php echo $rowComment["Time"] ?>)</span>
                         <?php if ($AccountType == 0 || $AccountType == 1 || $UserName == $rowComment["UserName"]) { ?>
-                            <a class="dropdown-toggle mb-5 float-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="dropdown-toggle mt-2 float-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <svg width="15px" height="15px" viewBox="0 0 16 16" class="bi bi-three-dots-vertical float-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
                                 </svg>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-info active-none" aria-labelledby="navbarDropdownMenuLink-4">
+                            <div class="dropdown-menu dropdown-menu-right dropdown-info active-none text-left" aria-labelledby="navbarDropdownMenuLink-4">
                                 <a class="dropdown-item" data-toggle="modal" data-target="#UpdateComment<?php echo $idComment ?>">Edit</a>
                                 <a class="dropdown-item" data-toggle="modal" data-target="#DeleteComment<?php echo $idComment ?>">Remove</a>
                             </div>
                         <?php } ?>
-                        <div class="post-comments ml-5">
+                        <div class="post-comments ml-5 text-break">
                             <p><?php echo $rowComment["Message"] ?></p>
                         </div>
                     </div>
@@ -131,7 +134,7 @@ while ($row = $result->fetch_assoc()) {
                         </div>
                         <input type="hidden" name="ClassID" value="<?php echo encryptClassCode($ClassID) ?>">
                         <input type="hidden" name="PostID" value="<?php echo $row["PostID"] ?>">
-                        <input type="text" class="form-control mt-0 rounded-pill mr-2" name="txtComment" rows="3" aria-describedby="basic-addon1">
+                        <input type="text" class="form-control mt-0 rounded-pill mr-2" name="txtComment" placeholder="Comment" rows="3" aria-describedby="basic-addon1">
                         <button class="btn btn-outline-secondary form-control-md mt-0 rounded-pill" type="submit">Comment</button></input>
                     </div>
                 </form>

@@ -9,6 +9,7 @@
         $stmt = $connection->prepare($query);
         $stmt->bind_param("i", $CommentID);
         $stmt->execute();
+        $connection->close();
         header("Location: ../View/Class?id=$encryptCode&msg=DeleteCommentSuccess");
     }
 ?>

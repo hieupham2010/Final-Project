@@ -23,91 +23,80 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
 
 <body>
     <?php include 'Header.php' ?>
-    <div class="container  main-secction border mt-5">
-        <div class="row ml-auto tab-pane active" id="View-Profile">
-            <div class="row user-left-part">
-                <form action="../Handle/UpdateProfileProcess" method="POST" enctype="multipart/form-data">
-                    <div class="col-md-3 col-sm-3 col-xs-12 user-profile-part pull-left">
-                        <div class="row ">
-                            <div class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center">
-                                <div>
-                                    <img src="<?php echo $AvatarSrc ?>" class="rounded-circle">
-                                    <input type="file" id="imageUpload" name="imageUpload" class="rounded-pill btn-outline">
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-sm-12 col-xs-12 d-flex justify-content-center">
-                                <div class="Bio-card border rounded mt-5 ">
-                                    <div class="ml-3 mt-2">
-                                        <h1>Bio</h1>
-                                    </div>
-                                    <div class="ml-3 mt-2">
-                                        <p>Some thing you write</p>
-                                    </div>
-                                </div>
+    <div class="container main-secction border mt-5">
+        <div class="row tab-pane active pb-2" id="View-Profile">
+            <form action="../Handle/UpdateProfileProcess" method="POST" enctype="multipart/form-data">
+                <div class="col-md-3 col-sm-3 col-xs-3 user-profile-part pull-left">
+                    <div class="row">
+                        <div class="col-md-12 col-md-12-sm-12 col-xs-12 user-image text-center">
+                            <img src="<?php echo $AvatarSrc ?>" class="rounded-circle">
+                            <div class="custom-file mt-1 text-left">
+                                <input type="file" class="custom-file-input" id="customFile" name="imageUpload">
+                                <label class="custom-file-label text-truncate" for="customFile">Choose file</label>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-9 col-sm-9 col-xs-12 pull-right">
-                        <div class="row profile-right-section-row">
-                            <div class="col-md-11">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="table-responsive mt-5">
-                                            <table class="table table-borderless border">
-                                                <tr>
-                                                    <td><span>Full Name:</span></td>
-                                                    <td>
-                                                        <div class="md-form">
-                                                            <input type="text" name="txtFullName" required class="form-control" placeholder="Full Name" value="<?php echo $FullName ?>">
-                                                        </div>
-                                                    </td>
-                                                    <td><span>Birth Day:</span></td>
-                                                    <td>
-                                                        <div class="md-form">
-                                                            <input type="date" name="txtDateOfBirth" id="txtDateOfBirth" required class="form-control" value="<?php echo $DateOfBirth ?>">
-                                                        </div>
-                                                    </td>
+                </div>
+                <script src="javascript/main.js"></script>
+                <div class="col-md-9 mt-2 pull-right">
+                    <div class="row profile-right-section-row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive mt-5">
+                                        <table class="table table-borderless border">
+                                            <tr>
+                                                <td><span>Full Name:</span></td>
+                                                <td>
+                                                    <div class="md-form">
+                                                        <input type="text" name="txtFullName" required class="form-control" placeholder="Full Name" value="<?php echo $FullName ?>">
+                                                    </div>
+                                                </td>
+                                                <td><span>Birth Day:</span></td>
+                                                <td>
+                                                    <div class="md-form">
+                                                        <input type="date" name="txtDateOfBirth" id="txtDateOfBirth" required class="form-control" value="<?php echo $DateOfBirth ?>">
+                                                    </div>
+                                                </td>
 
-                                                </tr>
+                                            </tr>
 
-                                                <tr>
+                                            <tr>
 
-                                                    <td><span>Email:</span></td>
-                                                    <td>
-                                                        <div class="md-form">
-                                                            <input type="email" name="txtEmail" id="txtEmail" placeholder="Email" required class="form-control" value="<?php echo $Email ?>">
-                                                        </div>
-                                                    </td>
-                                                    <td><span>Phone Number:</span></td>
-                                                    <td>
-                                                        <div class="md-form">
-                                                            <input type="tel" name="txtPhoneNumber" id="txtPhoneNumber" placeholder="Phone Number" pattern="[0-9]{10}" required class="form-control" value="<?php echo $PhoneNumber ?>">
-                                                        </div>
-                                                    </td>
+                                                <td><span>Email:</span></td>
+                                                <td>
+                                                    <div class="md-form">
+                                                        <input type="email" name="txtEmail" id="txtEmail" placeholder="Email" required class="form-control" value="<?php echo $Email ?>">
+                                                    </div>
+                                                </td>
+                                                <td><span>Phone Number:</span></td>
+                                                <td>
+                                                    <div class="md-form">
+                                                        <input type="tel" name="txtPhoneNumber" id="txtPhoneNumber" placeholder="Phone Number" pattern="[0-9]{10}" required class="form-control" value="<?php echo $PhoneNumber ?>">
+                                                    </div>
+                                                </td>
 
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td>
-                                                        <input type="submit" value="Update" class="btn btn-outline-info btn-rounded btn-block waves-effect z-depth-0">
-                                                    </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>
+                                                    <input type="submit" value="Update" class="btn btn-outline-info btn-rounded btn-block waves-effect z-depth-0">
+                                                </td>
 
-                                                </tr>
-                                            </table>
-
-                                        </div>
+                                            </tr>
+                                        </table>
 
                                     </div>
 
                                 </div>
+
                             </div>
                         </div>
                     </div>
-                </form>
-
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 </body>

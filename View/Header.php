@@ -9,53 +9,48 @@
   <script href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </head>
-<style>
 
-</style>
 
 <body>
 
-  <div class="container-fluid header mt-3 ">
+  <div class="container-fluid header">
+    <div class="row border-bottom border-primary">
 
-    <div class="row mt-4 border-bottom">
-
-      <div class="col-2 mt-2">
+      <div class="col-2 mt-1 pt-4">
         <a class="navbar-brand" href="MainPage" id="logo">
           <img src="images/LogoTDT/LogoTDT.png" width="30" height="30" alt="logo">
           <span>TDT Classroom</span>
         </a>
       </div>
 
-      <div class="col-6 justify-content-center mt-2"></div>
-      <div class="col-4">
+      <div class="col-4 justify-content-center"></div>
+      <div class="col-6">
         <nav class=" navbar navbar-expand-lg">
           <div class="collapse navbar-collapse">
-
             <div class="navbar-nav ml-auto">
 
               <?php require '../Handle/AccountRole.php'; ?>
               <?php if (!isset($_GET["request"]) && !isset($_GET["id"])) { ?>
-                <div class="dr-plus dropdown mb-3">
-                  <a class="nav-link dropdown-toggle waves-effect waves-light mr-1 align-center " id="navbarDropdownMenuLink-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <svg focusable="false" width="24" height="24" viewBox="0 0 24 24">
-                      <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
-                      <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
-                    </svg>
-                  </a>
-                  <div class=" dropdown-menu dropdown-menu-right dropdown-info mr-3" aria-labelledby="navbarDropdownMenuLink-4">
-
-                    <?php if ($AccountType == 0) { ?>
-                      <a class="dropdown-item waves-effect waves-light" data-toggle="modal" data-target="#JoinClass">Join Class</a>
-                      <a class="dropdown-item waves-effect waves-light" data-target="#AddClass" data-toggle="modal">Add Class</a>
-                    <?php } else if ($AccountType == 1) { ?>
-                      <a class="dropdown-item waves-effect waves-light" data-target="#AddClass" data-toggle="modal">Add Class</a>
-                    <?php } else { ?>
-                      <a class="dropdown-item waves-effect waves-light" data-toggle="modal" data-target="#JoinClass">Join Class</a>
-                    <?php } ?>
-                  </div>
-                </div>
+                <ul class="nav-img list-unstyled mt-3 pt-1 mr-2">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <svg focusable="false" width="24px" height="24px" viewBox="0 0 24 24">
+                        <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
+                        <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
+                      </svg>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right text-left" aria-labelledby="navbarDropdownMenuLink">
+                      <?php if ($AccountType == 0 || $AccountType == 1) { ?>
+                        <a class="dropdown-item waves-effect waves-light" data-toggle="modal" data-target="#JoinClass">Join Class</a>
+                        <a class="dropdown-item waves-effect waves-light" data-target="#AddClass" data-toggle="modal">Add Class</a>
+                      <?php } else { ?>
+                        <a class="dropdown-item waves-effect waves-light" data-toggle="modal" data-target="#JoinClass">Join Class</a>
+                      <?php } ?>
+                    </div>
+                  </li>
+                </ul>
                 <!--Search -->
-                <div class="search-Bar mt-0">
+                <div class="search-Bar mt-4 mr-4">
                   <form action="MainPage" method="GET">
                     <div class="input-group input-group-sm">
                       <!--input-->
@@ -75,64 +70,18 @@
                       <!--img-->
                     </div>
                   </form>
-
                 </div>
                 <!--Search -->
-                <!--Notification-->
-                <div class="dr-bell dropdown  dropdown-menu-right mb-3 mr-3">
-                  <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <svg width="24px" height="24px" viewBox="0 0 16 16" class="bi bi-bell" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z" />
-                      <path fill-rule="evenodd" d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
-                    </svg>
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-bell dropdown-menu-right dropdown-info active-none" aria-labelledby="navbarDropdownMenuLink-4">
-                    <ul class="list-notifications list-unstyled">
-                      <li class="ml-4 mt-3">
-
-                        <a href="" class="content-list-unstyled">
-                          <div class="notification-item">
-
-                            <h4 class="item-title">PTTK</h4>
-                            <p class="item-info">PTTK reminder</p>
-                            <button type="button" class="close" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="ml-4 mt-3">
-
-                        <a href="" class="content-list-unstyled">
-                          <div class="notification-item">
-                            <h4 class="item-title">PTTK</h4>
-                            <p class="item-info">PTTK reminder</p>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="ml-4 mt-3">
-
-                        <a href="" class="content-list-unstyled">
-                          <div class="notification-item">
-                            <h4 class="item-title">PTTK</h4>
-                            <p class="item-info">PTTK reminder</p>
-                          </div>
-                        </a>
-                      </li>
-
-                    </ul>
-                  </div>
-                </div>
               <?php } ?>
               <!--Notification-->
 
-              <span><?php echo $FullName ?></span>
-              <ul class="nav-img list-unstyled ">
+              <span class="mt-3 p-2"><?php echo $FullName ?></span>
+              <ul class="nav-img list-unstyled mt-2">
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img src="<?php echo $AvatarSrc ?>" width="40" height="40" class="rounded-circle">
                   </a>
-                  <div class="dropdown-menu dropdown-menu-right flex-wrap" aria-labelledby="navbarDropdownMenuLink">
+                  <div class="dropdown-menu dropdown-menu-right text-left" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="MainPage">Dashboard</a>
                     <a class="dropdown-item" href="Profile?request=profile">Profile</a>
                     <a class="dropdown-item" href="../Handle/LogoutProcess">Log Out</a>

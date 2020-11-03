@@ -9,37 +9,6 @@ div.search-Bar {
     margin-top: -16px;
 }
 
-.dr-plus {
-    margin-top: -3px;
-}
-
-.dr-bell {
-    margin-top: -2px;
-    margin-left: 16px;
-    margin-right: 12px;
-}
-
-.dropdown-menu-bell {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    z-index: 1000;
-    display: none;
-    float: left;
-    min-width: 10rem;
-    padding: 0.5rem 0;
-    margin: 0.125rem 0 0;
-    font-size: 1rem;
-    color: #212529;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    border-radius: 0.25rem;
-    width: 250px;
-}
-
 .list-notifications li {
     border: 1px solid;
     border-radius: 0.25rem;
@@ -72,9 +41,8 @@ svg {
     left: 50%;
     transform: translate(-50%, 25%);
     margin: auto;
-    width: 400px;
+    width: 450px;
     padding-bottom: auto !important;
-    height: 540px;
     box-shadow: 5px 10px #6db3db;
     border: 2px solid #6db3db;
 }
@@ -186,7 +154,6 @@ ol {
     left: auto;
     display: none;
     float: left;
-    min-width: 15rem;
     padding: 0.125rem 0;
     margin: 0.5rem 0 0;
     font-size: 1.125rem;
@@ -363,7 +330,7 @@ a.article:hover {
     box-shadow: 5px 5px 5px 5px;
     border-radius: 10px;
     border: 1px solid;
-    height: 100% !important;
+    height: 50% !important;
 }
 
 .user-image {

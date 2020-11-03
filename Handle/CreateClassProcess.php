@@ -19,9 +19,10 @@
         $stmt = $connection->prepare($query);
         $stmt->bind_param("sssss" , $classCode , $className , $subjectName , $room , $AvatarSrc);
         $stmt->execute();
-        $query = "INSERT INTO classmembers VALUES(?,?)";
+        $query = "INSERT INTO classmembers VALUES(?,?,?)";
         $stmt = $connection->prepare($query);
-        $stmt->bind_param("ss" , $UserName , $classCode);
+        $Founder = 1;
+        $stmt->bind_param("ssi" , $UserName , $classCode , $Founder);
         $stmt->execute();
         $connection->close();
         header("Location: ../View/MainPage");

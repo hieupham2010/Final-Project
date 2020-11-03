@@ -10,10 +10,11 @@ require '../Handle/ClassInfoProcess.php';
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style/style.css">
 	<title>Class</title>
 </head>
 
@@ -48,8 +49,8 @@ require '../Handle/ClassInfoProcess.php';
 							<div class="col col-12 ">
 								<main role="main" class="container">
 									<!--jumbotron-->
-									<div class="jumbotron border border-info shadow pt-4 pb-4">
-										<h1><?php echo $ClassName ?></h1>
+									<div class="jumbotron border border-info shadow pt-4 pb-4 text-break ">
+										<h1 class="text-truncate"><?php echo $ClassName ?></h1>
 										<?php require '../Handle/AccountRole.php' ?>
 										<hr class="my-4">
 										<?php if ($AccountType == 0 || $AccountType == 1) { ?>
@@ -57,6 +58,7 @@ require '../Handle/ClassInfoProcess.php';
 											<p class="lead font-italic"><span class="font-weight-bold">Subject</span> <?php echo $SubjectName ?></p>
 											<p class="lead font-italic"><span class="font-weight-bold">Room</span> <?php echo $Room ?></p>
 										<?php } else { ?>
+											<p class="lead font-italic" hidden><span class="font-weight-bold">Class Code</p>
 											<p class="lead font-italic"><span class="font-weight-bold">Subject</span> <?php echo $SubjectName ?></p>
 											<p class="lead font-italic"><span class="font-weight-bold">Room</span> <?php echo $Room ?></p>
 										<?php } ?>
@@ -64,7 +66,6 @@ require '../Handle/ClassInfoProcess.php';
 									<!--jumbotron-->
 
 									<!--Display post area-->
-
 									<div class="container rounded p-2 ">
 										<div class="row p-2">
 											<div class="col-sm-3 mt-4">
@@ -87,7 +88,7 @@ require '../Handle/ClassInfoProcess.php';
 														<li class="cmt-detail shadow rounded h-75 ">
 															<div id="share-idea" class="share-idea  shadow mt-5 rounded f-flex justify-content-left p-4" data-toggle="collapse">
 																<img src="<?php echo $AvatarSrc ?>" class="avatar rounded-circle" alt="" width="50" height="50" aria-hidden="true">
-																Share your idea
+																Share your opinion
 															</div>
 															<!--Post area-->
 
@@ -95,32 +96,23 @@ require '../Handle/ClassInfoProcess.php';
 																<div class="card-post card-body">
 																	<div class="md-form">
 																		<form action="../Handle/CreatePostProcess" method="POST" enctype="multipart/form-data">
-																			<textarea class="md-textarea form-control" name="txtPost" rows="3"></textarea>
+																			<textarea class="md-textarea form-control" placeholder="Share your opinion" name="txtPost" rows="3"></textarea>
 																			<div class="input-group mt-2">
-																				<div class="input-group mb-3">
-																					<div class="custom-file">
-																						<input type="hidden" name="encryptCode" value="<?php echo $encryptCode ?>">
-																						<input type="file" name="fileUpload[]" class="custom-file-input" id="inputGroupFile02" multiple/>
-																						<label class="custom-file-label" for="inputGroupFile02">Choose file</label>
-																					</div>
-																					<div class="input-group-append">
-																						<button type="reset" class="btn btn-outline-secondary" id="cancel">Cancel</button>
-																					</div>
 
-																					<div class="input-group-append">
-																						<button class="btn btn-outline-secondary" type="submit">Post</button>
-																					</div>
+																				<div class="custom-file">
+																					<input type="hidden" name="encryptCode" value="<?php echo $encryptCode ?>">
+																					<input type="file" class="custom-file-input" id="customFile" name="fileUpload[]" id="inputGroupFile02" multiple />
+																					<label class="custom-file-label text-truncate" for="customFile">Choose file</label>
 																				</div>
-																				<script>
-																					$('#inputGroupFile02').on('change', function() {
-																						//get the file name
-																						var fileName = $(this).val();
-																						//replace the "Choose a file" label
-																						$(this).next('.custom-file-label').html(fileName);
-																					})
-																				</script>
+																				<div class="input-group-append">
+																					<button type="reset" class="btn btn-outline-secondary" id="cancel">Cancel</button>
+																				</div>
+																				<div class="input-group-append">
+																					<button class="btn btn-outline-secondary" type="submit">Post</button>
+																				</div>
 
 																			</div>
+
 																		</form>
 
 																	</div>
@@ -143,59 +135,20 @@ require '../Handle/ClassInfoProcess.php';
 					</div>
 				</div>
 
-
+				<?php include 'DialogCreateClasswork.php'; ?>
 				<div id="ClassWork" class="container tab-pane fade">
+
 					<div class="faqs-page block col-md-12 mt-5">
+						<!--Dialog Assignment-->
+						<?php if ($AccountType == 0 || $AccountType == 1) { ?>
+							<div class="mr-5 text-right">
+								<button class="btn btn-secondary-outline dropdown-toggle btn-primary rounded-pill" type="button" data-target="#CreateClasswork" data-toggle="modal">Create Classwork<span class="caret"></span></button>
+							</div>
+						<?php } ?>
+						<!--Dialog Assignment-->
 						<ul class="list-unstyled p-2">
-							<li class="p-5">
-								<div class="panel-group shadow-sm h-100 border p-2 rounded-sm" id="accordion2" role="tablist" aria-multiselectable="true">
-									<div class="panel panel-default ">
-										<form action="">
-											<div class="mt-2">
-												<a role="button" class="item-question collapsed text-decoration-none  text-dark " data-toggle="collapse" href="#collapse1a" aria-expanded="false" aria-controls="collapse1a">
-													<div class="form-group ">
-														<h5 class="block">SomeThing teacher post
-															<div class="dropdown-tdoc dropdown dropdown-menu-right float-right ">
-																<a class="dropdown-toggle mb-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-																	<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-																		<path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-																	</svg>
-																</a>
-																<div class="dropdown-menu dropdown-menu-right dropdown-info active-none" aria-labelledby="navbarDropdownMenuLink-4">
-																	<a class="dropdown-item" data-toggle="dropdown">Delete ClassWork</a>
-																	<a class="dropdown-item" data-toggle="dropdown">Report</a>
-																	<a class="dropdown-item" data-toggle="dropdown">Coppy link</a>
-																</div>
-															</div>
-														</h5>
-
-													</div>
-												</a>
-
-
-												<hr>
-												<div id="collapse1a" class="panel-collapse collapse" role="tabpanel">
-													<div class="panel-body border-bottom">
-														<p>
-															Detail assingments
-															Detail assingments
-															Detail assingments
-															Detail assingments
-															Detail assingmentsDetail assingmentsDetail assingmentsDetail assingmentsDetail assingmentsDetail assingmentsDetail assingments
-														</p>
-													</div class="panel-body border">
-													<div class="p-3 mt-2">
-														<a href="DetailClassWorks.php" class="text-decoration-none text-muted mt-3 font-weight-bold">View full assignment details</a>
-													</div>
-												</div>
-
-											</div>
-										</form>
-
-									</div>
-							</li>
+							<?php include '../Handle/LoadClassworkProcess.php' ?>
 						</ul>
-
 					</div>
 
 				</div>
@@ -204,113 +157,27 @@ require '../Handle/ClassInfoProcess.php';
 
 					<div class="col-12 People-Card-List mt-5">
 
-						<!--Dialog Assignment-->
-						<div class="dropdown">
-							<button class="btn btn-secondary-outline dropdown-toggle  rounded-pill" type="button" data-toggle="dropdown">Add ClassWork
-								<span class="caret"></span></button>
-							<ul class="dropdown-menu list-unstyled 	text-left">
-								<li><a class="dropdown-item" href="#" data-toggle="modal" data-target="#CrClassWork">Assignment</a></li>
-								<li><a class="dropdown-item" href="#">Quiz</a></li>
-							</ul>
-
-						</div>
-						<!--Dialog Assignment-->
-
 						<ul class="list-group list-unstyled">
-
+							<?php include 'DialogInvitePeople.php' ?>
 							<h2 class="people-type">
 								Teachers
 								<!-- Add people-->
-								<a class="btn btn-link float-right p-1 " type="button" data-toggle="modal" data-target="#InviteStudent">
+								<a class="btn btn-link float-right p-1 " type="button" data-toggle="modal" data-target="#InvitePeople">
 									<svg class="" width="2em" height="2em" viewBox="0 0 20 20" class="bi bi-person-plus-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 										<path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7.5-3a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
 									</svg>
 								</a>
 							</h2>
-							<li class="List-Teahcer p-3 border-bottom">
-								<div>
-									<ul class="list-unstyled">
-										<li>
-											<form action="">
-												<div class="form-group">
-													<img id="teacher-1" src="images/avatarUploads/DefaultAvatar.png" width="40" height="40" class="rounded-circle">
-													<span class="">Teacher 1</span>
-
-
-													<!-- 3 chấm teacher -->
-													<div class="dropdown-tdoc dropdown dropdown-menu-right" style="z-index: 1; position: absolute; top: 150px; right: 30px;">
-														<a class="dropdown-toggle bg-transparent  d-flex flex-wrap" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-															<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-																<path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-															</svg>
-														</a>
-														<div class="dropdown-menu dropdown-menu-right dropdown-info active-none" aria-labelledby="navbarDropdownMenuLink-4">
-															<a class="dropdown-item" data-toggle="dropdown">Remove people</a>
-														</div>
-													</div>
-													<!-- 3 chấm teacher -->
-												</div>
-
-
-											</form>
-
-										</li>
-									</ul>
-
-
-								</div>
-
-							</li>
+							<?php include '../Handle/LoadLecturerClassProcess.php' ?>
 						</ul>
-						<ul class="list-group list-unstyled ">
-							<h2 class="people-type">Students
+						<ul class="list-group list-unstyled">
+							<h2 class="people-type pb-1">
+								Students
 								<!-- Add people-->
-								<a class="btn btn-link float-right p-1 " type="button" data-toggle="modal" data-target="#InviteStudent">
-									<svg class="" width="2em" height="2em" viewBox="0 0 20 20" class="bi bi-person-plus-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-										<path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7.5-3a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
-									</svg>
-								</a></h2>
-							<li class="List-Student p-3 border-bottom">
-
-								<form action="">
-									<div class="form-group">
-										<img id="student-1" src="images/avatarUploads/DefaultAvatar.png" width="40" height="40" class="rounded-circle">
-										<span>Student 1</span>
-										<div class="dropdown-tdoc dropdown dropdown-menu-right float-right mt-2	">
-											<a class="dropdown-toggle bg-transparent  d-flex flex-wrap" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-													<path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-												</svg>
-											</a>
-											<div class="dropdown-menu dropdown-menu-right dropdown-info active-none" aria-labelledby="navbarDropdownMenuLink-4">
-												<a class="dropdown-item" data-toggle="dropdown">Remove people</a>
-											</div>
-										</div>
-									</div>
-								</form>
-
-							</li>
-							<li class="List-Student p-3 border-bottom">
-
-								<form action="">
-									<div class="form-group">
-										<img id="student-1" src="images/avatarUploads/DefaultAvatar.png" width="40" height="40" class="rounded-circle">
-										<span>Student 1</span>
-										<div class="dropdown-tdoc dropdown dropdown-menu-right float-right mt-2	">
-											<a class="dropdown-toggle bg-transparent  d-flex flex-wrap" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-													<path fill-rule="evenodd" d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
-												</svg>
-											</a>
-											<div class="dropdown-menu dropdown-menu-right dropdown-info active-none" aria-labelledby="navbarDropdownMenuLink-4">
-												<a class="dropdown-item" data-toggle="dropdown">Remove people</a>
-											</div>
-										</div>
-									</div>
-								</form>
-
-							</li>
-
+							</h2>
+							<?php include '../Handle/CountStudent.php' ?>
+							<h6 class="text-right"><?php echo $NumStudent ?> Students</h6>
+							<?php include '../Handle/LoadClassMembersProcess.php' ?>
 						</ul>
 
 					</div>
@@ -329,7 +196,7 @@ require '../Handle/ClassInfoProcess.php';
 <?php
 include '../DialogMessage.php';
 if (isset($_GET["msg"])) {
-    echo "<script>$('#Message').modal({show: true})</script>";
+	echo "<script>$('#Message').modal({show: true})</script>";
 }
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

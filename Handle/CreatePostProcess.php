@@ -21,19 +21,24 @@
                     $fileUpload = $UserName . $Hash . $_FILES["fileUpload"]["name"][$i];
                     $destinationFile = $destination . basename($fileUpload);
                     move_uploaded_file($_FILES["fileUpload"]["tmp_name"][$i], $destinationFile);
+                    $temp = pathinfo($_FILES["fileUpload"]["name"][$i] , PATHINFO_EXTENSION);
+                    $FileName = basename($_FILES["fileUpload"]["name"][$i] , "." . $temp);
                     $FileSrc = "DocumentUpload/" . $fileUpload;
-                    $query = "INSERT documents(PostID, FileSrc) VALUES(?,?)";
+                    $query = "INSERT documents(PostID, FileSrc, FileName) VALUES(?,?,?)";
                     $stmt = $connection->prepare($query);
-                    $stmt->bind_param("is", $lastInsert, $FileSrc);
+                    $stmt->bind_param("iss", $lastInsert, $FileSrc,$FileName);
                     $stmt->execute();
+                    
                 }
-                header("Location: ../View/Class?id=$encryptCode&state=posted");
+                $connection->close();
+                header("Location: ../View/Class?id=$encryptCode&msg=posted");
             }else{
                 $query = "INSERT post(Message, UserName, ClassID) VALUES(?,?,?)";
                 $stmt = $connection->prepare($query);
                 $stmt->bind_param("sss", $Message, $UserName, $ClassID);
                 $stmt->execute();
-                header("Location: ../View/Class?id=$encryptCode&state=posted");
+                $connection->close();
+                header("Location: ../View/Class?id=$encryptCode&msg=posted");
             }
         }else {
             header("Location: ../View/Class?id=$encryptCode&msg=ErrorEmptyPost");
