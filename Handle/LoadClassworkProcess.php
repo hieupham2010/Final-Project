@@ -67,7 +67,7 @@ while ($row = $result->fetch_assoc()) {
                         </div>
                         <hr>
                         <div class="p-3 mt-2">
-                            <a href="DetailClassWorks?id=<?php echo urlencode($encryptCode) ?>&ClassworkID=<?php echo $row["ClassworkID"] ?>" class="text-decoration-none text-muted mt-3 font-weight-bold">View material</a>
+                            <a href="DetailClassworks?id=<?php echo urlencode($encryptCode) ?>&ClassworkID=<?php echo $row["ClassworkID"] ?>" class="text-decoration-none text-muted mt-3 font-weight-bold">View material</a>
                         </div>
                     </div>
                 </div>
