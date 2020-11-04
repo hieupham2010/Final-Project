@@ -23,8 +23,7 @@
         </a>
       </div>
 
-      <div class="col-4 justify-content-center"></div>
-      <div class="col-6">
+      <div class="col-10">
         <nav class=" navbar navbar-expand-lg">
           <div class="collapse navbar-collapse">
             <div class="navbar-nav ml-auto">
