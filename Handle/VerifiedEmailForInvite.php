@@ -21,7 +21,7 @@
                 $result = $stmt->get_result();
                 $row = $result->fetch_assoc();
                 $UserName = $row["UserName"];
-                $query = "INSERT classmembers VALUES(?,?)";
+                $query = "INSERT classmembers(UserName,ClassID) VALUES(?,?)";
                 $stmt = $connection->prepare($query);
                 $stmt->bind_param("ss", $UserName , $ClassID);
                 $stmt->execute();

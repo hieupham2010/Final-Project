@@ -57,7 +57,7 @@
                 }
                 $connection->close();
                 
-                //header("Location: ../View/Class?id=$encryptCode&msg=posted");
+                header("Location: ../View/Class?id=$encryptCode&msg=posted");
             }else{
                 $query = "INSERT classwork(Title , Description,Deadline, ClassID , UserName) VALUES(?,?,?,?,?)";
                 $stmt = $connection->prepare($query);
