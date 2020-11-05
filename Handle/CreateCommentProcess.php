@@ -2,7 +2,7 @@
     session_start();
     if(isset($_POST["ClassID"]) && !empty($_POST["ClassID"])
         &&isset($_POST["PostID"]) && !empty($_POST["PostID"])) {
-        $EncryptCode = $_POST["ClassID"];
+        $EncryptCode = urlencode($_POST["ClassID"]);
         if(isset($_POST["txtComment"]) && !empty($_POST["txtComment"])) {
             require_once 'DataAccess.php';
             $UserName = $_SESSION["username"];
