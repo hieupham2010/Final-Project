@@ -34,7 +34,7 @@
             <p>Please click button bellow to complete registration</p>
             <button style="background-color:#38c4d3;border:none;border-radius:5px;padding:10px 20px;">
             <a style="color:white;text-decoration: none;"
-            href="http://localhost/Final-Project/VerifiedEmailForSignUp?email='.$email.'&hash='.$hash.'">Verification</a></button>
+            href="http://localhost/Final-Project/Handle/VerifiedEmailForSignUp?email='.$email.'&hash='.$hash.'">Verification</a></button>
             <p style="color:red;">*This email is valid only within 10 minutes</p>
             <p>If it\'s not you, please ignore this email</p>
             </div><footer style="background-color:#1fa9b8;color:white;padding:30px;"><p>&copy; Copyright by Hieu & Duy</p></footer></div>';

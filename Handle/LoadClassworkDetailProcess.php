@@ -14,6 +14,7 @@
         $Title = $row["Title"];
         $Description = $row["Description"];
         $Time = $row["Time"];
+        $DeadLine = $row["Deadline"];
     }else{
         header("Location: ../index");
         exit;
