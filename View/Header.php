@@ -62,11 +62,11 @@
                   <form action="MainPage" method="GET">
                     <div class="input-group input-group-sm">
                       <!--input-->
-                      <input class="form-control" type="text" name="key" placeholder="Search" aria-label="Search" value="<?php if (isset($_GET["key"])) echo $_GET["key"]; ?>">
+                      <input id="search-field" type="text" name="key" placeholder="Search" aria-label="Search" value="<?php if (isset($_GET["key"])) echo $_GET["key"]; ?>">
                       <!--input-->
                       <!--img-->
                       <div class="input-group-prepend .bg-white">
-                        <button class="btn-submit input-group-text .bg-white" id="inputGroup-sizing-sm" type="submit">
+                        <button class="btn-submit input-group-text .bg-white" id="button-search" id="inputGroup-sizing-sm" type="submit">
                           <span>
                             <svg width="20px" height="20px" viewBox="0 0 15 15" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                               <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />

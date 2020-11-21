@@ -1,6 +1,7 @@
 <?php
 require_once 'DataAccess.php';
 require_once 'EncryptClassCode.php';
+require 'GetExtension.php';
 $query = "SELECT * FROM post WHERE ClassID = ? ORDER BY PostID DESC";
 $stmt = $connection->prepare($query);
 $stmt->bind_param("s", $ClassID);
@@ -58,12 +59,12 @@ while ($row = $result->fetch_assoc()) {
                     <?php
                     while ($rowDocument = $resultDocument->fetch_assoc()) {
                     ?>
-
-                        <div class="d-inline-block">
-                            <!-- <iframe src="http://docs.google.com/gview?url=<?php //echo $rowDocument["FileSrc"] 
-                                                                                ?>&embedded=true" frameborder="0"></iframe> -->
-                            <embed scrolling="no" src="<?php echo $rowDocument["FileSrc"] ?>" class="mr-4 ml-4 mt-2" width="160.5px" height="130px"></embed><br>
-                            <a class="ml-5 p-3" href="http://localhost/Final-Project/View/<?php echo $rowDocument["FileSrc"] ?>" download="<?php echo $rowDocument["FileName"] ?>">Download</a>
+                        <div class="d-inline-block text-center text-truncate content-attach m-4">
+                            <a href="http://localhost/Final-Project/View/<?php echo $rowDocument["FileSrc"] ?>" download="<?php echo $rowDocument["FileName"] ?>">
+                                <?php echo getExtension($rowDocument["FileSrc"]) ?>
+                                <br>
+                                <?php echo $rowDocument["FileName"] ?>
+                            </a>
                         </div>
                     <?php } ?>
 
