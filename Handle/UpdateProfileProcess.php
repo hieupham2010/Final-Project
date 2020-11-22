@@ -19,6 +19,13 @@
                 header("Location: ../View/Profile?request=profile&msg=InvalidImage");
             }else {
                 move_uploaded_file($_FILES["imageUpload"]["tmp_name"], $destinationFile);
+                $query = "SELECT * FROM accounts WHERE UserName = ?";
+                $stmt = $connection->prepare($query);
+                $stmt->bind_param("s" ,$UserName);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $row = $result->fetch_assoc();
+                unlink("../View/" . $row["AvatarSrc"]);
                 $query = "UPDATE users SET FullName = ?, DateOfBirth = ?, Email = ?, PhoneNumber = ? 
                 WHERE UserID = (SELECT UserID FROM accounts WHERE UserName = ?)";
                 $stmt = $connection->prepare($query);

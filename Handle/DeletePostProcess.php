@@ -5,6 +5,14 @@
         require 'EncryptClassCode.php';
         $encryptCode = urlencode($_POST["encryptCode"]);
         $PostID = $_POST["PostID"];
+        $query = "SELECT * FROM documents WHERE PostID = ?";
+        $stmt = $connection->prepare($query);
+        $stmt->bind_param("i", $PostID);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        while($row = $result->fetch_assoc()) {
+            unlink("../View/" . $row["FileSrc"]);
+        }
         $query = "DELETE FROM documents WHERE PostID = ?";
         $stmt = $connection->prepare($query);
         $stmt->bind_param("i", $PostID);
