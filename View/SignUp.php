@@ -22,62 +22,69 @@ include '../DialogMessage.php';
 </head>
 
 <body>
-    <div class="Sign-up-card rounded-lg h-auto ">
-        <!--Card content-->
-        <div class="card-body">
-            <!--logo-->
-            <div class=" d-flex justify-content-center">
-                <img src="images/LogoTDT/LogoTDT.png" alt="Logo" width="120" height="120">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col col-sm-12 ml-auto">
+                <div class="Sign-up-card rounded m-auto h-100  ">
+                    <!--Card content-->
+                    <div class="card-body">
+                        <!--logo-->
+                        <div class=" d-flex justify-content-center">
+                            <img src="images/LogoTDT/LogoTDT.png" alt="Logo" width="120" height="120">
+                        </div>
+
+                        <!-- Form -->
+                        <form class="text-center pl-4 pr-4" action="../Handle/SignUpProcess" method="POST">
+
+                            <div class="md-form">
+                                <input type="text" name="txtFullName" id="txtFullName" placeholder="Full Name" required class="form-control mt-3">
+                            </div>
+                            <!-- Birth Day -->
+                            <div class="md-form">
+                                <input type="date" name="txtDateOfBirth" id="txtDateOfBirth" required class="form-control mt-3">
+                            </div>
+                            <!-- Email -->
+                            <div class="md-form">
+                                <input type="email" name="txtEmail" id="txtEmail" placeholder="Email" required class="form-control mt-3">
+                            </div>
+                            <div class="text-danger small text-center">
+                                <span id="errorMessage"><?php if (isset($_GET["msg1"])) echo $_GET["msg1"]; ?>
+                            </div>
+                            <!-- Phone number -->
+                            <div class="md-form">
+                                <input type="tel" name="txtPhoneNumber" id="txtPhoneNumber" placeholder="Phone Number" pattern="[0-9]{10}" required class="form-control mt-3">
+                            </div>
+                            <!-- User Name-->
+                            <div class="md-form">
+                                <input type="text" name="txtUserName" id="txtUserName" placeholder="User Name" required class="form-control mt-3">
+                            </div>
+                            <div class="text-danger small text-left">
+                                <span id="errorMessage"><?php if (isset($_GET["msg2"])) echo $_GET["msg2"]; ?>
+                            </div>
+                            <!-- Pass Word -->
+                            <div class="md-form mt-3">
+                                <input type="password" name="txtPassword" id="txtPassword" placeholder="Password" required class="form-control mt-3">
+                            </div>
+                            <!-- error show -->
+                            <div class="text-danger small text-left">
+                                <span id="errorMessage"><?php if (isset($_GET["msg3"])) echo $_GET["msg3"]; ?>
+                            </div>
+                            <div class="md-form mt-3">
+                                <input type="password" name="txtConfirmPassword" id="txtConfirmPassword" placeholder="Confirm Password" required class="form-control mt-3">
+                            </div>
+                            <div class="text-danger small text-left">
+                                <span id="errorMessage"><?php if (isset($_GET["msg4"])) echo $_GET["msg4"]; ?>
+                            </div>
+                            <!-- Sign in button -->
+                            <button class="btn btn-outline-info btn-rounded btn-block my-4 mb-3 waves-effect z-depth-0" type="submit" id="buttonSignUp" name="buttonSignUp" value="Sign Up">Sign up</button>
+                        </form>
+                        <!-- Form -->
+                    </div>
+                </div>
             </div>
-
-            <!-- Form -->
-            <form class="text-center pl-4 pr-4" action="../Handle/SignUpProcess" method="POST">
-
-                <div class="md-form">
-                    <input type="text" name="txtFullName" id="txtFullName" placeholder="Full Name" required class="form-control mt-3">
-                </div>
-                <!-- Birth Day -->
-                <div class="md-form">
-                    <input type="date" name="txtDateOfBirth" id="txtDateOfBirth" required class="form-control mt-3">
-                </div>
-                <!-- Email -->
-                <div class="md-form">
-                    <input type="email" name="txtEmail" id="txtEmail" placeholder="Email" required class="form-control mt-3">
-                </div>
-                <div class="text-danger small text-center">
-                    <span id="errorMessage"><?php if (isset($_GET["msg1"])) echo $_GET["msg1"]; ?>
-                </div>
-                <!-- Phone number -->
-                <div class="md-form">
-                    <input type="tel" name="txtPhoneNumber" id="txtPhoneNumber" placeholder="Phone Number" pattern="[0-9]{10}" required class="form-control mt-3">
-                </div>
-                <!-- User Name-->
-                <div class="md-form">
-                    <input type="text" name="txtUserName" id="txtUserName" placeholder="User Name" required class="form-control mt-3">
-                </div>
-                <div class="text-danger small text-left">
-                    <span id="errorMessage"><?php if (isset($_GET["msg2"])) echo $_GET["msg2"]; ?>
-                </div>
-                <!-- Pass Word -->
-                <div class="md-form mt-3">
-                    <input type="password" name="txtPassword" id="txtPassword" placeholder="Password" required class="form-control mt-3">
-                </div>
-                <!-- error show -->
-                <div class="text-danger small text-left">
-                    <span id="errorMessage"><?php if (isset($_GET["msg3"])) echo $_GET["msg3"]; ?>
-                </div>
-                <div class="md-form mt-3">
-                    <input type="password" name="txtConfirmPassword" id="txtConfirmPassword" placeholder="Confirm Password" required class="form-control mt-3">
-                </div>
-                <div class="text-danger small text-left">
-                    <span id="errorMessage"><?php if (isset($_GET["msg4"])) echo $_GET["msg4"]; ?>
-                </div>
-                <!-- Sign in button -->
-                <button class="btn btn-outline-info btn-rounded btn-block my-4 mb-3 waves-effect z-depth-0" type="submit" id="buttonSignUp" name="buttonSignUp" value="Sign Up">Sign up</button>
-            </form>
-            <!-- Form -->
         </div>
     </div>
+
 
 </body>
 
@@ -86,4 +93,4 @@ include '../DialogMessage.php';
 if (isset($_GET["msg"])) {
     echo "<script>$('#Message').modal({show: true})</script>";
 }
-?>  
+?>

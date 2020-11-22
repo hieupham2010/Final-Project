@@ -11,16 +11,16 @@
 </head>
 <style>
   .navbar-toggler {
-    background-color: aqua;
+    background-color: rgb(92, 137, 255);
   }
 </style>
 
 <body>
 
   <div class="container-fluid header">
-    <div class="row border-bottom border-primary">
+    <div class="row border-bottom border-primary ">
 
-      <div class="col-2 mt-1 pt-4">
+      <div class="col-2 mt-1 pt-4 d-block">
         <a class="navbar-brand" href="MainPage" id="logo">
           <img src="images/LogoTDT/LogoTDT.png" width="30" height="30" alt="logo">
           <span>TDT Classroom</span>
@@ -28,35 +28,22 @@
       </div>
 
       <div class="col-10">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-justify" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
-          </svg>
-        </button>
-        <nav class=" navbar navbar-expand-lg">
-          <div class="collapse navbar-collapse">
+
+        <nav class=" navbar navbar-expand-lg ">
+          <a class="navbar-brand " href="#"></a>
+          <button class="navbar-toggler mt-3 text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+              <svg width="1.25em" height="1.5em" viewBox="0 0 14 14" class="bi bi-justify text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+              </svg>
+            </span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <div class="navbar-nav ml-auto">
 
               <?php require '../Handle/AccountRole.php'; ?>
               <?php if (!isset($_GET["request"]) && !isset($_GET["id"])) { ?>
-                <ul class="nav-img list-unstyled mt-3 pt-1 mr-2">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <svg focusable="false" width="24px" height="24px" viewBox="0 0 24 24">
-                        <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
-                        <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
-                      </svg>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right text-left" aria-labelledby="navbarDropdownMenuLink">
-                      <?php if ($AccountType == 0 || $AccountType == 1) { ?>
-                        <a class="dropdown-item waves-effect waves-light" data-toggle="modal" data-target="#JoinClass">Join Class</a>
-                        <a class="dropdown-item waves-effect waves-light" data-target="#AddClass" data-toggle="modal">Add Class</a>
-                      <?php } else { ?>
-                        <a class="dropdown-item waves-effect waves-light" data-toggle="modal" data-target="#JoinClass">Join Class</a>
-                      <?php } ?>
-                    </div>
-                  </li>
-                </ul>
+
                 <!--Search -->
                 <div class="search-Bar mt-4 mr-4">
                   <form action="MainPage" method="GET">
@@ -65,7 +52,7 @@
                       <input class="form-control" type="text" name="key" placeholder="Search" aria-label="Search" value="<?php if (isset($_GET["key"])) echo $_GET["key"]; ?>">
                       <!--input-->
                       <!--img-->
-                      <div class="input-group-prepend .bg-white">
+                      <div class="input-group-prepend .bg-white d-flex flex-wrap">
                         <button class="btn-submit input-group-text .bg-white" id="inputGroup-sizing-sm" type="submit">
                           <span>
                             <svg width="20px" height="20px" viewBox="0 0 15 15" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -81,6 +68,24 @@
                 </div>
                 <!--Search -->
               <?php } ?>
+              <ul class="nav-img list-unstyled mt-3 pt-1 mr-2 d-block">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <svg focusable="false" width="24px" height="24px" viewBox="0 0 24 24">
+                      <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
+                      <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
+                    </svg>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right text-left" aria-labelledby="navbarDropdownMenuLink">
+                    <?php if ($AccountType == 0 || $AccountType == 1) { ?>
+                      <a class="dropdown-item waves-effect waves-light" data-toggle="modal" data-target="#JoinClass">Join Class</a>
+                      <a class="dropdown-item waves-effect waves-light" data-target="#AddClass" data-toggle="modal">Add Class</a>
+                    <?php } else { ?>
+                      <a class="dropdown-item waves-effect waves-light" data-toggle="modal" data-target="#JoinClass">Join Class</a>
+                    <?php } ?>
+                  </div>
+                </li>
+              </ul>
               <!--Notification-->
 
               <span class="mt-3 p-2"><?php echo $FullName ?></span>
