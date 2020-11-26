@@ -43,7 +43,6 @@ svg {
 }
 
 .Login-card {
-<<<<<<< HEAD
   width: 100%;
   width: 400px;
   display: block;
@@ -60,38 +59,6 @@ svg {
   display: block;
   box-shadow: 5px 10px #6db3db;
   border: 2px solid #6db3db;
-=======
-    width: 400px;
-    display: block;
-    box-shadow: 5px 10px #6db3db;
-    border: 2px solid #6db3db;
-}
-
-.reset-card {
-    position: absolute;
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%, 25%);
-    margin: auto;
-    width: 400px;
-    height: 500px;
-    box-shadow: 5px 10px #6db3db;
-    border: 2px solid #6db3db;
-}
-
-.forgot-card {
-    position: fixed;
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%, 25%);
-    margin: auto;
-    margin-top: 15rem;
-    /* width: 23%; */
-    /* height: 20%; */
-    /* display: flex; */
-    box-shadow: 5px 10px #6db3db;
-    border: 2px solid #6db3db;
->>>>>>> 523be2d7a35588145bb13d47f61aee553084d6b7
 }
 
 #class {
@@ -214,66 +181,6 @@ dropdown-menu:active {
     display: block;
 }
 
-<<<<<<< HEAD
-=======
-
-/*Side bar left*/
-
-.wrapper {
-    display: flex;
-    width: 100%;
-    align-items: stretch;
-}
-
-#sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    background: #f3f3f3;
-    color: #fff;
-    transition: all 0.3s;
-}
-
-#sidebar.active {
-    margin-left: -250px;
-}
-
-#sidebar .sidebar-header {
-    padding: 20px;
-    background: #f3f3f3;
-}
-
-#sidebar ul.components {
-    padding: 20px 0;
-    border-bottom: 1px solid #f3f3f3;
-}
-
-#sidebar ul p {
-    color: #fff;
-    padding: 10px;
-}
-
-#sidebar ul li a {
-    padding: 10px;
-    font-size: 1.1em;
-    display: block;
-}
-
-#sidebar ul li a:hover {
-    color: #f3f3f3;
-    background: #fff;
-}
-
-#sidebar ul li.active>a,
-a[aria-expanded="true"] {
-    color: #fff;
-    background: #f3f3f3;
-}
-
-a[data-toggle="collapse"] {
-    position: relative;
-}
-
->>>>>>> 523be2d7a35588145bb13d47f61aee553084d6b7
 .dropdown-toggle::after {
     display: block;
     position: absolute;
@@ -294,34 +201,6 @@ a[data-toggle="collapse"] {
     border: none;
 }
 
-<<<<<<< HEAD
-=======
-ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-    background: #f3f3f3;
-}
-
-ul.CTAs {
-    padding: 20px;
-}
-
-ul.CTAs a {
-    text-align: center;
-    font-size: 0.9em !important;
-    display: block;
-    border-radius: 5px;
-    margin-bottom: 5px;
-}
-
-a.article,
-a.article:hover {
-    background: #f3f3f3 !important;
-    color: #fff !important;
-}
-
-
->>>>>>> 523be2d7a35588145bb13d47f61aee553084d6b7
 /*Side bar left*/
 
 
@@ -335,7 +214,6 @@ a.article:hover {
 /*Profile*/
 
 .fb-profile img.fb-image-lg {
-<<<<<<< HEAD
   z-index: 0;
   width: 100%;
   margin-bottom: 10px;
@@ -356,31 +234,6 @@ a.article:hover {
     z-index: 9;
   }
 }
-=======
-    z-index: 0;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.fb-image-profile {
-    margin: -90px 10px 0px 50px;
-    z-index: 9;
-    width: 20%;
-}
-
-@media (max-width:768px) {
-    .fb-profile-text>h1 {
-        font-weight: 700;
-        font-size: 16px;
-    }
-    .fb-image-profile {
-        margin: -45px 10px 0px 25px;
-        z-index: 9;
-        width: 20%;
-    }
-}
-
->>>>>>> 523be2d7a35588145bb13d47f61aee553084d6b7
 
 /*class */
 
@@ -481,7 +334,6 @@ a.article:hover {
 }
 
 .submit-file .fileAttach {
-<<<<<<< HEAD
   font-size: 50px;
 }
 
@@ -524,7 +376,3 @@ a.article:hover {
   content: "";
   background: white;
 }
-=======
-    font-size: 50px;
-}
->>>>>>> 523be2d7a35588145bb13d47f61aee553084d6b7
