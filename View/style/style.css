@@ -42,11 +42,11 @@ svg {
 }
 
 .Login-card {
-  width: 100%;
-  width: 400px;
-  display: block;
-  box-shadow: 5px 10px #6db3db;
-  border: 2px solid #6db3db;
+    width: 100%;
+    width: 400px;
+    display: block;
+    box-shadow: 5px 10px #6db3db;
+    border: 2px solid #6db3db;
 }
 
 .forgot-card {
@@ -178,6 +178,63 @@ dropdown-menu:active {
   display: block;
 }
 
+
+/*Side bar left*/
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #f3f3f3;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #f3f3f3;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #f3f3f3;
+    background: #fff;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #f3f3f3;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
 .dropdown-toggle::after {
   display: block;
   position: absolute;
@@ -198,6 +255,31 @@ dropdown-menu:active {
   border: none;
 }
 
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #f3f3f3;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.article,
+a.article:hover {
+    background: #f3f3f3 !important;
+    color: #fff !important;
+}
+
+
 /*Side bar left*/
 
 /*main*/
@@ -205,6 +287,7 @@ dropdown-menu:active {
 .jumbotron {
   background-color: #eef2f8f8;
 }
+
 
 /*class */
 
@@ -270,42 +353,42 @@ dropdown-menu:active {
 }
 
 .ContainHideComment span {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 #button-search {
-  color: black;
-  border-radius: 0 3px 3px 0;
-  background-color: white;
-  border: 1px solid black;
-  border-left: none;
-  outline: none;
+    color: black;
+    border-radius: 0 3px 3px 0;
+    background-color: white;
+    border: 1px solid black;
+    border-left: none;
+    outline: none;
 }
 
 #search-field {
-  border: 1px solid black;
-  border-right: none;
-  border-radius: 3px 0 0 3px;
-  outline: none;
+    border: 1px solid black;
+    border-right: none;
+    border-radius: 3px 0 0 3px;
+    outline: none;
 }
 
 .fileAttach {
-  font-size: 100px;
+    font-size: 100px;
 }
 
 .content-attach {
-  color: #007bff;
-  width: 100px;
+    color: #007bff;
+    width: 100px;
 }
 
 .submit-file {
-  box-shadow: 0 4px 8px 0 #00000033;
-  border-radius: 10px;
-  padding: 10px;
+    box-shadow: 0 4px 8px 0 #00000033;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .submit-file .fileAttach {
-  font-size: 50px;
+    font-size: 50px;
 }
 /*Profile*/
 
@@ -333,19 +416,19 @@ dropdown-menu:active {
 }
 
 .mainSection {
-  box-shadow: 0px 5px 5px 5px black;
+    box-shadow: 0px 5px 5px 5px black;
 }
 
 .wrapPicture {
-  position: relative;
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 1px 1px 15px -5px black;
+    position: relative;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 1px 1px 15px -5px black;
 }
 .wrapPicture:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 .avatar {
   height: 100%;
