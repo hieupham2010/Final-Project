@@ -1,5 +1,5 @@
 <?php
-    include '../DialogMessage.php';
+include '../DialogMessage.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,28 +17,32 @@
 </head>
 
 <body>
-    <div class="forgot-card rounded p-3">
-        <!--Card content-->
-        <div class="card-body px-lg-5 pt-0 mt-2">
-            <div class="mb-2 d-flex justify-content-center">
-                <img src="images/LogoTDT/LogoTDT.png" alt="Logo" width="120" height="120">
+    <div class="container mt-5">
+        <div class=" col col-sm-12 ml-auto">
+            <div class="forgot-card rounded m-auto ">
+                <!--Card content-->
+                <div class="card-body w-75 m-auto">
+                    <div class="mb-2 d-flex justify-content-center">
+                        <img src="images/LogoTDT/LogoTDT.png" alt="Logo" width="120" height="120">
+                    </div>
+                    <div class="mb-2">
+                        <p>Enter the registered email to reset password!</p>
+                    </div>
+                    <form class="text-center" form action="../Handle/ForgotPasswordProcess" method="POST">
+                        <!-- Email -->
+                        <div class="md-form">
+                            <input type="email" name="txtEmail" id="txtEmail" placeholder="Email" required class="form-control">
+                        </div>
+                        <div class="text-danger small text-left mt-3">
+                            <span id="errorMessage"><?php if (isset($_GET["msg1"])) echo $_GET["msg1"]; ?></span></td>
+                        </div>
+                        <div>
+                            <input class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" id="buttonForgotPassword" name="buttonForgotPassword" value="Verification">
+                        </div>
+
+                    </form>
+                </div>
             </div>
-            <div class="mb-2">
-                <p>Enter the registered email to reset password!</p>
-            </div>
-            <form class="text-center" form action="../Handle/ForgotPasswordProcess" method="POST">
-                <!-- Email -->
-                <div class="md-form">
-                    <input type="email" name="txtEmail" id="txtEmail" placeholder="Email" required class="form-control">
-                </div>
-                <div class="text-danger small text-left mt-3">
-                    <span id="errorMessage"><?php if (isset($_GET["msg1"])) echo $_GET["msg1"]; ?></span></td>
-                </div>
-                <div>
-                    <input class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" id="buttonForgotPassword" name="buttonForgotPassword" value="Verification">
-                </div>
-                <div class="d-flex justify-content-around">
-            </form>
         </div>
     </div>
 </body>

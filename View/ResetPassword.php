@@ -19,9 +19,9 @@ if (!isset($_SESSION["Email"]) && !isset($_SESSION["Hash"])) {
 
 <body>
 
-    <div class="reset-card rounded-lg d-flex justify-content-center mt-5">
+    <div class="reset-card rounded-lg d-flex justify-content-center">
         <!--Card content-->
-        <div class="card-body px-lg-5 pt-0 mt-3 mb-5">
+        <div class="card-body px-lg-5">
             <div class="mb-2 d-flex justify-content-center">
                 <img src="images/LogoTDT/LogoTDT.png" alt="Logo" width="120" height="120">
             </div>

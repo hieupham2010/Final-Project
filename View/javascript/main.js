@@ -19,6 +19,8 @@ function activaTab() {
     $('.nav-tabs a[href="#' + tab + '"]').tab('show');
 };
 
+
+
 $("#share-idea").click(function() {
     $("#share-idea").hide(function() {});
     $("#collapseShow").show(function() {
@@ -49,3 +51,26 @@ $(document).ready(function() {
         $(".Comment").toggle(300);
     });
 });
+$(document).ready(function() {
+
+    var readURL = function(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('.avatar').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $(".chooseImg").on('change', function() {
+        readURL(this);
+    });
+
+    $(".chooseFile").on('click', function() {
+        $(".chooseImg").click();
+    });
+});
+

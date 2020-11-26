@@ -34,7 +34,7 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
     <!-- Material form login -->
     <div class="container">
         <div class="row mt-5">
-         
+
             <div class=" col col-sm-12 ml-auto">
                 <div class="Login-card m-auto rounded  h-100">
                     <!--Card content-->
@@ -43,17 +43,17 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
                             <img src="View/images/LogoTDT/LogoTDT.png" alt="Logo" width="120" height="120">
                         </div>
                         <!-- Form -->
-                        <form class=" w-50 m-auto" action="Handle/LoginProcess" method="POST">
+                        <form class=" w-75 m-auto" action="Handle/LoginProcess" method="POST">
 
                             <!-- Email -->
-                           
-                                <input type="text" name="txtUserName" id="txtUserName" placeholder="User Name" required class="form-control " value="<?php if (isset($_COOKIE["UserName"])) echo $_COOKIE["UserName"]; ?>">
-                           
+
+                            <input type="text" name="txtUserName" id="txtUserName" placeholder="User Name" required class="form-control " value="<?php if (isset($_COOKIE["UserName"])) echo $_COOKIE["UserName"]; ?>">
+
                             <!-- Password -->
 
-                         
-                                <input type="password" name="txtPassword" id="txtPassword" placeholder="Password" required class="form-control mt-2" value="<?php if (isset($_COOKIE["Password"])) echo $_COOKIE["Password"]; ?>">
-                         
+
+                            <input type="password" name="txtPassword" id="txtPassword" placeholder="Password" required class="form-control mt-2" value="<?php if (isset($_COOKIE["Password"])) echo $_COOKIE["Password"]; ?>">
+
 
                             <div class="d-flex justify-content-left mt-3">
                                 <!-- Remember me -->
@@ -76,13 +76,13 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
 
 
                             <!-- Register -->
-                            <span class="d-block">Don't have an account?
-                                <a  class="d-flex justify-content-center"href="View/SignUp">Register</a>
+                            <span class="d-flex justify-content-center">Don't have an account?
+                                <a class="" href="View/SignUp">Register</a>
                             </span>
                             <!-- Register -->
 
                             <!--forgot message -->
-                            <p>
+                            <p class="d-flex justify-content-center">
                                 <?php if (isset($_GET["msg1"])) echo '<a href="View/ForgotPassword">Forgot Password</a>' ?>
                             </p>
                             <!------------------->
@@ -92,7 +92,7 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
                     </div>
                 </div>
             </div>
-  
+
         </div>
         <!-- Material form login -->
     </div>

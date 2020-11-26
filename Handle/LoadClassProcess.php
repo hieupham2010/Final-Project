@@ -52,7 +52,7 @@ while ($row = $result->fetch_assoc()) {
                             </div>
                             <!-- dấu 3 chấm ở đây -->
                         </div>
-                        <div class="float-right ml-auto" id="backdrop" style="z-index: -1; position: absolute; right: 10px; top: 150px">
+                        <div class="float-right ml-auto"  style="z-index: 1; position: absolute; right: 10px; top: 150px">
                             <img src="<?php echo $row["AvatarSrc"] ?>" alt="avatar" width="60" height="60" class="rounded-circle">
                         </div>
                         <a class="card-text mt-3" id="class" href="Class?id=<?php echo urlencode(encryptClassCode($row["ClassID"]));?>"><?php echo $row["ClassName"] ?></a>
