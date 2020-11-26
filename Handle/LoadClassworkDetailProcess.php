@@ -1,6 +1,6 @@
 <?php
     if(isset($_GET["id"]) && !empty($_GET["id"]) && isset($_GET["ClassworkID"]) && !empty($_GET["ClassworkID"])) {
-        require_once 'DataAccess.php';
+        require 'DataAccess.php';
         require 'EncryptClassCode.php';
         $encryptCode = $_GET["id"];
         $ClassID = decryptClassCode($_GET["id"]);
@@ -15,6 +15,7 @@
         $Description = $row["Description"];
         $Time = $row["Time"];
         $DeadLine = $row["Deadline"];
+        $connection->close();
     }else{
         header("Location: ../index");
         exit;

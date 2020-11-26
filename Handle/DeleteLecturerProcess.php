@@ -10,6 +10,6 @@
         $stmt->bind_param("s", $UserName);
         $stmt->execute();
         $connection->close();
-        header("Location: ../View/Class?id=$encryptCode&msg=DeleteLecturerSuccess");
+        header("Location: ../View/Class?id=$encryptCode");
     }
 ?>

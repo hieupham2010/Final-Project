@@ -29,6 +29,6 @@
         $stmt->bind_param("i", $ClassworkID);
         $stmt->execute();
         $connection->close();
-        header("Location: ../View/Class?id=$encryptCode&msg=DeleteMaterialSuccess");
+        header("Location: ../View/Class?id=$encryptCode");
     }
 ?>

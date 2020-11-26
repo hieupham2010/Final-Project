@@ -1,5 +1,5 @@
 <?php
-require_once 'DataAccess.php';
+require 'DataAccess.php';
 $query = "SELECT * FROM users WHERE UserID IN (SELECT UserID FROM accounts WHERE UserName IN 
 (SELECT UserName FROM classmembers WHERE ClassID = ?) AND AccountType = 1)";
 $stmt = $connection->prepare($query);
@@ -40,4 +40,4 @@ while ($row = $result->fetch_assoc()) {
             <?php } ?>
         </div>
     </li>
-<?php $id++; }?>
+<?php $id++; } $connection->close();?>

@@ -55,7 +55,6 @@
                 while($row = $result->fetch_assoc()) {
                     sendMailNotification($row["Email"] ,$ClassInfo, $row["FullName"] , $LectureName , $Title);
                 }
-                $connection->close();
                 
                 header("Location: ../View/Class?id=$encryptCode&msg=posted");
             }else{
@@ -87,6 +86,7 @@
                 }
                 header("Location: ../View/Class?id=$encryptCode&msg=posted");
             }
+            $connection->close();
         }else {
             header("Location: ../View/Class?id=$encryptCode&msg=ErrorEmptyPost");
         }

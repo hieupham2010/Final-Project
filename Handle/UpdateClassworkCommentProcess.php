@@ -12,6 +12,7 @@
         $stmt = $connection->prepare($query);
         $stmt->bind_param("sii",$Message, $CommentID , $ClassworkID);
         $stmt->execute();
-        header("Location: ../View/DetailClassworks?id=$encryptCode&ClassworkID=$ClassworkID&msg=UpdateCommentSuccess");
+        $connection->close();
+        header("Location: ../View/DetailClassworks?id=$encryptCode&ClassworkID=$ClassworkID");
     }
 ?>

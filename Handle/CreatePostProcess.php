@@ -28,18 +28,17 @@
                     $stmt = $connection->prepare($query);
                     $stmt->bind_param("iss", $lastInsert, $FileSrc,$FileName);
                     $stmt->execute();
-                    
                 }
-                $connection->close();
                 header("Location: ../View/Class?id=$encryptCode&msg=posted");
             }else{
                 $query = "INSERT post(Message, UserName, ClassID) VALUES(?,?,?)";
                 $stmt = $connection->prepare($query);
                 $stmt->bind_param("sss", $Message, $UserName, $ClassID);
                 $stmt->execute();
-                $connection->close();
+               
                 header("Location: ../View/Class?id=$encryptCode&msg=posted");
             }
+            $connection->close();
         }else {
             header("Location: ../View/Class?id=$encryptCode&msg=ErrorEmptyPost");
         }

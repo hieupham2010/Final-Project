@@ -19,26 +19,22 @@ include '../DialogMessage.php';
   <title>TDT Class Room</title>
   <script type="text/javascript" src="javascript/main.js"></script>
 </head>
-<style>
-
-</style>
 
 <body>
   <div class="container-fluid">
-    <?php include 'Header.php' ?>
+    <?php include 'Header.php'?>
     <!--body-->
     <div class="row">
       <!--Body left-->
       <div class="col col-sm-12 mt-5">
         <!--Element-->
         <ol class="list-group list-group-horizontal">
-          <?php require '../Handle/LoadClassProcess.php' ?>
+          <?php require '../Handle/LoadClassProcess.php'?>
         </ol>
       </div>
     </div>
   </div>
 </body>
-
 </html>
 <?php
 if (isset($_GET["msg"])) {

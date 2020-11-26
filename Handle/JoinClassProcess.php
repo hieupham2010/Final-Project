@@ -59,7 +59,6 @@
                     $stmt = $connection->prepare($query);
                     $stmt->bind_param("ssss", $Email, $Hash , $ClassID , $UserName);
                     $stmt->execute();
-                    $connection->close();
                     sendMailJoinClass($Email, $Hash , $FullName , $ClassInfo);
                     header("Location: ../View/MainPage?msg=RequestJoinSuccess");
                 }

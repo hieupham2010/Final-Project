@@ -32,7 +32,7 @@ include '../Handle/LoadClassworkDetailProcess.php';
                             <div class="mt-2">
                                 <h5 class="font-weight-bold d-inline"><?php echo $Title ?></h5>
                                 <span class="meta small font-italic">(Posted: <?php echo $Time ?>)</span>
-                                <span class="text-muted float-right mt-2"><?php echo $DeadLine ?></span>
+                                <span class="text-muted float-right mt-2">Due: <?php echo $DeadLine ?></span>
                             </div>
 
                             <hr class="font-weight-bold">

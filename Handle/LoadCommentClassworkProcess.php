@@ -1,4 +1,5 @@
 <?php
+require 'DataAccess.php';
 $query = "SELECT * FROM classworkcomment WHERE ClassworkID = ?";
 $stmt = $connection->prepare($query);
 $stmt->bind_param("i", $ClassworkID);
@@ -50,5 +51,5 @@ $resultComment = $stmt->get_result(); ?>
             </div>
         </div>
     <?php $id++;
-    } ?>
+    } $connection->close();?>
 </div>

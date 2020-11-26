@@ -11,6 +11,6 @@
         $stmt->bind_param("ii", $CommentID, $ClassworkID);
         $stmt->execute();
         $connection->close();
-        header("Location: ../View/DetailClassworks?id=$encryptCode&ClassworkID=$ClassworkID&msg=DeleteCommentSuccess");
+        header("Location: ../View/DetailClassworks?id=$encryptCode&ClassworkID=$ClassworkID");
     }
 ?>

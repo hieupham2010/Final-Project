@@ -1,6 +1,6 @@
 <?php
     if(isset($_GET["id"]) && !empty($_GET["id"])) {
-        require_once 'DataAccess.php';
+        require 'DataAccess.php';
         require 'EncryptClassCode.php';
         $encryptCode = $_GET["id"];
         $ClassID = decryptClassCode($encryptCode);
@@ -13,6 +13,7 @@
         $ClassName = $row["ClassName"];
         $SubjectName = $row["SubjectName"];
         $Room = $row["Room"];
+        $connection->close();
     }else {
         header("Location: MainPage");
         exit;

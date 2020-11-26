@@ -38,18 +38,6 @@ if (isset($_GET["msg"]) && !empty($_GET["msg"])) {
     }else if($_GET["msg"] === "ErrorEmptyComment") {
         $title = "Error";
         $content = "Comment can't be empty";
-    }else if($_GET["msg"] === "DeletePostSuccess") {
-        $title = "Delete Post";
-        $content = "post has been deleted";
-    }else if($_GET["msg"] === "DeleteCommentSuccess") {
-        $title = "Delete Comment";
-        $content = "Comment has been deleted";
-    }else if($_GET["msg"] === "DeleteLecturerSuccess") {
-        $title = "Delete Lecturer";
-        $content = "Lecturer has been deleted";
-    }else if($_GET["msg"] === "DeleteStudentSuccess") {
-        $title = "Delete Student";
-        $content = "Student has been deleted";
     }else if($_GET["msg"] ===  "EmailNotExists") {
         $title = "Invite People";
         $content = "Email doesn't exists please try again";
@@ -74,15 +62,6 @@ if (isset($_GET["msg"]) && !empty($_GET["msg"])) {
     }else if($_GET["msg"] === "MaterialUpdated") {
         $title = "Update Classwork";
         $content = "Update classwork success";
-    }else if($_GET["msg"] === "UpdateCommentSuccess") {
-        $title = "Edit Comment";
-        $content = "Update comment success";
-    }else if($_GET["msg"] === "DeleteCommentSuccess") {
-        $title = "Delete Comment";
-        $content = "Delete comment success";
-    }else if($_GET["msg"] === "AssignmentSubmitted") {
-        $title = "Submit Classwork";
-        $content = "Submit classwork success";
     }else if($_GET["msg"] === "ErrorSubmit") {
         $title = "Submit Classwork";
         $content = "Please attach your file";

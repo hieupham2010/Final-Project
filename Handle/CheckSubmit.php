@@ -1,8 +1,9 @@
 <?php 
-    require_once 'DataAccess.php';
+    require 'DataAccess.php';
     $query = "SELECT * FROM assignment WHERE ClassworkID = ? AND UserName = ?";
     $stmt = $connection->prepare($query);
     $stmt->bind_param("is", $ClassworkID, $UserName);
     $stmt->execute();
     $resultAssignment = $stmt->get_result();
+    $connection->close();
 ?>

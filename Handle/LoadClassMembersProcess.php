@@ -1,5 +1,5 @@
 <?php
-require_once 'DataAccess.php';
+require 'DataAccess.php';
 $query = "SELECT * FROM users WHERE UserID IN (SELECT UserID FROM accounts WHERE UserName IN 
 (SELECT UserName FROM classmembers WHERE ClassID = ?) AND AccountType = 2)";
 $stmt = $connection->prepare($query);
@@ -16,8 +16,7 @@ while ($row = $result->fetch_assoc()) {
     $rowAccount = $resultAccount->fetch_assoc();
     require '../View/DialogDeleteStudent.php';
 ?>
-    <li class="List-Student p-1 border-bottom">
-
+    <li class="List-Student pb-2 pt-2 p-1 border-bottom">
         <div class="form-group mt-3">
             <img src="<?php echo $rowAccount["AvatarSrc"] ?>" width="40" height="40" class="rounded-circle mr-3 mb-2">
             <span><?php echo $row["FullName"] ?></span>

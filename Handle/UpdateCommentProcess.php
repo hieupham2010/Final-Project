@@ -11,6 +11,7 @@
         $stmt = $connection->prepare($query);
         $stmt->bind_param("si",$Message, $CommentID);
         $stmt->execute();
-        header("Location: ../View/Class?id=$encryptCode&msg=UpdateCommentSuccess");
+        $connection->close();
+        header("Location: ../View/Class?id=$encryptCode");
     }
 ?>
