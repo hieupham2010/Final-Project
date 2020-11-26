@@ -32,67 +32,75 @@ if (isset($_SESSION["logged"]) && $_SESSION["logged"] === true) {
 <body>
 
     <!-- Material form login -->
-    <div class="Login-card rounded-lg">
-        <!--Card content-->
-        <div class="card-body px-lg-5 pt-0 mt-3 mb-5">
-            <div class="mb-2 d-flex justify-content-center">
-                <img src="View/images/LogoTDT/LogoTDT.png" alt="Logo" width="120" height="120">
-            </div>
-            <!-- Form -->
-            <form class="text-center " action="Handle/LoginProcess" method="POST">
+    <div class="container">
+        <div class="row mt-5">
+         
+            <div class=" col col-sm-12 ml-auto">
+                <div class="Login-card m-auto rounded  h-100">
+                    <!--Card content-->
+                    <div class="mb-5">
+                        <div class="mb-2 d-flex justify-content-center">
+                            <img src="View/images/LogoTDT/LogoTDT.png" alt="Logo" width="120" height="120">
+                        </div>
+                        <!-- Form -->
+                        <form class=" w-50 m-auto" action="Handle/LoginProcess" method="POST">
 
-                <!-- Email -->
-                <div class="md-form mt-2">
-                    <input type="text" name="txtUserName" id="txtUserName" placeholder="User Name" required class="form-control" value="<?php if (isset($_COOKIE["UserName"])) echo $_COOKIE["UserName"]; ?>">
-                </div>
-                <!-- Password -->
+                            <!-- Email -->
+                           
+                                <input type="text" name="txtUserName" id="txtUserName" placeholder="User Name" required class="form-control " value="<?php if (isset($_COOKIE["UserName"])) echo $_COOKIE["UserName"]; ?>">
+                           
+                            <!-- Password -->
 
-                <div class="md-form mt-3">
-                    <input type="password" name="txtPassword" id="txtPassword" placeholder="Password" required class="form-control" value="<?php if (isset($_COOKIE["Password"])) echo $_COOKIE["Password"]; ?>">
-                </div>
+                         
+                                <input type="password" name="txtPassword" id="txtPassword" placeholder="Password" required class="form-control mt-2" value="<?php if (isset($_COOKIE["Password"])) echo $_COOKIE["Password"]; ?>">
+                         
 
-                <div class="d-flex justify-content-left mt-3">
-                    <!-- Remember me -->
-                    <div class="check_box">
-                        <input type="checkbox" id="remember" name="remember" <?php if (isset($_COOKIE["UserName"])) echo "checked"; ?>>
-                        <label class="form-check-label" for="remember">Remember me</label>
+                            <div class="d-flex justify-content-left mt-3">
+                                <!-- Remember me -->
+                                <div class="check_box">
+                                    <input type="checkbox" id="remember" name="remember" <?php if (isset($_COOKIE["UserName"])) echo "checked"; ?>>
+                                    <label class="form-check-label" for="remember">Remember me</label>
+                                </div>
+
+                            </div>
+
+                            <!-- error show -->
+                            <div class="text-danger small text-left mt-3">
+                                <?php if (isset($_GET["msg1"])) echo $_GET["msg1"] ?>
+                            </div>
+                            <!-- error show -->
+
+                            <!-- Sign in button -->
+                            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" id="buttonLogin" name="buttonLogin" value="Login">Sign in</button>
+                            <!-- Sign in button -->
+
+
+                            <!-- Register -->
+                            <span class="d-block">Don't have an account?
+                                <a  class="d-flex justify-content-center"href="View/SignUp">Register</a>
+                            </span>
+                            <!-- Register -->
+
+                            <!--forgot message -->
+                            <p>
+                                <?php if (isset($_GET["msg1"])) echo '<a href="View/ForgotPassword">Forgot Password</a>' ?>
+                            </p>
+                            <!------------------->
+
+                        </form>
+                        <!-- Form -->
                     </div>
-
                 </div>
-
-                <!-- error show -->
-                <div class="text-danger small text-left mt-3">
-                    <?php if (isset($_GET["msg1"])) echo $_GET["msg1"] ?>
-                </div>
-                <!-- error show -->
-
-                <!-- Sign in button -->
-                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" id="buttonLogin" name="buttonLogin" value="Login">Sign in</button>
-                <!-- Sign in button -->
-
-
-                <!-- Register -->
-                <p>Don't have an account? |
-                    <a href="View/SignUp">Register</a>
-                </p>
-                <!-- Register -->
-
-                <!--forgot message -->
-                <p>
-                    <?php if (isset($_GET["msg1"])) echo '<a href="View/ForgotPassword">Forgot Password</a>' ?>
-                </p>
-                <!------------------->
-
-            </form>
-            <!-- Form -->
+            </div>
+  
         </div>
+        <!-- Material form login -->
     </div>
-    <!-- Material form login -->
 </body>
 
 </html>
 <?php
 if (isset($_GET["msg"])) {
-  echo "<script>$('#Message').modal({show: true})</script>";
+    echo "<script>$('#Message').modal({show: true})</script>";
 }
 ?>

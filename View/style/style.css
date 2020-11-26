@@ -36,27 +36,15 @@ svg {
 /******************************** Index */
 
 .Sign-up-card {
-    position: absolute;
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%, 25%);
-    margin: auto;
-    width: 450px;
+    width: 400px;
     padding-bottom: auto !important;
     box-shadow: 5px 10px #6db3db;
     border: 2px solid #6db3db;
 }
 
 .Login-card {
-    position: absolute;
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%, 25%);
-    margin-bottom: 10px;
     width: 400px;
-    height: 500px;
     display: block;
-    flex-wrap: wrap;
     box-shadow: 5px 10px #6db3db;
     border: 2px solid #6db3db;
 }
@@ -321,34 +309,28 @@ a.article:hover {
 
 /*Profile*/
 
-.border {
-    border-bottom: 1px solid #f1f1f1;
+.fb-profile img.fb-image-lg {
+    z-index: 0;
+    width: 100%;
     margin-bottom: 10px;
 }
 
-.main-secction {
-    box-shadow: 5px 5px 5px 5px;
-    border-radius: 10px;
-    border: 1px solid;
-    height: 50% !important;
+.fb-image-profile {
+    margin: -90px 10px 0px 50px;
+    z-index: 9;
+    width: 20%;
 }
 
-.user-image {
-    position: absolute;
-    margin-top: 50px;
-}
-
-.user-left-part {
-    margin: 0px;
-}
-
-.user-image img {
-    width: 150px;
-    height: 150px;
-}
-
-.profile-right-section {
-    padding: 20px 20px 10px 15px;
+@media (max-width:768px) {
+    .fb-profile-text>h1 {
+        font-weight: 700;
+        font-size: 16px;
+    }
+    .fb-image-profile {
+        margin: -45px 10px 0px 25px;
+        z-index: 9;
+        width: 20%;
+    }
 }
 
 

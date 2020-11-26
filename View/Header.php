@@ -10,12 +10,13 @@
   <script href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </head>
 
+
 <body>
 
   <div class="container-fluid header">
-    <div class="row border-bottom border-primary">
+    <div class="row border-bottom border-primary ">
 
-      <div class="col-2 mt-1 pt-4">
+      <div class="col-2 mt-1 pt-4 d-block">
         <a class="navbar-brand" href="MainPage" id="logo">
           <img src="images/LogoTDT/LogoTDT.png" width="30" height="30" alt="logo">
           <span>TDT Classroom</span>
@@ -23,13 +24,17 @@
       </div>
 
       <div class="col-10">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-justify" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
-          </svg>
-        </button>
-        <nav class=" navbar navbar-expand-lg">
-          <div class="collapse navbar-collapse">
+
+        <nav class=" navbar navbar-expand-lg ">
+          <a class="navbar-brand " href="#"></a>
+          <button class="navbar-toggler mt-3 text-white btn-primary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+              <svg width="1.25em" height="1.5em" viewBox="0 0 14 14" class="bi bi-justify text-white" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+              </svg>
+            </span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarSupportedContent">
             <div class="navbar-nav ml-auto">
               <?php require '../Handle/AccountRole.php'; ?>
               <?php if (!isset($_GET["request"]) && !isset($_GET["id"])) { ?>
@@ -80,7 +85,6 @@
                 </div>
                 <!--Search -->
               <?php } ?>
-              <!--Notification-->
 
               <span class="mt-3 p-2"><?php echo $FullName ?></span>
               <ul class="nav-img list-unstyled mt-2">

@@ -69,19 +69,8 @@ require '../Handle/ClassInfoProcess.php';
 									<!--Display post area-->
 									<div class="container rounded p-2 ">
 										<div class="row p-2">
-											<div class="col-sm-3 mt-4">
-												<!-- Sidebar -->
-												<aside class="border rounded-lg mt-4 justify-content-left p-2 shadow">
-													<h2>Class Work</h2>
-													<ul class="list-unstyled ml-4">
-														<li><a>Class Work 1</a></li>
-														<li><a>Class Work 1</a></li>
-														<li><a>Class Work 1</a></li>
-														<li><a>Class Work 1</a></li>
-													</ul>
-												</aside>
-											</div>
-											<div class="col-sm-9">
+											
+											<div class="col-sm-12">
 												<!--Comment area-->
 												<div class="blog-comment h-50 relative ">
 
