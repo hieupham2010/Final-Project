@@ -59,9 +59,9 @@ require '../Handle/ClassInfoProcess.php';
 											<p class="lead font-italic"><span class="font-weight-bold">Subject</span> <?php echo $SubjectName ?></p>
 											<p class="lead font-italic"><span class="font-weight-bold">Room</span> <?php echo $Room ?></p>
 										<?php } else { ?>
-											<p class="lead font-italic" hidden><span class="font-weight-bold">Class Code</p>
 											<p class="lead font-italic"><span class="font-weight-bold">Subject</span> <?php echo $SubjectName ?></p>
 											<p class="lead font-italic"><span class="font-weight-bold">Room</span> <?php echo $Room ?></p>
+											<p class="invisible" class="lead font-italic"><span class="font-weight-bold">Class Code</p>
 										<?php } ?>
 									</div>
 									<!--jumbotron-->
@@ -172,12 +172,15 @@ require '../Handle/ClassInfoProcess.php';
 							<?php include '../Handle/LoadLecturerClassProcess.php' ?>
 						</ul>
 						<ul class="list-group list-unstyled">
-							<h2 class="people-type pb-1">
-								Students
-								<!-- Add people-->
-							</h2>
-							<?php include '../Handle/CountStudent.php' ?>
-							<h6 class="text-right"><?php echo $NumStudent ?> Students</h6>
+							<div class="people-type pb-1 mt-3">
+								<h2 class="d-inline" >
+									Students
+									<!-- Add people-->
+									<?php include '../Handle/CountStudent.php' ?>
+									<h6 class="float-right mb-0 mt-3"><?php echo $NumStudent ?> Students</h6>
+								</h2>
+
+							</div>
 							<?php include '../Handle/LoadClassMembersProcess.php' ?>
 						</ul>
 

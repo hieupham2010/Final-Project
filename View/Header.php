@@ -9,11 +9,6 @@
   <script href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </head>
-<style>
-  .navbar-toggler {
-    background-color: aqua;
-  }
-</style>
 
 <body>
 
@@ -36,33 +31,37 @@
         <nav class=" navbar navbar-expand-lg">
           <div class="collapse navbar-collapse">
             <div class="navbar-nav ml-auto">
-
               <?php require '../Handle/AccountRole.php'; ?>
               <?php if (!isset($_GET["request"]) && !isset($_GET["id"])) { ?>
-                <ul class="nav-img list-unstyled mt-3 pt-1 mr-2">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <svg focusable="false" width="24px" height="24px" viewBox="0 0 24 24">
-                        <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
-                        <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
-                      </svg>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right text-left" aria-labelledby="navbarDropdownMenuLink">
-                      <?php if ($AccountType == 0 || $AccountType == 1) { ?>
-                        <a class="dropdown-item waves-effect waves-light" data-toggle="modal" data-target="#JoinClass">Join Class</a>
-                        <a class="dropdown-item waves-effect waves-light" data-target="#AddClass" data-toggle="modal">Add Class</a>
-                      <?php } else { ?>
-                        <a class="dropdown-item waves-effect waves-light" data-toggle="modal" data-target="#JoinClass">Join Class</a>
-                      <?php } ?>
-                    </div>
-                  </li>
-                </ul>
+                <?php if (!isset($_GET["admin"])) { ?>
+                  <ul class="nav-img list-unstyled mt-3 pt-1 mr-2">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg focusable="false" width="24px" height="24px" viewBox="0 0 24 24">
+                          <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
+                          <path d="M20 13h-7v7h-2v-7H4v-2h7V4h2v7h7v2z"></path>
+                        </svg>
+                      </a>
+                      <div class="dropdown-menu dropdown-menu-right text-left" aria-labelledby="navbarDropdownMenuLink">
+                        <?php if ($AccountType == 0 || $AccountType == 1) { ?>
+                          <a class="dropdown-item waves-effect waves-light" data-toggle="modal" data-target="#JoinClass">Join Class</a>
+                          <a class="dropdown-item waves-effect waves-light" data-target="#AddClass" data-toggle="modal">Create Class</a>
+                        <?php } else { ?>
+                          <a class="dropdown-item waves-effect waves-light" data-toggle="modal" data-target="#JoinClass">Join Class</a>
+                        <?php } ?>
+                      </div>
+                    </li>
+                  </ul>
+                <?php } ?>
                 <!--Search -->
                 <div class="search-Bar mt-4 mr-4">
-                  <form action="MainPage" method="GET">
+                  <form action="<?php if(isset($_GET["admin"])) {echo 'ManageAccount';} else{echo 'MainPage';} ?>" method="GET">
                     <div class="input-group input-group-sm">
                       <!--input-->
                       <input id="search-field" type="text" name="key" placeholder="Search" aria-label="Search" value="<?php if (isset($_GET["key"])) echo $_GET["key"]; ?>">
+                      <?php if(isset($_GET["admin"])) {?>
+                        <input type="hidden" name="admin" value="ManageAccount" required >
+                      <?php } ?>
                       <!--input-->
                       <!--img-->
                       <div class="input-group-prepend .bg-white">
@@ -91,6 +90,9 @@
                   </a>
                   <div class="dropdown-menu dropdown-menu-right text-left" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="MainPage">Dashboard</a>
+                    <?php if ($AccountType == 0) { ?>
+                      <a class="dropdown-item waves-effect waves-light" href="ManageAccount?admin=ManageAccount">Manage Account</a>
+                    <?php } ?>
                     <a class="dropdown-item" href="Profile?request=profile">Profile</a>
                     <a class="dropdown-item" href="../Handle/LogoutProcess">Log Out</a>
                   </div>

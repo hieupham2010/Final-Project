@@ -1,5 +1,5 @@
 <?php
-require_once 'DataAccess.php';
+require 'DataAccess.php';
 require 'EncryptClassCode.php';
 $query = "SELECT * FROM classmembers WHERE UserName = ?";
 $stmt = $connection->prepare($query);
@@ -20,7 +20,6 @@ $stmt->bind_param("s", $UserName);
 $stmt->execute();
 $result = $stmt->get_result();
 $id = 0;
-$connection->close();
 while ($row = $result->fetch_assoc()) {
     require 'DialogDeleteClass.php';
     require 'DialogUpdateClass.php';
@@ -63,4 +62,4 @@ while ($row = $result->fetch_assoc()) {
         </div>
     </li>
 <?php $id++;
-}  ?>
+} $connection->close();?>

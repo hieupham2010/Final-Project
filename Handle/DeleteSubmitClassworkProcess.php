@@ -18,6 +18,7 @@
         $stmt = $connection->prepare($query);
         $stmt->bind_param("is", $ClassworkID, $UserName);
         $stmt->execute();
+        $connection->close();
         header("Location: ../View/DetailClassworks?id=$encryptCode&ClassworkID=$ClassworkID");
     }
 ?>

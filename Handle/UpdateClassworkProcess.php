@@ -21,8 +21,9 @@ if (isset($_POST["encryptCode"]) && !empty($_POST["encryptCode"])) {
             $stmt->bind_param("i" , $ClassworkID);
             $stmt->execute();
             $result = $stmt->get_result();
-            $row = $result->fetch_assoc();
-            unlink("../View/" . $row["MaterialSrc"]);
+            while($row = $result->fetch_assoc()) {
+                unlink("../View/" . $row["MaterialSrc"]);
+            }
             $query = "DELETE FROM material WHERE ClassworkID = ?";
             $stmt = $connection->prepare($query);
             $stmt->bind_param("i", $ClassworkID);
@@ -48,6 +49,7 @@ if (isset($_POST["encryptCode"]) && !empty($_POST["encryptCode"])) {
             $stmt->execute();
             header("Location: ../View/Class?id=$encryptCode&msg=MaterialUpdated");
         }
+        $connection->close();
     } else {
         header("Location: ../View/Class?id=$encryptCode&msg=ErrorEmptyPost");
     }

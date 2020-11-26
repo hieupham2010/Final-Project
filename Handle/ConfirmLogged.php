@@ -1,6 +1,5 @@
 <?php
     session_start();
-
     if (!isset($_SESSION["logged"]) && $_SESSION["logged"] !== true) {
         header("Location: ../index");
         exit;
@@ -28,6 +27,7 @@
             $result = $stmt->get_result();
             $row = $result->fetch_assoc();
             $AvatarSrc = $row["AvatarSrc"];
+            $connection->close();
         }
     }
 ?>

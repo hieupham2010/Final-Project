@@ -24,10 +24,10 @@
                 $stmt->bind_param("sssi", $AssignmentSrc ,$FileName,$UserName , $ClassworkID);
                 $stmt->execute();
             }
-            header("Location: ../View/DetailClassworks?id=$encryptCode&ClassworkID=$ClassworkID&msg=AssignmentSubmitted");
+            header("Location: ../View/DetailClassworks?id=$encryptCode&ClassworkID=$ClassworkID");
         }else{
             header("Location: ../View/DetailClassworks?id=$encryptCode&ClassworkID=$ClassworkID&msg=ErrorSubmit");
         }
-        
+        $connection->close();
     }
 ?>

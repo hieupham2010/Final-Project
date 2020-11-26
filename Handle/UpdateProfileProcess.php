@@ -48,7 +48,7 @@
                     $stmt->bind_param("ss" , $AvatarSrc , $UserName);
                     $stmt->execute();
                 }
-                header("Location: ../View/Profile?request=profile&msg=UpdateSuccess");
+                header("Location: ../View/Profile?request=profile");
             }
         }else{
             $query = "UPDATE users SET FullName = ?, DateOfBirth = ?, Email = ?, PhoneNumber = ? 
@@ -56,6 +56,7 @@
             $stmt = $connection->prepare($query);
             $stmt->bind_param("sssss", $FullName , $DateOfBirth , $Email , $PhoneNumber, $UserName);
             $stmt->execute();
-            header("Location: ../View/Profile?request=profile&msg=UpdateSuccess");
+            header("Location: ../View/Profile?request=profile");
         }
+        $connection->close();
     }

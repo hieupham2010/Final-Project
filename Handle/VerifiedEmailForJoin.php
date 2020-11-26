@@ -1,7 +1,7 @@
 <?php
-    require_once 'DataAccess.php';
     if(isset($_GET["Email"]) && !empty($_GET["Email"])
     && isset($_GET["Hash"]) && !empty($_GET["Hash"])) {
+        require_once 'DataAccess.php';
         $Email = $_GET["Email"];
         $Hash = $_GET["Hash"];
         $query = "SELECT * FROM joinclass WHERE Email = ? AND Hash = ?";
@@ -27,5 +27,6 @@
         }else {
             header("Location: ../index");
         }
+        $connection->close();
     }
 ?>

@@ -1,6 +1,5 @@
 <?php
-require_once 'DataAccess.php';
-require 'GetExtension.php';
+require 'DataAccess.php';
 $query = "SELECT * FROM assignment WHERE ClassworkID = ? AND UserName = ?";
 $stmt = $connection->prepare($query);
 $stmt->bind_param("is", $ClassworkID, $UserName);
@@ -18,6 +17,5 @@ $resultAssignment = $stmt->get_result(); ?>
                 </a>
             </div>
         </div>
-
     <?php } ?>
-<?php } ?>
+<?php } $connection->close();?>

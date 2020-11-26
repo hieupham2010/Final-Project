@@ -1,6 +1,5 @@
 <?php
-require_once 'DataAccess.php';
-require_once 'EncryptClassCode.php';
+require 'DataAccess.php';
 require 'GetExtension.php';
 $query = "SELECT * FROM post WHERE ClassID = ? ORDER BY PostID DESC";
 $stmt = $connection->prepare($query);
@@ -153,4 +152,4 @@ while ($row = $result->fetch_assoc()) {
         </script>' ?>
 
 <?php $id++;
-} ?>
+} $connection->close(); ?>

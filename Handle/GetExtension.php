@@ -23,6 +23,8 @@
         }else if($TypeFile == "html" || $TypeFile == "c" || $TypeFile == "php" || $TypeFile == "java" || 
         $TypeFile == "js" || $TypeFile == "cpp" || $TypeFile == "py" || $TypeFile == "cs") {
             $result = '<i class="fa fa-file-code-o fileAttach"></i>';
+        }else {
+            $result = '<i class="fa fa-file-o fileAttach"></i>';
         }
         return $result;
     }
