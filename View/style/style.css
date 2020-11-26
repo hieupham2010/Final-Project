@@ -126,7 +126,6 @@ ol {
     float: left;
     padding: 0.125rem 0;
     margin: 0.5rem 0 0;
-    font-size: 1.125rem;
     color: #212529;
     text-align: right;
     list-style: none;
@@ -436,11 +435,6 @@ a.article:hover {
     position: absolute;
     top: 0;
     right: 0;
-    height: 100%;
-    width: 100%;
-}
-
-.avatar {
     height: 100%;
     width: 100%;
 }

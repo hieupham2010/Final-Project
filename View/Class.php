@@ -77,11 +77,10 @@ require '../Handle/ClassInfoProcess.php';
 													<ul class="comments list-unstyled  ">
 														<li class="cmt-detail shadow rounded h-75 ">
 															<div id="share-idea" class="share-idea  shadow mt-5 rounded f-flex justify-content-left p-4" data-toggle="collapse">
-																<img src="<?php echo $AvatarSrc ?>" class="avatar rounded-circle" alt="" width="50" height="50" aria-hidden="true">
+																<img src="<?php echo $AvatarSrc ?>" class="avatar rounded-circle" alt="" width="50px" height="50px" aria-hidden="true">
 																Share your opinion
 															</div>
 															<!--Post area-->
-
 															<div class="collapse" id="collapseShow">
 																<div class="card-post card-body">
 																	<div class="md-form">
