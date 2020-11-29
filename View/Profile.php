@@ -20,7 +20,13 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="javascript/main.js"></script>
-
+    <script>
+       $ (document).ready(function() {
+           if((window).width() <=670){
+               $('profile-text').css('display','none')
+           }
+       })
+    </script>
 </head>
 
 <body>
@@ -29,18 +35,18 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
     <div class="container">
         <form action="../Handle/UpdateProfileProcess" method="POST" enctype="multipart/form-data">
             <div class="fb-profile rounded-circle row">
-                <img align="left" class="fb-image-lg " src="https://wowslider.com/sliders/demo-76/data1/images/bookshelf349946_1280.jpg" alt="Profile image example" />
-                <div align="left" class="fb-image-profile wrapPicture  ">
+                <img  class="fb-image-lg " src="https://wowslider.com/sliders/demo-76/data1/images/bookshelf349946_1280.jpg" alt="Profile image example" />
+                <div  class="fb-image-profile wrapPicture">
                     <img class=" avatar " src="<?php echo $AvatarSrc ?>" width="200px" height="200px" />
                     <div class="chooseFile"></div>
                     <input type="file" class="chooseImg">
                 </div>
 
-                <div class="fb-profile-text">
-                    <h1><?php echo $FullName ?></h1>
+                <div class="fb-profile-text" id="fb-profile-text">
+                    <h1 id="profile-text"><?php echo $FullName ?></h1>
                 </div>
             </div>
-            <div class="mainSection row  my-5 m-1">
+            <div class="mainSection row  my-5">
 
                 <div class="col-md-4 mt-5">
                     <ul class="nav nav-tabs border-0" id="myTab" role="tablist">
@@ -54,38 +60,37 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
                 <div class="tab-content col-md-8">
                     <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <table class="table col-md-10">
-                            <thead>
+                            <thead class="border-0">
                                 <tr>
-                                    <th scope="col" colspan="2" class="text-center">
+                                    <th scope="col" colspan="2" class="text-center border-0">
                                         <h2>PERSONAL INFORMATION</h2>
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody class=" m-5 text-center m-5">
-                                <tr class="border-0">
-                                    <th scope="row">Full Name</th>
-                                    <td>
+                            <tbody class=" ">
+                                <tr >
+                                    <th scope="row" class="">Full Name</th>
+                                    <td class="">
                                         <p><?php echo $FullName ?></p>
                                     </td>
-
                                 </tr>
                                 <tr>
-                                    <th scope="row">Birth Date</th>
-                                    <td>
+                                    <th scope="row" class="">Birth Date</th>
+                                    <td class="">
                                         <p><?php echo $DateOfBirth ?></p>
                                     </td>
 
                                 </tr>
                                 <tr>
-                                    <th scope="row">Email</th>
-                                    <td>
+                                    <th scope="row" class="">Email</th>
+                                    <td class="">
                                         <p><?php echo $Email ?></p>
                                     </td>
 
                                 </tr>
                                 <tr>
-                                    <th scope="row">Phone Number</th>
-                                    <td>
+                                    <th scope="row" class="">Phone Number</th>
+                                    <td class="">
                                         <?php echo $PhoneNumber ?>
                                     </td>
 

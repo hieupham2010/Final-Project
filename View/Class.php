@@ -50,7 +50,7 @@ require '../Handle/ClassInfoProcess.php';
 							<div class="col col-12 ">
 								<main role="main" class="container">
 									<!--jumbotron-->
-									<div class="jumbotron border border-info shadow pt-4 pb-4 text-break ">
+									<div class="jumbotron  border border-info shadow pt-4 pb-4 text-break ">
 										<h1 class="text-truncate"><?php echo $ClassName ?></h1>
 										<?php require '../Handle/AccountRole.php' ?>
 										<hr class="my-4">
@@ -81,7 +81,6 @@ require '../Handle/ClassInfoProcess.php';
 																Share your opinion
 															</div>
 															<!--Post area-->
-
 															<div class="collapse" id="collapseShow">
 																<div class="card-post card-body">
 																	<div class="md-form">
@@ -100,11 +99,8 @@ require '../Handle/ClassInfoProcess.php';
 																				<div class="input-group-append">
 																					<button class="btn btn-outline-secondary" type="submit">Post</button>
 																				</div>
-
 																			</div>
-
 																		</form>
-
 																	</div>
 																</div>
 															</div>
@@ -177,7 +173,6 @@ require '../Handle/ClassInfoProcess.php';
 				</div>
 			</div>
 			<!--body left-->
-
 		</div>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" href="style/style.css">
