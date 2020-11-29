@@ -29,22 +29,20 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
     <div class="container">
         <form action="../Handle/UpdateProfileProcess" method="POST" enctype="multipart/form-data">
             <div class="fb-profile rounded-circle row">
-                <img align="left" class="fb-image-lg " src="https://wowslider.com/sliders/demo-76/data1/images/bookshelf349946_1280.jpg" alt="Profile image example" />
-                <div align="left" class="fb-image-profile wrapPicture  ">
-
-                    <img class=" avatar border-0 img-thumbnail" src="<?php echo $AvatarSrc ?>" alt="Change Avatar" />
+                <img class="fb-image-lg " src="https://wowslider.com/sliders/demo-76/data1/images/bookshelf349946_1280.jpg" alt="Profile image example" />
+                <div class="fb-image-profile wrapPicture  ">
+                    <img class="avatar " src="<?php echo $AvatarSrc ?>" width="200px" height="200px" />
                     <div class="chooseFile"></div>
                     <input type="file" class="chooseImg">
-
                 </div>
 
                 <div class="fb-profile-text">
                     <h1><?php echo $FullName ?></h1>
                 </div>
             </div>
-            <div class="mainSection row  my-5">
+            <div class="mainSection row  my-5 m-1">
 
-                <div class="col-md-2 mt-5">
+                <div class="col-md-4 mt-5">
                     <ul class="nav nav-tabs border-0" id="myTab" role="tablist">
                         <div class="m-auto mt-5">
                             <a class="nav-link active text-muted" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile</a>
@@ -53,7 +51,7 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
 
                     </ul>
                 </div>
-                <div class="tab-content col-md-10">
+                <div class="tab-content col-md-8">
                     <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <table class="table col-md-10">
                             <thead>
@@ -63,8 +61,8 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
                                     </th>
                                 </tr>
                             </thead>
-                            <tbody class=" m-5 text-center">
-                                <tr>
+                            <tbody class=" m-5 text-center m-5">
+                                <tr class="border-0">
                                     <th scope="row">Full Name</th>
                                     <td>
                                         <p><?php echo $FullName ?></p>
@@ -140,7 +138,6 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
                                 </tr>
                             </tbody>
                         </table>
-
                     </div>
                 </div>
             </div>
