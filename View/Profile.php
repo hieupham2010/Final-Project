@@ -30,12 +30,11 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
         <form action="../Handle/UpdateProfileProcess" method="POST" enctype="multipart/form-data">
             <div class="fb-profile rounded-circle row">
                 <img class="fb-image-lg " src="https://wowslider.com/sliders/demo-76/data1/images/bookshelf349946_1280.jpg" alt="Profile image example" />
-                <div class="fb-image-profile wrapPicture  ">
-                    <img class="avatar " src="<?php echo $AvatarSrc ?>" width="200px" height="200px" />
+                <div class="fb-image-profile wrapPicture">
+                    <img class="avatar" src="<?php echo $AvatarSrc ?>" width="200px" height="200px"/>
                     <div class="chooseFile"></div>
-                    <input type="file" class="chooseImg">
+                    <input type="file" name="imageUpload" class="chooseImg">
                 </div>
-
                 <div class="fb-profile-text">
                     <h1><?php echo $FullName ?></h1>
                 </div>
