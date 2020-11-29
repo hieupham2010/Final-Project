@@ -238,7 +238,6 @@ a[data-toggle="collapse"] {
     position: absolute;
     top: 50%;
     right: 20px;
-    transform: translateY(-50%);
     content: none !important;
     border: none;
 }
@@ -368,6 +367,9 @@ a.article:hover {
     border-right: none;
     border-radius: 3px 0 0 3px;
     outline: none;
+    width: 200px;
+    padding-bottom: 2px;
+    padding-left: 15px;
 }
 
 .fileAttach {
