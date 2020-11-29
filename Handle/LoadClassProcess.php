@@ -28,7 +28,7 @@ while ($row = $result->fetch_assoc()) {
         <div class="card border-info rounded-lg">
             <img src="<?php echo $row["ImageSrc"] ?>" width="100%" height="178px" class="card-img-top" alt="Class Avatar">
             <!--Class-->
-            <div class="card-body">
+            <div class="card-body position-relative">
                 <h5 class="card-title">
                     <div>
                         <div>
@@ -51,7 +51,7 @@ while ($row = $result->fetch_assoc()) {
                             </div>
                             <!-- dấu 3 chấm ở đây -->
                         </div>
-                        <div class="float-right ml-auto"  style="z-index: 1; position: absolute; right: 10px; top: 150px">
+                        <div class="float-right ml-auto"  style="z-index: 1; position: absolute; right: 10px; top:-30px">
                             <img src="<?php echo $row["AvatarSrc"] ?>" alt="avatar" width="60" height="60" class="rounded-circle">
                         </div>
                         <a class="card-text mt-3" id="class" href="Class?id=<?php echo urlencode(encryptClassCode($row["ClassID"]));?>"><?php echo $row["ClassName"] ?></a>
