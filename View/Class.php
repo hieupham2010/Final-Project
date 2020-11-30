@@ -18,6 +18,13 @@ require '../Handle/ClassInfoProcess.php';
 	<link rel="stylesheet" href="style/style.css">
 	<title>Class</title>
 </head>
+<style>
+	@media all and (max-width: 768px) {
+		#collapseShow {
+			display: none;
+		}
+	}
+</style>
 
 <body>
 
@@ -69,14 +76,14 @@ require '../Handle/ClassInfoProcess.php';
 									<!--Display post area-->
 									<div class="container rounded p-2 ">
 										<div class="row p-2">
-											
-											<div class="col-sm-12">
-												<!--Comment area-->
-												<div class="blog-comment h-50 relative ">
 
-													<ul class="comments list-unstyled  ">
-														<li class="cmt-detail shadow rounded h-75 ">
-															<div id="share-idea" class="share-idea  shadow mt-5 rounded f-flex justify-content-left p-4" data-toggle="collapse">
+											<div class="col-md-12">
+												<!--Comment area-->
+												<div class="blog-comment relative ">
+
+													<ul class="list-unstyled  ">
+														<li class="cmt-detail shadow rounded ">
+															<div id="share-idea" class="share-idea  shadow mt-5 rounded f-flex justify-content-center p-4" data-toggle="collapse">
 																<img src="<?php echo $AvatarSrc ?>" class="avatar rounded-circle" alt="" width="50" height="50" aria-hidden="true">
 																Share your opinion
 															</div>
@@ -158,7 +165,7 @@ require '../Handle/ClassInfoProcess.php';
 						</ul>
 						<ul class="list-group list-unstyled">
 							<div class="people-type pb-1 mt-3">
-								<h2 class="d-inline" >
+								<h2 class="d-inline">
 									Students
 									<!-- Add people-->
 									<?php include '../Handle/CountStudent.php' ?>
