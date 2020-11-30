@@ -62,6 +62,22 @@
         $stmt = $connection->prepare($query);
         $stmt->bind_param("s", $ClassID);
         $stmt->execute();
+
+        $query = "SELECT * FROM classrooms WHERE ClassID = ?";
+        $stmt = $connection->prepare($query);
+        $stmt->bind_param("s", $ClassID);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        if(basename($row["ImageSrc"]) != "1.png" 
+        && basename($row["ImageSrc"]) != "2.png" 
+        && basename($row["ImageSrc"]) != "3.png"
+        && basename($row["ImageSrc"]) != "4.png"
+        && basename($row["ImageSrc"]) != "5.png"
+        && basename($row["ImageSrc"]) != "6.png" 
+        && basename($row["ImageSrc"]) != "7.png" ) {
+            unlink("../View/" . $row["ImageSrc"]);
+        }
         $query = "DELETE FROM classrooms WHERE ClassID = ?";
         $stmt = $connection->prepare($query);
         $stmt->bind_param("s", $ClassID);

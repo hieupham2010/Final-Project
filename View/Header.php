@@ -15,11 +15,8 @@
 
   <div class="container-fluid header">
     <div class="row border-bottom border-primary ">
-
-
-
       <div class="col-12">
-        <div class=" mt-4 float-left clearfix">
+        <div class="mt-4 pt-2 float-left clearfix">
           <a class="logo navbar-brand" href="MainPage" id="logo">
             <img src="images/LogoTDT/LogoTDT.png" width="30" height="30" alt="logo">
             <span>TDT Classroom</span>
@@ -28,12 +25,10 @@
 
         <nav class=" navbar navbar-expand-lg float-right" id="navbar">
 
-          <a class="navbar-brand" href="#"></a>
-
           <?php require '../Handle/AccountRole.php'; ?>
           <?php if (!isset($_GET["request"]) && !isset($_GET["id"])) { ?>
             <?php if (!isset($_GET["admin"])) { ?>
-              <ul class="nav-img list-unstyled mt-3 pt-1 mr-2">
+              <ul class="nav-img list-unstyled mt-3 mr-2">
                 <li class=" dropdown">
                   <a class="findClass nav-link dropdown-toggle" id="findClass" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <svg focusable="false" width="24px" height="24px" viewBox="0 0 24 24">
@@ -52,10 +47,8 @@
                 </li>
               </ul>
             <?php } ?>
-
-
             <!--Search -->
-            <div class="search-Bar mt-4 mr-4" id=Search>
+            <div class="search-Bar mt-3 mr-4" id="Search">
               <form action="<?php if (isset($_GET["admin"])) {
                               echo 'ManageAccount';
                             } else {
@@ -63,7 +56,7 @@
                             } ?>" method="GET">
                 <div class="input-group input-group-sm">
                   <!--input-->
-                  <input class=" rounded-pill position-relative" id="search-field" type="text" name="key" placeholder="Search" aria-label="Search" value="<?php if (isset($_GET["key"])) echo $_GET["key"]; ?>">
+                  <input class="rounded-pill position-relative" id="search-field" type="text" name="key" placeholder="Search" aria-label="Search" value="<?php if (isset($_GET["key"])) echo $_GET["key"]; ?>">
                   <?php if (isset($_GET["admin"])) { ?>
                     <input type="hidden" name="admin" value="ManageAccount" required>
                   <?php } ?>
@@ -87,27 +80,23 @@
           <?php } ?>
 
 
-          <span class="" id="fullName"><?php echo $FullName ?></span>
-          <ul class="nav-img list-unstyled mt-2 float-right">
-            <li class=" dropdown">
+          <span class="mr-3" id="fullName"><?php echo $FullName ?></span>
+          <ul class="nav-img list-unstyled mt-3 float-right">
+            <li class="dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="<?php echo $AvatarSrc ?>" width="40" height="40" class="rounded-circle">
+                <img src="<?php echo $AvatarSrc ?>" width="40px" height="40px" class="rounded-circle">
               </a>
               <div class="dropdown-menu dropdown-menu-right text-left" aria-labelledby="navbarDropdownMenuLink">
                 <p class="mt-3 p-2 ml-3" id="fullName1"><?php echo $FullName ?></p>
                 <?php if (!isset($_GET["request"]) && !isset($_GET["id"])) { ?>
                   <?php if (!isset($_GET["admin"])) { ?>
-                    
-                        
-                          <?php if ($AccountType == 0 || $AccountType == 1) { ?>
-                            <p><a class="dropdown-item waves-effect waves-light" id="dropdownAvt" data-toggle="modal" data-target="#JoinClass">Join Class</a></p>
-                            <p><a class="dropdown-item waves-effect waves-light" id="dropdownAvt" data-target="#AddClass" data-toggle="modal">Create Class</a></p>
-                            
-                          <?php } else { ?>
-                            <p><a class="dropdown-item waves-effect waves-light" id="dropdownAvt" data-toggle="modal" data-target="#JoinClass">Join Class</a></p>
-                            
-                          <?php } ?>
-                    
+                    <?php if ($AccountType == 0 || $AccountType == 1) { ?>
+                      <p><a class="dropdown-item waves-effect waves-light" id="dropdownAvt" data-toggle="modal" data-target="#JoinClass">Join Class</a></p>
+                      <p><a class="dropdown-item waves-effect waves-light" id="dropdownAvt" data-target="#AddClass" data-toggle="modal">Create Class</a></p>
+                    <?php } else { ?>
+                      <p><a class="dropdown-item waves-effect waves-light" id="dropdownAvt" data-toggle="modal" data-target="#JoinClass">Join Class</a></p>
+                    <?php } ?>
+
                   <?php } ?>
                 <?php } ?>
                 <a class="dropdown-item" href="MainPage">Dashboard</a>

@@ -81,10 +81,17 @@ require '../Handle/ClassInfoProcess.php';
 												<!--Comment area-->
 												<div class="blog-comment relative ">
 
+<<<<<<< HEAD
 													<ul class="list-unstyled  ">
 														<li class="cmt-detail shadow rounded ">
 															<div id="share-idea" class="share-idea  shadow mt-5 rounded f-flex justify-content-center p-4" data-toggle="collapse">
 																<img src="<?php echo $AvatarSrc ?>" class="avatar rounded-circle" alt="" width="50" height="50" aria-hidden="true">
+=======
+													<ul class="comments list-unstyled  ">
+														<li class="cmt-detail shadow rounded h-75 ">
+															<div id="share-idea" class="share-idea  shadow mt-5 rounded f-flex justify-content-left p-4" data-toggle="collapse">
+																<img src="<?php echo $AvatarSrc ?>" class="avatar rounded-circle" alt="" width="50px" height="50px" aria-hidden="true">
+>>>>>>> 73d7be720fe82436ee7263fba45eb1474ca62408
 																Share your opinion
 															</div>
 															<!--Post area-->

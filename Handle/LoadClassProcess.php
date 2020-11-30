@@ -24,9 +24,9 @@ while ($row = $result->fetch_assoc()) {
     require 'DialogDeleteClass.php';
     require 'DialogUpdateClass.php';
 ?>
-    <li class="list-group-item border-0">
+    <li class="list-group-item border-0 m-0 p-0 p-4">
         <div class="card border-info rounded-lg">
-            <img src="http://placehold.it/700x400" class="card-img-top" alt="...">
+            <img src="<?php echo $row["ImageSrc"] ?>" width="100%" height="178px" class="card-img-top" alt="Class Avatar">
             <!--Class-->
             <div class="card-body position-relative">
                 <h5 class="card-title">

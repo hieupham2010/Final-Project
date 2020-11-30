@@ -1,6 +1,6 @@
 <?php require '../Handle/ConfirmLogged.php' ?>
 <?php require '../Handle/AccountRole.php' ?>
-<?php if($AccountType != 0) exit; ?>
+<?php if ($AccountType != 0) exit; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,23 +16,25 @@
 </head>
 
 <body>
-    <?php include 'Header.php' ?>
-    <div class="container py-5">
-        <table class="bg-white rounded shadow m-auto text-center table table-hover">
-            <thead>
-                <tr class="border-bottom-0">
-                    <th scope="col">#</th>
-                    <th scope="col">Account</th>
-                    <th scope="col">Full Name</th>
-                    <th scope="col">Phone Number</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Current Role</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <?php require '../Handle/LoadAccountProcess.php' ?>
-        </table>
+    <div class="container-fluid">
+        <?php include 'Header.php' ?>
+        <div class="container py-5">
+            <table class="bg-white rounded shadow m-auto text-center table table-hover">
+                <thead>
+                    <tr class="border-bottom-0">
+                        <th scope="col">#</th>
+                        <th scope="col">Account</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Current Role</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <?php require '../Handle/LoadAccountProcess.php' ?>
+            </table>
 
+        </div>
     </div>
 </body>
 

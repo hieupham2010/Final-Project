@@ -39,7 +39,7 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
                 <div  class="fb-image-profile wrapPicture">
                     <img class=" avatar " src="<?php echo $AvatarSrc ?>" width="200px" height="200px" />
                     <div class="chooseFile"></div>
-                    <input type="file" class="chooseImg">
+                    <input type="file" name="imageUpload" class="chooseImg">
                 </div>
 
                 <div class="fb-profile-text" id="fb-profile-text">

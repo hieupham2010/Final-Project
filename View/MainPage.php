@@ -26,7 +26,7 @@ include '../DialogMessage.php';
     <!--body-->
     <div class="row">
       <!--Body left-->
-      <div class="col col-sm-12 mt-5">
+      <div class="col col-sm-12">
         <!--Element-->
         <ol class="list-group list-group-horizontal" >
           <?php require '../Handle/LoadClassProcess.php'?>

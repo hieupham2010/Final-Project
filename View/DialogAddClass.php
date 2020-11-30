@@ -9,7 +9,7 @@
             </div>
             <!-- class content -->
             <div class="modal-body">
-                <form action="../Handle/CreateClassProcess" method="POST">
+                <form action="../Handle/CreateClassProcess" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="txtClassNameAdd" class="col-form-label">Class Name</label>
                         <input type="text" class="form-control" id="txtClassNameAdd" name="txtClassNameAdd" required>
@@ -21,6 +21,12 @@
                     <div class="form-group">
                         <label for="txtRoomAdd" class="col-form-label">Room</label>
                         <input type="text" class="form-control" id="txtRoomAdd" name="txtRoomAdd" required>
+                    </div>
+                    <div class="form-group mt-4">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFile" name="imageUpload" id="inputGroupFile02"/>
+                            <label class="custom-file-label text-truncate" for="customFile">Choose file</label>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
