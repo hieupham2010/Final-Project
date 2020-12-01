@@ -48,7 +48,7 @@
               </ul>
             <?php } ?>
             <!--Search -->
-            <div class="search-Bar mt-3 mx-2" id="Search">
+            <div class="search-Bar mt-3 mx-3 px-3" id="Search">
               <form action="<?php if (isset($_GET["admin"])) {
                               echo 'ManageAccount';
                             } else {
@@ -56,14 +56,14 @@
                             } ?>" method="GET">
                 <div class="input-group input-group-sm">
                   <!--input-->
-                  <input class="rounded-pill position-relative" id="search-field" type="text" name="key" placeholder="Search" aria-label="Search" value="<?php if (isset($_GET["key"])) echo $_GET["key"]; ?>">
+                  <input class="position-relative" id="search-field" type="text" name="key" placeholder="Search" aria-label="Search" value="<?php if (isset($_GET["key"])) echo $_GET["key"]; ?>">
                   <?php if (isset($_GET["admin"])) { ?>
                     <input type="hidden" name="admin" value="ManageAccount" required>
                   <?php } ?>
                   <!--input-->
                   <!--img-->
                   <div class="input-group-prepend .bg-white">
-                    <button class="btn-submit input-group-text .bg-white position-absolute" id="button-search" id="inputGroup-sizing-sm" type="submit" style="z-index: 1; top:0; right:10px;">
+                    <button class="btn-submit input-group-text   position-absolute" id="button-search" id="inputGroup-sizing-sm" type="submit" style="z-index: 1; top:0; right:-25;">
                       <span>
                         <svg width="20px" height="20px" viewBox="0 0 15 15" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                           <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
