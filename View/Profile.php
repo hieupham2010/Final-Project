@@ -49,7 +49,7 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
             <div class="mainSection row  my-5">
 
                 <div class="col-md-4 mt-5">
-                    <ul class="nav nav-tabs border-0" id="myTab" role="tablist">
+                    <ul class="nav nav-tabs border-0 nav-justify" id="myTab" role="tablist">
                         <div class="m-auto mt-5">
                             <a class="nav-link active text-muted" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile</a>
                             <a class="nav-link text-decoration-none text-muted" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Update Profile</a>

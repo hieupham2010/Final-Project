@@ -280,6 +280,9 @@ a.article:hover {
 .nav-link:active {
     border-bottom: 1px solid #5086de;
 }
+#home-tab:active , #profile-tab:active {
+    background-color: #00000020;
+}
 
 .card-post {
     position: relative;

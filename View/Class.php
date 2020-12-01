@@ -75,15 +75,15 @@ require '../Handle/ClassInfoProcess.php';
 
 									<!--Display post area-->
 									<div class="container rounded p-2 ">
-										<div class="row p-2">
+										<div class="row">
 
 											<div class="col-md-12">
 												<!--Comment area-->
 												<div class="blog-comment relative ">
 
-													<ul class="comments list-unstyled  ">
-														<li class="cmt-detail shadow rounded h-75 ">
-															<div id="share-idea" class="share-idea  shadow mt-5 rounded f-flex justify-content-left p-4" data-toggle="collapse">
+													<ul class="comments list-unstyled  h-100">
+														<li class="cmt-detail shadow rounded h-100">
+															<div id="share-idea" class="share-idea  shadow mt-5 rounded f-flex justify-content-center p-4" data-toggle="collapse">
 																<img src="<?php echo $AvatarSrc ?>" class="avatar rounded-circle" alt="" width="50px" height="50px" aria-hidden="true">
 																Share your opinion
 															</div>
