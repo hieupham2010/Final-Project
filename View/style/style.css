@@ -193,41 +193,6 @@ dropdown-menu:active {
     transition: all 0.3s;
 }
 
-#sidebar.active {
-    margin-left: -250px;
-}
-
-#sidebar .sidebar-header {
-    padding: 20px;
-    background: #f3f3f3;
-}
-
-#sidebar ul.components {
-    padding: 20px 0;
-    border-bottom: 1px solid #f3f3f3;
-}
-
-#sidebar ul p {
-    color: #fff;
-    padding: 10px;
-}
-
-#sidebar ul li a {
-    padding: 10px;
-    font-size: 1.1em;
-    display: block;
-}
-
-#sidebar ul li a:hover {
-    color: #f3f3f3;
-    background: #fff;
-}
-
-#sidebar ul li.active>a,
-a[aria-expanded="true"] {
-    color: #fff;
-    background: #f3f3f3;
-}
 
 a[data-toggle="collapse"] {
     position: relative;
@@ -292,6 +257,12 @@ a.article:hover {
 .nav-link {
     border: none !important;
     border-bottom: none !important;
+    padding: 0 !important;
+}
+.navbar{
+    padding: 0 !important;
+    margin-top: 16px;
+   
 }
 
 .People-Card-List {
@@ -412,7 +383,7 @@ a.article:hover {
         font-size: 16px;
     }
     .fb-image-profile {
-        z-index: 9;
+        z-index: 1;
     }
 }
 
@@ -424,10 +395,12 @@ a.article:hover {
     position: relative;
     height: 200px;
     width: 200px;
+    max-width: 100%;;
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 1px 1px 15px -5px black;
 }
+
 
 .wrapPicture:hover {
     cursor: pointer;
@@ -486,10 +459,12 @@ a.article:hover {
     }
 }
 
-@media all and (max-width: 366px) {
+@media all and (max-width: 540px) {
     #fb-profile-text {
+        margin: auto;
         display: inline;
-        text-align: center;
+       
+        
     }
 }
 

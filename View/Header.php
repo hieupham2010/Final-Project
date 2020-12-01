@@ -15,20 +15,20 @@
 
   <div class="container-fluid header">
     <div class="row border-bottom border-primary ">
-      <div class="col-12">
-        <div class="mt-4 pt-2 float-left clearfix">
+      <div class="col-12 m-0">
+        <div class="mt-4 pt-2 float-left clearfix ">
           <a class="logo navbar-brand" href="MainPage" id="logo">
             <img src="images/LogoTDT/LogoTDT.png" width="30" height="30" alt="logo">
             <span>TDT Classroom</span>
           </a>
         </div>
 
-        <nav class=" navbar navbar-expand-lg float-right" id="navbar">
+        <nav class=" navbar navbar-expand-lg float-right mx-1" id="navbar">
 
           <?php require '../Handle/AccountRole.php'; ?>
           <?php if (!isset($_GET["request"]) && !isset($_GET["id"])) { ?>
             <?php if (!isset($_GET["admin"])) { ?>
-              <ul class="nav-img list-unstyled mt-3 mr-2">
+              <ul class="nav-img list-unstyled mt-3 mx-2">
                 <li class=" dropdown">
                   <a class="findClass nav-link dropdown-toggle" id="findClass" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <svg focusable="false" width="24px" height="24px" viewBox="0 0 24 24">
@@ -48,7 +48,7 @@
               </ul>
             <?php } ?>
             <!--Search -->
-            <div class="search-Bar mt-3 mr-4" id="Search">
+            <div class="search-Bar mt-3 mx-2" id="Search">
               <form action="<?php if (isset($_GET["admin"])) {
                               echo 'ManageAccount';
                             } else {
@@ -80,7 +80,7 @@
           <?php } ?>
 
 
-          <span class="mr-3" id="fullName"><?php echo $FullName ?></span>
+          <span class="mx-3" id="fullName"><?php echo $FullName ?></span>
           <ul class="nav-img list-unstyled mt-3 float-right">
             <li class="dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

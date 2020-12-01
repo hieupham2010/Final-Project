@@ -103,7 +103,7 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
                         <table class="table col-md-10">
                             <thead>
                                 <tr>
-                                    <th scope="col" colspan="2" class="text-center">
+                                    <th scope="col" colspan="2" class="text-center border-0">
                                         <h2>UPDATE PERSONAL INFORMATION</h2>
                                     </th>
                                 </tr>
