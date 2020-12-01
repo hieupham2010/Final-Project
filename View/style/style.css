@@ -482,3 +482,24 @@ a.article:hover {
         width: 120%;
     }
 }
+
+@media all and (max-width: 990px){
+    .deadline{
+        display: inline;
+    }
+    .nameClassWork{
+        display: inline-block;
+    }
+    .submitWork{
+        display: inline-block;
+        margin-top: 10%;
+    }
+}
+
+@media all and (max-width: 579px){
+
+    .submitWork{
+        display: inline-block;
+        margin-top: 30%;
+    }
+}

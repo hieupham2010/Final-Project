@@ -18,6 +18,9 @@ include '../Handle/LoadClassworkDetailProcess.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+
+</style>
 
 <body>
 
@@ -26,17 +29,16 @@ include '../Handle/LoadClassworkDetailProcess.php';
         <div class="container pt-4">
             <div class="row">
                 <!--Detail ClassWork-->
-                <div class="col-8">
+                <div class="col-lg-8">
                     <div class="rounded">
                         <div class="p-2">
                             <div class="mt-2">
-                                <h5 class="font-weight-bold d-inline"><?php echo $Title ?></h5>
+                                <h5 class="nameClassWork font-weight-bold d-inline"><?php echo $Title ?></h5>
                                 <span class="meta small font-italic">(Posted: <?php echo $Time ?>)</span>
-                                <span class="text-muted float-right mt-2">Due: <?php echo $DeadLine ?></span>
+                                <span class="deadline text-muted float-right mt-2">Due: <?php echo $DeadLine ?></span>
                             </div>
 
-                            <hr class="font-weight-bold">
-                            <div id="" class="">
+                            <div id="" class="mt-5">
                                 <div class="panel-body border-bottom text-break">
                                     <p><?php echo $Description ?></p>
                                     <?php include '../Handle/LoadMaterialProcess.php'; ?>
@@ -45,13 +47,25 @@ include '../Handle/LoadClassworkDetailProcess.php';
                                     <?php include '../Handle/LoadCommentClassworkProcess.php'; ?>
                                     <form action="../Handle/CreateClassworkCommentProcess" method="POST" class="form-control-lg">
                                         <div class="input-group mb-3 mt-2">
-                                            <div class="input-group-prepend">
-                                                <span class="avt-group-text mr-2 mt-0" id="basic-addon1"><img src="<?php echo $AvatarSrc ?>" class="avatar rounded-circle" alt="" width="30" height="30" aria-hidden="true"></span>
+                                            <div class="row">
+                                                <div class="col-sm-2">
+                                                    <div class="input-group-prepend">
+                                                        <span class="avt-group-text mr-2 mt-0" id="basic-addon1"><img src="<?php echo $AvatarSrc ?>" class="avatar rounded-circle" alt="" width="30" height="30" aria-hidden="true"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <input type="hidden" name="encryptCode" value="<?php echo $encryptCode ?>">
+                                                    <input type="hidden" name="ClassworkID" value="<?php echo $ClassworkID ?>">
+                                                    <input type="text" class="form-control  mt-0 rounded-pill" name="txtComment" placeholder="Comment" aria-describedby="basic-addon1">
+
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <button class="btn btn-outline-secondary form-control-md mt-0 rounded-pill" type="submit">Comment</button>
+                                                </div>
+
+
                                             </div>
-                                            <input type="hidden" name="encryptCode" value="<?php echo $encryptCode ?>">
-                                            <input type="hidden" name="ClassworkID" value="<?php echo $ClassworkID ?>">
-                                            <input type="text" class="form-control mt-0 rounded-pill mr-2" name="txtComment" placeholder="Comment" aria-describedby="basic-addon1">
-                                            <button class="btn btn-outline-secondary form-control-md mt-0 rounded-pill" type="submit">Comment</button>
+
                                         </div>
                                     </form>
                                 </div>
@@ -62,7 +76,7 @@ include '../Handle/LoadClassworkDetailProcess.php';
                 <!--Detail ClassWork-->
 
                 <!--submit -->
-                <div class="col-4">
+                <div class="submitWork col-lg-4">
                     <div class="shadow border rounded p-4">
                         <div class="border-bottom">
                             <h3 class="d-inline">Submit Work</h3>
