@@ -14,9 +14,9 @@
 <body>
 
   <div class="container-fluid header">
-    <div class="row border-bottom border-primary ">
-      <div class="col-12">
-        <div class="mt-4 pt-2 float-left clearfix">
+    <div class="row border-bottom border-primary pb-3 ">
+      <div class="col-12 m-0">
+        <div class="mt-4 pt-2 float-left clearfix ">
           <a class="logo navbar-brand" href="MainPage" id="logo">
             <img src="images/LogoTDT/LogoTDT.png" width="30" height="30" alt="logo">
             <span>TDT Classroom</span>
@@ -28,7 +28,7 @@
           <?php require '../Handle/AccountRole.php'; ?>
           <?php if (!isset($_GET["request"]) && !isset($_GET["id"])) { ?>
             <?php if (!isset($_GET["admin"])) { ?>
-              <ul class="nav-img list-unstyled mt-3 mr-2">
+              <ul class="nav-img list-unstyled mt-3 mx-2">
                 <li class=" dropdown">
                   <a class="findClass nav-link dropdown-toggle" id="findClass" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <svg focusable="false" width="24px" height="24px" viewBox="0 0 24 24">
@@ -48,22 +48,24 @@
               </ul>
             <?php } ?>
             <!--Search -->
-            <div class="search-Bar mt-3 mr-4" id="Search">
-              <form action="<?php if (isset($_GET["admin"])) {
+            <div class="search-Bar mt-1 pl-2 pr-2" id="Search">
+              <form class="mb-1" action="<?php if (isset($_GET["admin"])) {
                               echo 'ManageAccount';
                             } else {
                               echo 'MainPage';
                             } ?>" method="GET">
                 <div class="input-group input-group-sm">
                   <!--input-->
-                  <input class="rounded-pill position-relative" id="search-field" type="text" name="key" placeholder="Search" aria-label="Search" value="<?php if (isset($_GET["key"])) echo $_GET["key"]; ?>">
+                  <input id="search-field" type="text" name="key" placeholder="Search" aria-label="Search" value="<?php if (isset($_GET["key"])) echo $_GET["key"]; ?>">
                   <?php if (isset($_GET["admin"])) { ?>
                     <input type="hidden" name="admin" value="ManageAccount" required>
                   <?php } ?>
+
+
                   <!--input-->
                   <!--img-->
                   <div class="input-group-prepend .bg-white">
-                    <button class="btn-submit input-group-text .bg-white position-absolute" id="button-search" id="inputGroup-sizing-sm" type="submit" style="z-index: 1; top:0; right:10px;">
+                    <button class="btn-submit input-group-text" id="button-search" id="inputGroup-sizing-sm" type="submit">
                       <span>
                         <svg width="20px" height="20px" viewBox="0 0 15 15" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                           <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
@@ -80,8 +82,8 @@
           <?php } ?>
 
 
-          <span class="mr-3" id="fullName"><?php echo $FullName ?></span>
-          <ul class="nav-img list-unstyled mt-3 float-right">
+          <span class="mx-3" id="fullName"><?php echo $FullName ?></span>
+          <ul class="nav-img list-unstyled mt-3">
             <li class="dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img src="<?php echo $AvatarSrc ?>" width="40px" height="40px" class="rounded-circle">

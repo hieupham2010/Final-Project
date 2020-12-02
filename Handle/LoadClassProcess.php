@@ -1,17 +1,11 @@
 <?php
 require 'DataAccess.php';
 require 'EncryptClassCode.php';
-$query = "SELECT * FROM classmembers WHERE UserName = ?";
-$stmt = $connection->prepare($query);
-$stmt->bind_param("s", $UserName);
-$stmt->execute();
-$resultFounder = $stmt->get_result();
-$rowFounder = $resultFounder->fetch_assoc();
+
 if(isset($_GET["key"]) && !empty($_GET["key"])) {
     $key = $_GET["key"];
-    $query = "SELECT * FROM classrooms WHERE ClassID IN (SELECT ClassID FROM classmembers WHERE UserName = ?) 
-    AND ClassName LIKE BINARY '%$key%' OR SubjectName LIKE BINARY '%$key%' OR Room LIKE BINARY '%$key%' 
-    OR ClassName LIKE '%$key%' OR SubjectName LIKE '%$key%' OR Room LIKE '%$key%'";
+    $query = "SELECT * FROM classrooms WHERE ClassID IN (SELECT ClassID FROM classmembers WHERE UserName = ?) AND (ClassName LIKE BINARY '%$key%' OR SubjectName LIKE BINARY '%$key%' OR Room LIKE BINARY '%$key%' 
+    OR ClassName LIKE '%$key%' OR SubjectName LIKE '%$key%' OR Room LIKE '%$key%')";
 }else {
     $query = "SELECT * FROM classrooms WHERE ClassID IN (SELECT ClassID FROM classmembers WHERE UserName = ?)";
 }
@@ -23,10 +17,16 @@ $id = 0;
 while ($row = $result->fetch_assoc()) {
     require 'DialogDeleteClass.php';
     require 'DialogUpdateClass.php';
+    $query = "SELECT * FROM classmembers WHERE UserName = ? AND ClassID = ?";
+    $stmt = $connection->prepare($query);
+    $stmt->bind_param("ss", $UserName , $row["ClassID"]);
+    $stmt->execute();
+    $resultFounder = $stmt->get_result();
+    $rowFounder = $resultFounder->fetch_assoc();
 ?>
-    <li class="list-group-item border-0 m-0 p-0 p-4">
+    <li class="list-group-item border-0">
         <div class="card border-info rounded-lg">
-            <img src="<?php echo $row["ImageSrc"] ?>" width="100%" height="178px" class="card-img-top" alt="Class Avatar">
+            <img src="<?php echo $row["ImageSrc"] ?>" width="100%" height="180px" class="card-img-top" alt="...">
             <!--Class-->
             <div class="card-body position-relative">
                 <h5 class="card-title">
@@ -35,7 +35,7 @@ while ($row = $result->fetch_assoc()) {
                             <!-- dấu 3 chấm ở đây -->
                             <div class="dropdown-tdoc dropdown dropdown-menu-right text-dark position-absolute" style="z-index: 1;  top: -170px; right: 5px; color: black;">
                                 <a class="dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                                    <svg class="dropdown-svg text-white" width="24px" height="24px" viewBox="0 0 24 24" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="dropdown-svg text-white~" width="24px" height="24px" viewBox="0 0 24 24" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
                                     </svg>
                                 </a>

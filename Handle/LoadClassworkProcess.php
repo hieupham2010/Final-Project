@@ -15,8 +15,8 @@ while ($row = $result->fetch_assoc()) {
         <div class="shadow p-3 bg-white rounded" id="accordion2" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default ">
                 <div class="mt-2 ml-3 mr-3">
-                    <div class="row">
-                        <div class="col-11">
+                    <div class="row position-relative">
+                        <div class="">
                             <a role="button" class="item-question bg-white pb-3 pt-3 collapsed text-decoration-none text-dark d-block" data-toggle="collapse" href="#collapse<?php echo $id ?>" aria-expanded="false" aria-controls="collapse1a">
                                 <h5>
                                     <?php echo $row["Title"] ?>
@@ -24,7 +24,8 @@ while ($row = $result->fetch_assoc()) {
                                 <span class="meta small font-italic">(Posted: <?php echo $row["Time"] ?>)</span>
                             </a>
                         </div>
-                        <div class="col-1">
+                        <!-- Dấu 3 chấm-->
+                        <div class="position-absolute" style="right:0;">
                             <div class="dropdown-tdoc dropdown dropdown-menu-right float-right mt-4">
                                 <a class="dropdown-toggle mb-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

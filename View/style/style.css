@@ -193,42 +193,6 @@ dropdown-menu:active {
     transition: all 0.3s;
 }
 
-#sidebar.active {
-    margin-left: -250px;
-}
-
-#sidebar .sidebar-header {
-    padding: 20px;
-    background: #f3f3f3;
-}
-
-#sidebar ul.components {
-    padding: 20px 0;
-    border-bottom: 1px solid #f3f3f3;
-}
-
-#sidebar ul p {
-    color: #fff;
-    padding: 10px;
-}
-
-#sidebar ul li a {
-    padding: 10px;
-    font-size: 1.1em;
-    display: block;
-}
-
-#sidebar ul li a:hover {
-    color: #f3f3f3;
-    background: #fff;
-}
-
-#sidebar ul li.active>a,
-a[aria-expanded="true"] {
-    color: #fff;
-    background: #f3f3f3;
-}
-
 a[data-toggle="collapse"] {
     position: relative;
 }
@@ -292,6 +256,12 @@ a.article:hover {
 .nav-link {
     border: none !important;
     border-bottom: none !important;
+    padding: 0 !important;
+}
+
+.navbar {
+    padding: 0 !important;
+    margin-top: 16px;
 }
 
 .People-Card-List {
@@ -308,6 +278,11 @@ a.article:hover {
 
 .nav-link:active {
     border-bottom: 1px solid #5086de;
+}
+
+#home-tab:active,
+#profile-tab:active {
+    background-color: #00000020;
 }
 
 .card-post {
@@ -358,18 +333,19 @@ a.article:hover {
     color: black;
     background: none;
     border: 1px solid black;
-    border: none;
     outline: none;
+    border-left: none;
+    padding-bottom: 6px;
+    border-radius: 0 25px 25px 0;
 }
 
 #search-field {
     border: 1px solid black;
     border-right: none;
-    border-radius: 3px 0 0 3px;
+    border-radius: 25px 0 0 25px;
     outline: none;
+    padding: 4px 10px 4px 10px;
     width: 200px;
-    padding-bottom: 2px;
-    padding-left: 15px;
 }
 
 .fileAttach {
@@ -412,7 +388,7 @@ a.article:hover {
         font-size: 16px;
     }
     .fb-image-profile {
-        z-index: 9;
+        z-index: 1;
     }
 }
 
@@ -424,6 +400,8 @@ a.article:hover {
     position: relative;
     height: 200px;
     width: 200px;
+    max-width: 100%;
+    ;
     border-radius: 50%;
     overflow: hidden;
     box-shadow: 1px 1px 15px -5px black;
@@ -486,15 +464,35 @@ a.article:hover {
     }
 }
 
-@media all and (max-width: 366px) {
+@media all and (max-width: 540px) {
     #fb-profile-text {
+        margin: auto;
         display: inline;
-        text-align: center;
     }
 }
 
 @media all and (max-width:768px) {
     .jumbotron {
         width: 120%;
+    }
+}
+
+@media all and (max-width: 990px) {
+    .deadline {
+        display: inline;
+    }
+    .nameClassWork {
+        display: inline-block;
+    }
+    .submitWork {
+        display: inline-block;
+        margin-top: 10%;
+    }
+}
+
+@media all and (max-width: 579px) {
+    .submitWork {
+        display: inline-block;
+        margin-top: 30%;
     }
 }
