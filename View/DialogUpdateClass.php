@@ -9,7 +9,7 @@
             </div>
             <!-- class content -->
             <div class="modal-body">
-                <form action="../Handle/UpdateClassProcess" method="POST">
+                <form action="../Handle/UpdateClassProcess" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="txtClassNameUD" class="col-form-label">Class Name</label>
                         <input type="text" class="form-control" id="txtClassNameUD" name="txtClassNameUD" value="<?php echo $row["ClassName"]?>" required>
@@ -25,6 +25,13 @@
                     <div class="form-group">
                         <input type="hidden" class="form-control" id="UDClassID" name="UDClassID" value="<?php echo $row["ClassID"] ?>"required>
                     </div>
+                    <div class="form-group mt-4">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFile" name="imageUpload" id="inputGroupFile02"/>
+                            <label class="custom-file-label text-truncate" for="customFile">Choose file</label>
+                        </div>
+                    </div>
+                    <script src="javascript/main.js"></script>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <input type="submit" class="btn btn-primary pl-3 pr-3" value="Update">

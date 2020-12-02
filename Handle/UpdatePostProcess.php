@@ -32,8 +32,7 @@ if (isset($_POST["encryptCode"]) && !empty($_POST["encryptCode"])) {
                 $fileUpload = $UserName . $Hash . $_FILES["fileUpload"]["name"][$i];
                 $destinationFile = $destination . basename($fileUpload);
                 move_uploaded_file($_FILES["fileUpload"]["tmp_name"][$i], $destinationFile);
-                $temp = pathinfo($_FILES["fileUpload"]["name"][$i] , PATHINFO_EXTENSION);
-                $FileName = basename($_FILES["fileUpload"]["name"][$i] , "." . $temp);
+                $FileName = $_FILES["fileUpload"]["name"][$i];
                 $FileSrc = "DocumentUpload/" . $fileUpload;
                 $query = "INSERT documents(PostID, FileSrc, FileName) VALUES(?,?,?)";
                 $stmt = $connection->prepare($query);

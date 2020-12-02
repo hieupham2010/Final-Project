@@ -33,9 +33,9 @@ while ($row = $result->fetch_assoc()) {
                     <div>
                         <div>
                             <!-- dấu 3 chấm ở đây -->
-                            <div class="dropdown-tdoc dropdown dropdown-menu-right" style="z-index: 1; position: absolute; top: 5px; right: 5px;">
-                                <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <svg class="dropdown-svg" width="24px" height="24px" viewBox="0 0 24 24" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <div class="dropdown-tdoc dropdown dropdown-menu-right text-dark position-absolute" style="z-index: 1;  top: -170px; right: 5px; color: black;">
+                                <a class="dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                    <svg class="dropdown-svg text-white" width="24px" height="24px" viewBox="0 0 24 24" class="bi bi-three-dots-vertical" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
                                     </svg>
                                 </a>

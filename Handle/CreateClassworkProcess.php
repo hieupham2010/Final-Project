@@ -25,8 +25,7 @@
                     $fileUpload = $UserName . $Hash . $_FILES["fileUpload"]["name"][$i];
                     $destinationFile = $destination . basename($fileUpload);
                     move_uploaded_file($_FILES["fileUpload"]["tmp_name"][$i], $destinationFile);
-                    $temp = pathinfo($_FILES["fileUpload"]["name"][$i] , PATHINFO_EXTENSION);
-                    $FileName = basename($_FILES["fileUpload"]["name"][$i] , "." . $temp);
+                    $FileName = $_FILES["fileUpload"]["name"][$i];
                     $MaterialSrc = "MaterialUpload/" . $fileUpload;
                     $query = "INSERT material(MaterialSrc, FileName, ClassworkID) VALUES(?,?,?)";
                     $stmt = $connection->prepare($query);

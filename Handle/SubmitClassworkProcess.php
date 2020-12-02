@@ -16,8 +16,7 @@
                 $fileUpload = $UserName . $Hash . $_FILES["fileUpload"]["name"][$i];
                 $destinationFile = $destination . basename($fileUpload);
                 move_uploaded_file($_FILES["fileUpload"]["tmp_name"][$i], $destinationFile);
-                $temp = pathinfo($_FILES["fileUpload"]["name"][$i] , PATHINFO_EXTENSION);
-                $FileName = basename($_FILES["fileUpload"]["name"][$i] , "." . $temp);
+                $FileName = $_FILES["fileUpload"]["name"][$i];
                 $AssignmentSrc = "AssignmentUpload/" . $fileUpload;
                 $query = "INSERT assignment(AssignmentSrc ,FileName,UserName ,ClassworkID) VALUES(?,?,?,?)";
                 $stmt = $connection->prepare($query);
