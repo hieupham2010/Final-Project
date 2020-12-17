@@ -21,11 +21,7 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="javascript/main.js"></script>
     <script>
-       $ (document).ready(function() {
-           if((window).width() <=670){
-               $('profile-text').css('display','none')
-           }
-       })
+       
     </script>
 </head>
 
@@ -51,8 +47,8 @@ if (!isset($_GET["request"]) || empty($_GET["request"])) {
                 <div class="col-md-4 mt-5">
                     <ul class="nav nav-tabs border-0 nav-justify" id="myTab" role="tablist">
                         <div class="m-auto mt-5">
-                            <a class="nav-link active text-muted" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile</a>
-                            <a class="nav-link text-decoration-none text-muted" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Update Profile</a>
+                            <a class="nav-link active text-muted font-weight-bold" class="" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profile</a>
+                            <a class="nav-link text-decoration-none text-muted font-weight-bold" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Update Profile</a>
                         </div>
 
                     </ul>

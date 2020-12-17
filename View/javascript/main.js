@@ -73,3 +73,9 @@ $(document).ready(function() {
         $(".chooseImg").click();
     });
 });
+
+// $(document).ready(function() {
+//     if ((window).width() <= 670) {
+//         $('profile-text').css('display', 'none')
+//     }
+// })
