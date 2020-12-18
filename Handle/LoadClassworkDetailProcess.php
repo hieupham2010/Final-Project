@@ -5,7 +5,7 @@
         $encryptCode = $_GET["id"];
         $ClassID = decryptClassCode($_GET["id"]);
         $ClassworkID = $_GET["ClassworkID"];
-        $query = "SELECT * FROM classwork WHERE ClassID = ? AND $ClassworkID = ? ";
+        $query = "SELECT * FROM classwork WHERE ClassID = ? AND ClassworkID = ? ";
         $stmt = $connection->prepare($query);
         $stmt->bind_param("si", $ClassID , $ClassworkID);
         $stmt->execute();
