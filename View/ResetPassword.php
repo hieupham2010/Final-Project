@@ -29,7 +29,7 @@ if (!isset($_SESSION["Email"]) && !isset($_SESSION["Hash"])) {
                     <img src="images/LogoTDT/LogoTDT.png" alt="Logo" width="120" height="120">
                 </div>
                 <!-- Form -->
-                <form class="text-center w-75 m-auto" action="../Handle/ResetPasswordProcess" method="POST">
+                <form class="text-center w-100 m-auto" action="../Handle/ResetPasswordProcess" method="POST">
 
                     <div class="md-form mt-2">
                         <p>Hi <?php if (isset($_SESSION["FullName"])) echo $_SESSION["FullName"];  ?></p>
