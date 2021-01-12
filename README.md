@@ -1,3 +1,3 @@
 # TDTU CLASSROOM PROJECT
 
-Visit website at[TDTUCLASSROOM](https://tdtuclassroom.herokuapp.com/)
+Visit website at: [TDTU CLASSROOM](https://tdtuclassroom.herokuapp.com/)
